@@ -1,0 +1,127 @@
+/*=================================*/
+/* Nivo Slider Demo
+/* November 20310
+/* By: Gilbert Pellegrom
+/* http://dev7studios.com
+/*=================================*/
+
+/*====================*/
+/*=== Reset Styles ===*/
+/*====================*/
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {
+	line-height:1;
+	color:black;
+	background:white;
+}
+
+
+table {
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:"";
+}
+blockquote, q {
+	quotes:"" "";
+}
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/*===================*/
+/*=== Main Styles ===*/
+/*===================*/
+body {
+	font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	color:#333;
+	filter:alpha(opacity=100 finishopacity=50 style=2 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=#EFEFEF,gradientType=0);
+    -ms-filter:alpha(opacity=100 finishopacity=50 style=2 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=#EFEFEF,gradientType=0);/*IE8*/	
+    background:white; 
+    background:-moz-radial-gradient(white 70%, rgba(233, 233, 233, 0.5));  
+    background:-webkit-gradient(center, 0 0, 0 bottom, from(#ffffff), to(rgba(233, 233, 233, 0.5)));  
+    background:-o-linear-gradient(center, white, rgba(233, 233, 233, 0.5)); 
+	
+}
+
+a, a:visited {
+	color:blue;
+	text-decoration:none;
+}
+a:hover, a:active {
+	color:#000;
+	text-decoration:none;
+}
+.slider-wrapper { 
+	width: 80%; 
+	margin: 40px auto 100px auto;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;
+}
+
+.sized {
+	max-width: 800px;
+}
+
+.zhi {
+	width: 100px;
+	vertical-align: center;
+	margin: 100px auto;
+}
+
+hr {
+	clear: both; 
+	float: none; 
+	width: 100%; 
+	height: 1px;
+	line-height: 1px;
+	font-size: 0;
+	border: none 0;
+	margin: 1.4em 0;
+	border: none; 
+	background: #ddd;
+	background-image: -webkit-gradient(linear,left bottom,right bottom,color-stop(0, rgb(255,255,255)), color-stop(0.1, rgb(221,221,221)),color-stop(0.9, rgb(221,221,221)),color-stop(1, rgb(255,255,255)));
+	background-image: -webkit-linear-gradient(left center,rgb(255,255,255) 0%,rgb(221,221,221) 10%,rgb(221,221,221) 90%,rgb(255,255,255) 100%);
+	background-image: -moz-linear-gradient(left center,rgb(255,255,255) 0%,rgb(221,221,221) 10%,rgb(221,221,221) 90%,rgb(255,255,255) 100%);
+	background-image: -o-linear-gradient(left center,rgb(255,255,255) 0%,rgb(221,221,221) 10%,rgb(221,221,221) 90%,rgb(255,255,255) 100%);
+}
+
+header h1 div {
+    background: url("images/zhi.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    height: 100px;
+    margin: 40px auto 3px;
+    text-indent: -9999px;
+    width: 100px;
+}
