@@ -117,11 +117,17 @@ hr {
 }
 
 header h1 div {
-    background: url("images/zhi.png") no-repeat scroll 0 0 transparent;
+    
+    background: url("http://wp-williamw.rhcloud.com/wp-content/uploads/2013/04/zhi.png") no-repeat scroll 0 0 transparent;
     border: 0 none;
     display: block;
     height: 100px;
-    margin: 40px auto 3px;
+    margin: 20px auto 2px;
     text-indent: -9999px;
-    width: 100px;
+    width: 120px;
+}
+
+#timer {
+	font-size: 28px;
+	text-align: center;
 }
