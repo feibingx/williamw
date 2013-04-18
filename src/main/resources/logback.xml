@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- <property name="USER_HOME" value="debug" /> -->
+	<property name="LOG_FILE_NAME" value="greatbanker" />
+	<property name="LOG_FILE_NAME_MSG" value="greatbanker" />
+	<property name="LEVEL" value="debug" />
+	<property name="logFileNamePattern" value="${LOG_FILE_NAME}_%d{yyyy-MM-dd}" />
+	<property name="logFileNamePattern2" value="${LOG_FILE_NAME}_%d{yyyy-MM-dd}_%i" />
+	<property name="fileLayoutPattern"
+		value="%d{yyyyMMdd:HH:mm:ss.SSS} [%thread][%logger{25}]%-5level  %msg%n" /><!-- 
+		value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n" /> -->
+	<property name="consoleLayoutPattern"
+		value="%d{yyyyMMdd:HH:mm:ss.SSS}[%logger{25}]%-5level  %msg%n" />
+	<contextName>pchApp</contextName>
+	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" />
+	<timestamp key="byDate" datePattern="yyyyMMdd" />
+
+	<appender name="ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Prudent>true</Prudent>
+		<file>${USER_HOME}/${LOG_FILE_NAME_MSG}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/${LOG_FILE_NAME_MSG}.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<layout>
+			<pattern>${fileLayoutPattern}</pattern>
+		</layout>
+		<encoder>
+			<pattern>${consoleLayoutPattern}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<layout name="StandardFormat" class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${consoleLayoutPattern}</pattern>
+		</layout>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>${consoleLayoutPattern}</pattern>
+		</encoder>
+	</appender>
+
+	<root level="${LEVEL}">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ROLLING" />
+	</root>
+
+</configuration>

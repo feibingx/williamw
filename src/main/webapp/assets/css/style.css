@@ -1,0 +1,96 @@
+.grid {height: 50px; background: red}
+.panel {padding: 10px; background: #FFF; border-radius: 5px; box-shadow: 0px 0px 10px #AAA;}
+
+body {padding-top: 20px; background: url("../../assets/img/bgnoise_lg.png"); font-family: "Microsoft Yahei"}
+.page {margin: 0 auto; width: 1000px;}
+.logo {margin-bottom: 10px;}
+.wrapper {max-height: 565px; background: #FFF; padding: 20px; margin: 0 auto; width: 1000px; border-radius: 10px; box-shadow: 0px 0px 10px #AAA}
+.container-fluid {width: 960px; margin: 0 auto;}
+.content {background: url("../../assets/img/tiny_grid.png"); height: 500px; width: 819px; border-radius: 5px 0 0 0;}
+.footer {height: 55px;; background: #333746; border-radius: 0 0 5px 5px; z-index: 100; position: relative;}
+.avatar {height: 60px; width: 100px; position: relative; border-radius: 5px 5px 0 0; background: #333746; top: -60px; left: 20px;}
+.pic {position: relative; padding: 5px 0; margin: 5px; height: 90px; width: 90px; background: #FFF; border-radius: 5px;}
+
+.dialog {width: 720px; margin-right: 0;}
+.dialog hr {margin-bottom: 0}
+.dialog-avatar img {width: 140px; height: 140px; margin:  5px;}
+.dialog-title {padding: 10px; margin-bottom: 10px;}
+.dialog-title h1{font-size: 48px; margin: 10px; padding: 5px; line-height: 48px;}
+.dialog-title h3{font-size: 32px; margin: 10px; padding: 5px;}
+.dialog-content {padding: 0 10px; margin-top: 10px;}
+.dialog-item {float: left; width: 200px; background: #F5F5F5; border-radius: 5px; padding: 10px; margin-right: 10px;}
+.dialog-item h3 {color: #79C3D4; font-size: 24px; margin-top: 5px;}
+.banker-item {padding:5px; margin-bottom:5px;border-radius: 3px; font-size: 20px;}
+.banker-money {border-radius: 5px;margin-top: 10px; padding: 1px; background: #79C3D4 ;}
+.banker-money .type {height: 30px;}
+
+
+.result {width: 940px; height: 450px; background: #DDD; border-radius: 5px 5px 0 0; padding: 10px;}
+.status-list {height: 395px; overflow:auto;}
+
+
+.actions {padding: 10px; border: 1px solid #DDD;background: #DDD;text-align: right;border-radius: 5px; margin-bottom: 10px;}
+.btn {text-shadow: none; color: #111; background: #F5F5F5;}
+.actions .btn-success {background: #79c3d4;}
+.actions .btn-danger {background: #EE5F5B;}
+.info {height: 300px}
+.maininfo {height: 370px;}
+.customer {width: 300px;}
+.customer img {width: 250px;}
+.money-nav-container {margin: -110px 0 0 125px;}
+.money-container {height: 50px;}
+.money {margin: 0 6px 0 0 ; padding: 5px; background: #333746; border-radius: 5px; top: -40px;}
+.number {font-size: 18px; height: 30px;color: #333746; padding: 5px;}
+.money .type {height: 30px}
+
+.footer .nav-pills {margin: 0; padding-top: 10px;}
+.footer .nav-pills > li > a {background-color: #F5F5F5 !important;color: #333; margin-right: 10px;}
+.footer .nav-pills > li > a:hover {background-color: #DAEDE1 !important;color: #333; margin-right: 10px;}
+.footer .nav-pills > li.active > a {background-color: #79c3d4 !important;color: #333}
+
+.customer-list {height: 400px; width: 160px; margin-right: 0; padding: 10px;}
+.customer-list ul {list-style: none; margin: 0; padding: 0;}
+.customer-list li {margin-bottom: 10px;}
+.customer-list li .list-avatar {background: #F5F5F5;}
+.customer-list li .list-avatar:hover {background: #DAEDE1; cursor: pointer;}
+.customer-list li.active .list-avatar {background: #79C3D4;}
+.customer-list li .list-avatar {float: none; width: 100%; clear: both;}
+.customer-list li .list-avatar span{margin-left: 10px; width: 90px; height: 48px; overflow: none; padding-top: 12px;}
+.customer-list li .list-avatar *{float: left; display: inline-block;}
+.customer-name {color: #333746; font-size: 36px; }
+.customer-info { margin: -75px -20px 67px 154px}
+
+.loan-list {overflow: hidden; margin: 0; padding: 0; list-style: none; }
+.loan-list-item {background: #FFF; margin-bottom: 10px; height: 70px; padding: 8px; border-radius: 5px;box-shadow: 0px 0px 2px #AAA}
+.list-avatar {float: left; width: 60px; height: 60px; padding: 5px; border-radius: 5px; background: #79C3D4;margin-right: 10px;}
+.list-avatar img {width: 60px; height: 60px; background: #FFF;border-radius: 5px;}
+.list-avatar a{color: #000;}
+.list-avatar a:hover{color: #fff;}
+.loan-list-item div.pull-left {margin-right: 10px; padding-top: 10px;}
+.list-money {width: 100px; height: 60px;}
+.list-applicant {width: 120px; height: 60px;}
+.loan-list-item h3 {color: #79C3D4; font-size: 24px;}
+.list-rate {width: 90px;}
+.list-day-left {width: 120px;}
+.list-progress {width: 120px; height: 60px; margin-right: 0 !important;}
+.list-progress .progress {height: 50px;  background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
+  background-image: -ms-linear-gradient(top, #ffffff, #ffffff);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);}
+.list-progress .progress .bar {height: 60px; background: #79C3D4 }
+
+.modal {padding: 10px;}
+.success-info {padding: 20px; margin: 40px 0 0 30px}
+.success-info p{ color: #79C3D4; font-size: 24px; margin-top: 5px; font-weight: bolder;}
+.success-info h2{margin: 12px 0 0 0px;}
+.success-info .btn-info {margin-top:40px;background: #79c3d4;}
+.success-girl {padding: 10px; margin:  10px;}
+.custom-title {height: 160px; }
+.welcome-info {padding: 20px;}
+.welcome-info img{padding: 20px; margin-right: 20px;}
+.welcome-info h3{padding-top: 10px; }
+
+.request-form {height: 150px;margin-left: 0; width: 525px; background-color: white; border: 0;}
+.custom-request-title {height: 80px; }
+.custom-request-title h1{   font-size: 40px; margin: 10px; padding: 5px;}
+.control-label {font-size: 18px; }
