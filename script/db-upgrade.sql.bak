@@ -40,7 +40,7 @@ CREATE TABLE DT_STUDENTS (
    mummyjob varchar(80),
    mummyphone varchar(32),
    prices text,
-   history text,
+   selfintro text,
    applyreason text,
    yuwem1 tinyint,
    yuwem2 tinyint,

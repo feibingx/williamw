@@ -65,7 +65,7 @@ img {
 button,
 input,
 select,
-textareatextarea {
+textarea {
   margin: 0;
   font-size: 100%;
   vertical-align: middle;
@@ -97,7 +97,7 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
-textareatextarea {
+textarea {
   overflow: auto;
   vertical-align: top;
 }
@@ -597,7 +597,7 @@ label,
 input,
 button,
 select,
-textareatextarea {
+textarea {
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -605,7 +605,7 @@ textareatextarea {
 input,
 button,
 select,
-textareatextarea {
+textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 label {
@@ -614,7 +614,7 @@ label {
   color: #333333;
 }
 input,
-textareatextarea,
+textarea,
 select,
 .uneditable-input {
   display: inline-block;
@@ -630,12 +630,12 @@ select,
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-.uneditable-textareatextarea {
+.uneditable-textarea {
   width: auto;
   height: auto;
 }
 label input,
-label textareatextarea,
+label textarea,
 label select {
   display: block;
 }
@@ -704,7 +704,7 @@ input[type="image"] {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-textareatextarea {
+textarea {
   height: auto;
 }
 input[type="hidden"] {
@@ -735,7 +735,7 @@ input[type="hidden"] {
   margin-left: 10px;
 }
 input,
-textareatextarea {
+textarea {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -746,7 +746,7 @@ textareatextarea {
   transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 input:focus,
-textareatextarea:focus {
+textarea:focus {
   border-color: rgba(82, 168, 236, 0.8);
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
@@ -787,58 +787,58 @@ select:focus {
 }
 input[class*="span"],
 select[class*="span"],
-textareatextarea[class*="span"],
+textarea[class*="span"],
 .uneditable-input {
   float: none;
   margin-left: 0;
 }
 input,
-textareatextarea,
+textarea,
 .uneditable-input {
   margin-left: 0;
 }
-input.span12, textareatextarea.span12, .uneditable-input.span12 {
+input.span12, textarea.span12, .uneditable-input.span12 {
   width: 930px;
 }
-input.span11, textareatextarea.span11, .uneditable-input.span11 {
+input.span11, textarea.span11, .uneditable-input.span11 {
   width: 850px;
 }
-input.span10, textareatextarea.span10, .uneditable-input.span10 {
+input.span10, textarea.span10, .uneditable-input.span10 {
   width: 770px;
 }
-input.span9, textareatextarea.span9, .uneditable-input.span9 {
+input.span9, textarea.span9, .uneditable-input.span9 {
   width: 690px;
 }
-input.span8, textareatextarea.span8, .uneditable-input.span8 {
+input.span8, textarea.span8, .uneditable-input.span8 {
   width: 610px;
 }
-input.span7, textareatextarea.span7, .uneditable-input.span7 {
+input.span7, textarea.span7, .uneditable-input.span7 {
   width: 530px;
 }
-input.span6, textareatextarea.span6, .uneditable-input.span6 {
+input.span6, textarea.span6, .uneditable-input.span6 {
   width: 450px;
 }
-input.span5, textareatextarea.span5, .uneditable-input.span5 {
+input.span5, textarea.span5, .uneditable-input.span5 {
   width: 370px;
 }
-input.span4, textareatextarea.span4, .uneditable-input.span4 {
+input.span4, textarea.span4, .uneditable-input.span4 {
   width: 290px;
 }
-input.span3, textareatextarea.span3, .uneditable-input.span3 {
+input.span3, textarea.span3, .uneditable-input.span3 {
   width: 210px;
 }
-input.span2, textareatextarea.span2, .uneditable-input.span2 {
+input.span2, textarea.span2, .uneditable-input.span2 {
   width: 130px;
 }
-input.span1, textareatextarea.span1, .uneditable-input.span1 {
+input.span1, textarea.span1, .uneditable-input.span1 {
   width: 50px;
 }
 input[disabled],
 select[disabled],
-textareatextarea[disabled],
+textarea[disabled],
 input[readonly],
 select[readonly],
-textareatextarea[readonly] {
+textarea[readonly] {
   background-color: #eeeeee;
   border-color: #ddd;
   cursor: not-allowed;
@@ -850,13 +850,13 @@ textareatextarea[readonly] {
 }
 .control-group.warning input,
 .control-group.warning select,
-.control-group.warning textareatextarea {
+.control-group.warning textarea {
   color: #c09853;
   border-color: #c09853;
 }
 .control-group.warning input:focus,
 .control-group.warning select:focus,
-.control-group.warning textareatextarea:focus {
+.control-group.warning textarea:focus {
   border-color: #a47e3c;
   -webkit-box-shadow: 0 0 6px #dbc59e;
   -moz-box-shadow: 0 0 6px #dbc59e;
@@ -875,13 +875,13 @@ textareatextarea[readonly] {
 }
 .control-group.error input,
 .control-group.error select,
-.control-group.error textareatextarea {
+.control-group.error textarea {
   color: #b94a48;
   border-color: #b94a48;
 }
 .control-group.error input:focus,
 .control-group.error select:focus,
-.control-group.error textareatextarea:focus {
+.control-group.error textarea:focus {
   border-color: #953b39;
   -webkit-box-shadow: 0 0 6px #d59392;
   -moz-box-shadow: 0 0 6px #d59392;
@@ -900,13 +900,13 @@ textareatextarea[readonly] {
 }
 .control-group.success input,
 .control-group.success select,
-.control-group.success textareatextarea {
+.control-group.success textarea {
   color: #468847;
   border-color: #468847;
 }
 .control-group.success input:focus,
 .control-group.success select:focus,
-.control-group.success textareatextarea:focus {
+.control-group.success textarea:focus {
   border-color: #356635;
   -webkit-box-shadow: 0 0 6px #7aba7b;
   -moz-box-shadow: 0 0 6px #7aba7b;
@@ -919,13 +919,13 @@ textareatextarea[readonly] {
   border-color: #468847;
 }
 input:focus:required:invalid,
-textareatextarea:focus:required:invalid,
+textarea:focus:required:invalid,
 select:focus:required:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
 input:focus:required:invalid:focus,
-textareatextarea:focus:required:invalid:focus,
+textarea:focus:required:invalid:focus,
 select:focus:required:invalid:focus {
   border-color: #e9322d;
   -webkit-box-shadow: 0 0 6px #f8b9b7;
@@ -1089,9 +1089,9 @@ select:focus:required:invalid:focus {
 .form-search input,
 .form-inline input,
 .form-horizontal input,
-.form-search textareatextarea,
-.form-inline textareatextarea,
-.form-horizontal textareatextarea,
+.form-search textarea,
+.form-inline textarea,
+.form-horizontal textarea,
 .form-search select,
 .form-inline select,
 .form-horizontal select,

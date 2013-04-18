@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Great Banker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+    body {padding-top: 20px; font-family: "Microsoft Yahei"}
+    .page {margin: 0 auto; max-width: 1000px;}
+    .logo {margin-bottom: 100px; }
+    .wrapper{margin:auto; height: auto; background: #FFF;padding: 20px; width: 800px; font-size: 16px; line-height: 18px;}
+    .wrapperbak{ border-radius: 10px; box-shadow: 0px 2px 15px #666; }
+    .form-btn {background-color: #79C3D4 !important;}
+    .error {color: #B94A48;}
+    .control-label{ width: 90px !important;}
+    .controls {margin-left: 100px !important;;}
+    .wrapper div{ border: solid 1px #EEEEEE; margin: 0px !important; padding:1px;}
+    .wrapper tr td{padding: 1px 2px; margin: 2px; text-align: left; border: solid 1px #999999 !important; }
+    .wrapper table{width: 790px;  }
+    .input-xsmall{width: 50px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="logo">
+            <img src="assets/img/logo.png"></div>
+        <div class="wrapper">
+            <!--      <div class="row-fluid">
+            -->
+            <!-- form begin -->
+            <form class="form-horizontal" action="fillin" method="post">
+                <table>
+                    <tr>
+                        <td>姓名</td>
+                        <td>
+                            <input type="text" id="name" name="name" placeholder="请输入" class="input"></td>
+                        <td>性别</td>
+                        <td>
+                            <select class="span1" id="sex" name="sex">
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                        </td>
+                        <td>政治面貌</td>
+                        <td>
+                            <input type="text" id="policy" name="policy" placeholder="请输入" class="input"></td>
+                    </tr>
+
+                    <tr>
+                        <td>出生年月</td>
+                        <td colspan="3">
+                            <select class="span2" id="birthyear" name="birthyear">
+                                <option value="1996">1996</option>
+                                <option value="1997">1997</option>
+                                <option value="1998">1998</option>
+                                <option value="1999">1999</option>
+                                <option value="2000">2000</option>
+                            </select>
+                            年
+                            <select class="span1" id="birthmonth" name="birthmonth">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            月
+                            <select class="span1" id="birthday" name="birthday">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            日
+                        </td>
+                        <td>身体状况</td>
+                        <td>
+                            <input type="text" id="healthy" name="healthy" placeholder="请输入" class="input"></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>户口所在地</td>
+                        <td>
+                            <input id="city" name="city" type="text" class="input-xxlarge"></td>
+                    </tr>
+                    <tr>
+                        <td>家庭住址</td>
+                        <td>
+                            <input id="address" name="address" type="text" class="input-xxlarge"></td>
+                    </tr>
+                    <tr>
+                        <td>邮政编码</td>
+                        <td>
+                            <input id="addcode" name="addcode" type="text" class="input-large"></td>
+                    </tr>
+                    <tr>
+                        <td>联系电话</td>
+                        <td>
+                            <input id="phone" name="phone" type="text" class="input-large"></td>
+                    </tr>
+                    <tr>
+                        <td>手机</td>
+                        <td>
+                            <input id="cell" name="cell" type="text" class="input-large"></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align: center;" colspan="4">家庭成员和主要社会关系</td>
+                    </tr>
+                    <tr >
+                        <td style="text-align: center;">称谓</td>
+                        <td style="text-align: center;">姓名</td>
+                        <td style="text-align: center;">工作单位</td>
+                        <td style="text-align: center;">联系电话</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="daddy" name="daddy" type="text" class="input-small"></td>
+                        <td>
+                            <input id="daddyname" name="daddyname" type="text" class="input-small"></td>
+                        <td>
+                            <input id="daddyjob" name="daddyjob" type="text" class="input-xlarge"></td>
+                        <td>
+                            <input id="daddyphone" name="daddyphone" type="text" class="input-large"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="mummy" name="mummy" type="text" class="input-small"></td>
+                        <td>
+                            <input id="mummyname" name="mummyname" type="text" class="input-small"></td>
+                        <td>
+                            <input id="mummyjob" name="mummyjob" type="text" class="input-xlarge"></td>
+                        <td>
+                            <input id="mummyphone" name="mummyphone" type="text" class="input-large"></td>
+                    </tr>
+                </table>
+                <table style="align:center;">
+                    <tr>
+                        <td style="text-align: center;" colspan="8">区统考成绩</td>
+                    </tr>
+                    <tr >
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;">语文</td>
+                        <td style="text-align: center;">数学</td>
+                        <td style="text-align: center;">英语</td>
+                        <td style="text-align: center;">物理</td>
+                        <td style="text-align: center;">化学</td>
+                        <td style="text-align: center;">总分</td>
+                        <td style="text-align: center;">定位分（或区排名）</td>
+                    </tr>
+                    <tr>
+                        <td>第一次</td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall easyui-numberbox" precision="2"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                    </tr>
+                    <tr>
+                        <td>第二次</td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                        <td>
+                            <input id="" name="" type="text" class="input-xsmall"></td>
+                    </tr>
+                </table>
+                <table id="tblLevel">
+                    <tr>
+                        <td style="text-align: center;" colspan="5">
+                            初中阶段参加各类比赛获奖情况（市级及以上奖项名称、等第、获奖时间、颁奖单位）
+                            <a class="btn pull-right" onclick="addlevel()">+</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>级别</td>
+                        <td>名称</td>
+                        <td>等第</td>
+                        <td>获奖时间</td>
+                        <td>颁奖单位</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="lev0" name="lev0" type="text" class="input-small"></td>
+                        <td>
+                            <input id="pname0" name="pname0" type="text" class="input"></td>
+                        <td>
+                            <input id="plev0" name="plev0" type="text" class="input-small"></td>
+                        <td>
+                            <input id="ptime0" name="ptime0" type="text" class="input-small"></td>
+                        <td>
+                            <input id="pcell0" name="pcell0" type="text" class="input"></td>
+                    </tr>
+                </table>
+                <table>
+
+                    <tr>
+                        <td style="text-align: center;" colspan="4">初中阶段主要获得的荣誉称号</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <textarea name="prices" id="prices"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="4">初中阶段主要社会经历（包括社会实践、社会活动等非学科学习经历）</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="4">
+                            <textarea name="history" id="history"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="4">申请理由</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="4">
+                            <textarea name="reason" id="reason"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <!-- form end-->
+
+            <!--      </div>--></div>
+
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script src="assets/js/editor_config.js"></script>
+    <script src="assets/js/editor_all.js"></script>
+    <script type="text/javascript">
+    var initlevel = 1;
+
+    var editor = new UE.ui.Editor();
+    editor.render("prices");
+    var editor2 = new UE.ui.Editor();
+    editor2.render("history");
+    new UE.ui.Editor().render("reason");
+    function addlevel(){
+        $("#tblLevel").append("<tr>"+
+"<td>"+
+"<input id=\"lev"+initlevel+"\" name=\"lev"+initlevel+"\" type=\"text\" class=\"input-small\"></td>"+
+"<td>"+
+"<input id=\"pname"+initlevel+"\" name=\"pname"+initlevel+"\" type=\"text\" class=\"input\"></td>"+
+"<td>"+
+"<input id=\"plev"+initlevel+"\" name=\"plev"+initlevel+"\" type=\"text\" class=\"input-small\"></td>"+
+"<td>"+
+"<input id=\"ptime"+initlevel+"\" name=\"ptime"+initlevel+"\" type=\"text\" class=\"input-small\"></td>"+
+"<td><input id=\"pcell"+initlevel+"\" name=\"pcell"+initlevel+"\" type=\"text\" class=\"input\"></td>"+
+"</tr>");
+    }
+    </script>
+</body>
+</html>
