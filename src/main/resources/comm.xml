@@ -23,7 +23,7 @@
 					<value>assets</value>
 					<value>login</value>
 					<value>register</value>
-					<value>error</value>
+					<value>message</value>
 					<value>getUser</value>
 				</list>
 			</property>

@@ -19,15 +19,15 @@ import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.User;
 
 @Controller
-public class ErrorController {
+public class MessageController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserMapper userMapper;
     
-    @RequestMapping(value="/error", method = RequestMethod.GET)
-    @ModelAttribute(DTContants.ERROR_MSG)
-    public String getError(@ModelAttribute(DTContants.ERROR_MSG)String msg) {
+    @RequestMapping(value="/message", method = RequestMethod.GET)
+    @ModelAttribute(DTContants.MSG_ERRER)
+    public String getError(@ModelAttribute(DTContants.MSG_ERRER)String msg) {
     	logger.debug(msg);
 		return msg;
     }

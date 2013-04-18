@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import com.zhiweiwang.datong.DTContants;
+import com.zhiweiwang.datong.DTMessage;
 import com.zhiweiwang.datong.MD5;
 import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.User;
@@ -34,8 +35,8 @@ public class RegisterController {
           User userx = userMapper.get_user(user.getUsername());
           if(userx!=null){
         	  logger.debug(userx.toString());
-        	  mav.addObject(DTContants.ERROR_MSG, "user_existed");
-        	  mav.setViewName("redirect:/error");
+        	  mav.addObject(DTContants.MSG_ERRER, "user_existed");
+        	  mav.setViewName("redirect:/message");
           }
           else{
 	          String password = MD5.md5s(user.getPasswd());
@@ -44,7 +45,8 @@ public class RegisterController {
 	          
 	          userMapper.insertRow(user.getUsername(), password, user.getEmail());
 	          
-	          mav.setViewName("redirect:/login");
+	          mav.addObject(DTContants.MSG_ERRER, DTMessage.REGIST_SUCCESS);
+	          mav.setViewName("redirect:/message");
           }
           return mav;
     }

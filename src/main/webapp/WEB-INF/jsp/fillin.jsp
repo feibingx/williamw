@@ -18,11 +18,6 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
     body {padding-top: 20px; font-family: "Microsoft Yahei"}
     .page {margin: 0 auto; max-width: 1000px;}
@@ -44,43 +39,12 @@
   <div class="wrapper">
 <!--      <div class="row-fluid">-->
             <!-- form begin -->
-            <form class="form-horizontal" action="register" method="post">
-				<div class="control-group">
-					<label class="control-label" for="inputEmail">用户名</label>
-					<div class="controls">
-						 <input type="text" id="username" name="username" placeholder="请输入姓名" class="input-large">
-					<span id="input01alert"  class="help-inline hidden">不能为空</span>
-					</div>
-				</div>
-				<div class="control-group">
-			    	<label class="control-label" for="inputPassword">密码</label>
-					<div class="controls">
-						<input type="password" id="passwd" name="passwd" placeholder="请输入密码" class="input-large">
-					<span id="input02alert"  class="help-inline hidden">不能为空</span>
-					</div>
-				</div>
-				<div class="control-group">
-			    	<label class="control-label" for="inputPassword">重复密码</label>
-					<div class="controls">
-						<input type="password" id="passwd2" name="passwd2" placeholder="请输入密码" class="input-large">
-					<span id="input03alert"  class="help-inline hidden">不能为空</span>
-					</div>
-				</div>
-				<div class="control-group">
-			    	<label class="control-label" for="inputPassword">电子邮件</label>
-					<div class="controls">
-						<input type="email" id="email" name="email" placeholder="请输入电子邮件" class="input-large">
-					<span id="input04alert"  class="help-inline hidden">不能为空</span>
-					</div>
-				</div>		
-				<div class="control-group">
-					
-					<div class="controls">
-						<input type="checkbox" id="readed" name="readed" />我已阅读xxx
-						<span class="help-inline hidden" ></span>
-						<button id="submitbtn" type="submit" class="btn" disabled>注册</button>
-					</div>
-				</div>
+            <form class="form-horizontal" action="fillin" method="post">
+                <table class="table">
+                    <tbody>
+                        <tr></tr>
+                </tbody>
+                </table>
 			</form>
             <!-- form end-->
    

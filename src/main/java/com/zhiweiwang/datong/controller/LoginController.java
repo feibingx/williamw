@@ -1,6 +1,7 @@
 package com.zhiweiwang.datong.controller;
 
 import com.zhiweiwang.datong.DTContants;
+import com.zhiweiwang.datong.DTMessage;
 import com.zhiweiwang.datong.MD5;
 import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.User;
@@ -48,8 +49,7 @@ public class LoginController {
 
         User user = userMapper.get_user(name);
         if (user == null || user.getPasswd().equals(MD5.md5s(password)) == false) {
-            logger.info(errmsg);
-            mav.getModel().put(DTContants.ERROR_MSG, "user_existed");
+            mav.getModel().put(DTContants.MSG_ERRER, DTMessage.WRONG_NAME_OR_PASSWORD);
             mav.setViewName("redirect:/login");
             return mav;
         }
@@ -60,14 +60,10 @@ public class LoginController {
         return mav;
     }
 
-    @ModelAttribute(DTContants.ERROR_MSG)
+    @ModelAttribute(DTContants.MSG_ERRER)
     @RequestMapping(method = GET)
-    public void get(@ModelAttribute(DTContants.ERROR_MSG)String msg) throws UnsupportedEncodingException {
-
+    public void get(@ModelAttribute(DTContants.MSG_ERRER)String msg) throws UnsupportedEncodingException {
+    	logger.debug(errmsg);
     }
-//    
-//    @RequestMapping(method = GET)
-//    public void getx()  {
-//    }
-//   
+
 }
