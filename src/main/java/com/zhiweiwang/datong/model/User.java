@@ -7,8 +7,6 @@ public class User {
 	String email;
 	String createtime;
 	
-
-
 	public String getUsername() {
 		return username;
 	}

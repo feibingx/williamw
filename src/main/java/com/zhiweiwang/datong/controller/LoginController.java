@@ -7,6 +7,8 @@ import com.zhiweiwang.datong.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,11 +31,15 @@ import java.io.UnsupportedEncodingException;
 public class LoginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    protected String errmsg = "ÖÐÎÄ";
+    
+    protected String errmsg = "ä¸­æ–‡æµ‹è¯•";
 
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private ReloadableResourceBundleMessageSource message;
+    
     @RequestMapping(method = POST)
     public ModelAndView login(@RequestParam String name,@RequestParam String password) throws UnsupportedEncodingException {
         logger.info("login selected User is {} ", new Object[]{name});
@@ -43,7 +49,7 @@ public class LoginController {
         User user = userMapper.get_user(name);
         if (user == null || user.getPasswd().equals(MD5.md5s(password)) == false) {
             logger.info(errmsg);
-            mav.getModelMap().put(DTContants.ERROR_MSG, errmsg);
+            mav.getModel().put(DTContants.ERROR_MSG, "user_existed");
             mav.setViewName("redirect:/login");
             return mav;
         }
@@ -57,9 +63,11 @@ public class LoginController {
     @ModelAttribute(DTContants.ERROR_MSG)
     @RequestMapping(method = GET)
     public void get(@ModelAttribute(DTContants.ERROR_MSG)String msg) throws UnsupportedEncodingException {
-    	logger.info(errmsg);
-    	errmsg = new String(errmsg.getBytes("iso-8859-1"),"utf-8");
-    	logger.info(errmsg);
+
     }
-   
+//    
+//    @RequestMapping(method = GET)
+//    public void getx()  {
+//    }
+//   
 }

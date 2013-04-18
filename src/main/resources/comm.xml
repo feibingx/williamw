@@ -45,6 +45,7 @@
 			</list>
 		</property>
 	</bean>
+	
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"

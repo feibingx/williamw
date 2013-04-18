@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html lang="zh">
   <head>
     <meta charset="utf-8">
@@ -46,7 +47,10 @@
   <div class="wrapper">
 <!--      <div class="row-fluid">-->
             <!-- login form begin -->
-            <div class="help-inline error errmsg">${errmessage}</div>
+            <c:if test="${errmessage!=null && fn:length(errmessage)>0}">  
+			    <div class="help-inline error"><fmt:message key="${errmessage}" /></div>
+			</c:if>  
+            
             <form class="form-horizontal" action="login" method="post">
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">用户名</label>
