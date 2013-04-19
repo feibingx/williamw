@@ -58,17 +58,22 @@ public class FillController {
         }
         map.put(DTContants.DT_ID, user.getId());
         map.put(DTContants.DT_USERNAME, user.getUsername());
+        logger.info(map.toString());
         
-        logger.info("{} ", map);        
-        studentMapper.insertRow(map);
-
-		ModelAndView mav = new ModelAndView();
+        ModelAndView mav = new ModelAndView();
+        
+        Map<?, ?> student = studentMapper.getStudent(user.getId());
+        if( student == null || student.size()<1){
+        	studentMapper.insertRow(map);
+        	mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_SUCCESS);
+        }else{
+        	studentMapper.update(map);
+        	mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_UPATE_SUCCESS);
+        }
+		
 		mav.setViewName("redirect:/message");
-        mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_SUCCESS);
 		return mav;
 	}
-
-
 
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/fillin", method = GET)
