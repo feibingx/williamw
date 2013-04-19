@@ -1,5 +1,7 @@
 package com.zhiweiwang.datong.mapper;
 
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
@@ -13,6 +15,9 @@ public interface UserMapper {
 	@Insert("insert into dt_users(username, passwd, email) values (#{username},#{passwd},#{email})")
 	void insertRow(@Param("username") String username, @Param("passwd") String passwd, @Param("email") String email);
 
+//	@Insert("insert into dt_users(username, passwd, email) values (#{username},#{passwd},#{email})")
+//	void insertRow(Map<String, Object> map);
+	
 	@Select("select * FROM dt_users WHERE username = #{username}")
 	User get_user(String username);
 

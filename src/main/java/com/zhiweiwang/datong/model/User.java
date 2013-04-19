@@ -1,7 +1,7 @@
 package com.zhiweiwang.datong.model;
 
 public class User {
-
+	int id;
 	String username;
 	String passwd;
 	String email;
@@ -34,5 +34,11 @@ public class User {
 	
 	public String toString(){
 		return "username: "+username;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

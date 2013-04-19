@@ -44,7 +44,7 @@
   <div class="wrapper">
 <!--      <div class="row-fluid">-->
             <!-- form begin -->
-            <form class="form-horizontal" action="register" method="post">
+            <form class="form-horizontal" action="register" id="theform" method="post">
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">用户名</label>
 					<div class="controls">
@@ -78,7 +78,7 @@
 					<div class="controls">
 						<input type="checkbox" id="readed" name="readed" />我已阅读xxx
 						<span class="help-inline hidden" ></span>
-						<button id="submitbtn" type="submit" class="btn" disabled>注册</button>
+						<button id="submitbtn" type="submit" class="btn">注册</button>
 					</div>
 				</div>
 			</form>
@@ -93,6 +93,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
     <script src="assets/js/bootstrap-modal.js"></script>
@@ -107,43 +108,37 @@
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
     <script>
-        $(function(){
-        $("form").submit(function(){
-            if( $("#username").attr("value") == ""){
-                $("#input01alert").removeClass("hidden");
-                $("#input01alert").addClass("error");
-                $("#input01alert").html("用户名不能为空");
-                return false;
-            }
-            
-            if( $("#passwd").attr("value") == ""){
-                $("#input02alert").removeClass("hidden");
-                $("#input02alert").addClass("error");
-                $("#input02alert").html("密码不能为空");
-                return false;
-            }
-            if( $("#passwd").attr("value").length < 1){
-                $("#input02alert").removeClass("hidden");
-                $("#input02alert").addClass("error");
-                $("#input02alert").html("请输入6位以上密码");
-                return false;
-            }
-            if( $("#passwd").attr("value")!=$("#passwd2").attr("value") ){
-           	 $("#input03alert").removeClass("hidden");
-                $("#input03alert").addClass("error");
-                $("#input03alert").html("两次输入的密码不一致");
-                return false;
-           }
-            if( $("#email").attr("value") == ""){
-                $("#input04alert").removeClass("hidden");
-                $("#input04alert").addClass("error");
-                $("#input04alert").html("Email不能为空");
-                return false;
-            }
-
-            
-            return isvalid;
-        });
+    $(document).ready(function() {
+			$("#theform").validate({
+				rules : {
+					username : "required",
+					passwd : {required: true, minlength: 5},
+					passwd2: {required:true, minlength: 5,equalTo: "#passwd"},
+					email: {
+					    required: true
+					    ,email: true
+					},
+					readed: "required"
+				},
+				messages : {
+					username : "必填",
+					email: {
+					    required: "请输入Email地址"
+					    ,email: "请输入正确的email地址"
+					},
+					   passwd: {
+					    required: "请输入密码",
+					    minlength: jQuery.format("密码不能小于{0}个字 符")
+					   },
+					   passwd2: {
+					    required: "请输入确认密码",
+					    minlength: "确认密码不能小于5个字符",
+					    equalTo: "两次输入密码不一致不一致"
+					   },
+					   readed: "请确认真实有效"
+				}
+			});
+    });
 
         $('#username').blur(function() {
     		
@@ -153,12 +148,10 @@
                     $("#input01alert").addClass("error");
                     $("#input01alert").html("用户名已存在，请重新选择一个");
                     $("#submitbtn").addAttr("disabled");
-                    userexist = true;
                 }else if($("#input01alert").hasClass("error")){
                 	$("#input01alert").removeClass("error");
                 	$("#input01alert").html("该用户名可以使用");
                 	$("#input01alert").addClass("alert");
-                	userexist = false;
                 	if($('#readed').attr("checked")==null)
                  		$("#submitbtn").addAttr("disabled");
                  	else
@@ -166,14 +159,7 @@
                 }
             });
 		});
-		
-        $('#readed').bind('click', function() {
-        	if($('#readed').attr("checked")!="checked")
-        		$("#submitbtn").addAttr("disabled");
-        	else if(userexist == false)
-        		$("#submitbtn").removeAttr("disabled");
-		});
-    });
+ 
     </script>
 
   </body>

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -29,6 +30,7 @@ import java.io.UnsupportedEncodingException;
  */
 @Controller
 @RequestMapping("/login")
+@SessionAttributes(DTContants.USER_IN_SESSION)
 public class LoginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -54,7 +56,7 @@ public class LoginController {
             return mav;
         }
 
-        mav.setViewName("redirect:/welcome");
+        mav.setViewName("redirect:/fillin");
         mav.addObject(DTContants.USER_IN_SESSION, user);
 
         return mav;
