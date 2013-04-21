@@ -1,9 +1,11 @@
-use test;
+create database apply character set utf8;
 
-drop table IF EXISTS DT_USERS;
-drop table IF EXISTS DT_STUDENTS;
+use apply;
 
-create table DT_USERS(
+drop table IF EXISTS dt_users;
+drop table IF EXISTS dt_students;
+
+create table dt_users(
 	id int NOT NULL AUTO_INCREMENT,
 	username varchar(32) unique not null,
 	passwd varchar(32) not null,
@@ -13,7 +15,7 @@ create table DT_USERS(
 );
 
 
-CREATE TABLE DT_STUDENTS (
+CREATE TABLE dt_students (
    id int not null unique,
    username varchar(32) unique not null,
    name varchar(32),
@@ -40,6 +42,7 @@ CREATE TABLE DT_STUDENTS (
    mummyname varchar(16),
    mummyjob varchar(80),
    mummyphone varchar(32),
+   honors text,
    prices text,
    history text,
    applyreason text,
@@ -57,7 +60,7 @@ CREATE TABLE DT_STUDENTS (
    zongfen2 varchar(4),
    paimin1 varchar(4),
    paimin2 varchar(4),
+   sts varchar(8),
    primary key(id)
 );
-
 

@@ -1,12 +1,104 @@
-.grid {height: 50px; background: red}
-.panel {padding: 10px; background: #FFF; border-radius: 5px; box-shadow: 0px 0px 10px #AAA;}
+body {
+    padding-top: 10px;
+    font-family: "Microsoft Yahei"
+}
 
-body {padding-top: 20px; font-family: "Microsoft Yahei"}
-.page {margin: 0 auto; width: 1000px;}
-.logo {margin-bottom: 10px;}
-.wrapper {max-height: 565px; background: #FFF; padding: 20px; margin: 0 auto; width: 1000px; border-radius: 10px; box-shadow: 0px 0px 10px #AAA}
-.container-fluid {width: 960px; margin: 0 auto;}
-.content {background: url("../../assets/img/tiny_grid.png"); height: 500px; width: 819px; border-radius: 5px 0 0 0;}
-.footer {height: 55px;; background: #333746; border-radius: 0 0 5px 5px; z-index: 100; position: relative;}
-.avatar {height: 60px; width: 100px; position: relative; border-radius: 5px 5px 0 0; background: #333746; top: -60px; left: 20px;}
-.pic {position: relative; padding: 5px 0; margin: 5px; height: 90px; width: 90px; background: #FFF; border-radius: 5px;}
+.container-fluid {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.content {
+    background: url("../../assets/img/tiny_grid.png");
+    height: 500px;
+    width: 819px;
+    border-radius: 5px 0 0 0;
+}
+
+.footer {
+    height: 55px;;
+    background: #333746;
+    border-radius: 0 0 5px 5px;
+    z-index: 100;
+    position: relative;
+}
+
+.avatar {
+    height: 60px;
+    width: 100px;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    background: #333746;
+    top: -60px;
+    left: 20px;
+}
+
+.page {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.logo {
+    margin-bottom: 0px;
+	max-width: 1000px;
+}
+
+.wrapper {	
+   	padding: 120px 20px 20px 20px;
+    margin: auto;
+    height: auto;
+    background: #FFF;
+    width: 800px;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.wrapperbak {
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px #666;
+}
+
+.form-btn {
+    background-color: #79C3D4 !important;
+}
+
+.error {
+    color: #B94A48;
+}
+
+.control-label {
+    width: 90px !important;
+}
+
+.controls {
+    margin-left: 100px !important;;
+}
+
+.wrapper tr td {
+    padding: 1px 2px;
+    margin: 2px;
+    text-align: left;
+    border: solid 1px #888888 !important;
+}
+
+.wrapper table {
+    width: 790px;
+}
+
+.wrapper div {
+    text-align: center;
+    margin: 2px auto;
+}
+
+.input-xsmall {
+    width: 50px;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    line-height: 100px;
+    font-family: "KaiTi";
+    font-weight: 38;
+}
+.centerw { padding-top: 200px;}

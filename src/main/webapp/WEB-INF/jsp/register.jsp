@@ -4,7 +4,7 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8">
-    <title>Great Banker</title>
+    <title>大同中学自主招生系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,6 +12,7 @@
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -20,17 +21,8 @@
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-    body {padding-top: 20px; font-family: "Microsoft Yahei"}
-    .page {margin: 0 auto; max-width: 1000px;}
-    .logo {margin-bottom: 100px; }
-    .wrapper {margin:auto; height: auto 220px; background: #FFF; padding: 20px; width: 400px; border-radius: 10px; box-shadow: 0px 2px 15px #666}
-    .form-search-pad{ background-color: white; margin: 0 auto; width: auto;}
-    .form-action {margin-bottom: 10px;margin-top: 0px;padding: 7px 109px 8px;}
-    .form-btn {background-color: #79C3D4 !important;}
+    .wrapper {margin:auto; height: auto 220px; background: #FFF; width: 400px; }
     .error {color: #B94A48;}
     .control-label{ width: 90px !important;}
     .controls {margin-left: 100px !important;;}
@@ -39,12 +31,16 @@
 <body>
 <div class="page">
   <div class="logo">
-    <img src="assets/img/logo.png">
-  </div>
-  <div class="wrapper">
+			<img class="pull-left title" src="assets/img/logo.png">
+			<div class="pull-left title">自主招生系统</div>
+		</div>
+  <div class="centerw wrapper">
 <!--      <div class="row-fluid">-->
             <!-- form begin -->
             <form class="form-horizontal" action="register" id="theform" method="post">
+            	<div class="control-group">
+            		欢迎注册
+            	</div>
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">用户名</label>
 					<div class="controls">
