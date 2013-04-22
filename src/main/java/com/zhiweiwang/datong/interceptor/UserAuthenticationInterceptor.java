@@ -1,5 +1,7 @@
 package com.zhiweiwang.datong.interceptor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,6 +10,7 @@ import com.zhiweiwang.datong.DTContants;
 
 public class UserAuthenticationInterceptor extends HandlerInterceptorAdapter {
 
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
     private String[] noFilters;
 
     @Override
@@ -25,6 +28,8 @@ public class UserAuthenticationInterceptor extends HandlerInterceptorAdapter {
         if (user != null) {
             return true;
         }
+        
+        logger.error("login first !");
 
         response.sendRedirect(request.getContextPath() + "/login");
         return false;

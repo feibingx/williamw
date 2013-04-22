@@ -10,6 +10,7 @@ create table dt_users(
 	username varchar(32) unique not null,
 	passwd varchar(32) not null,
 	email varchar(120),
+	role varchar(12),
 	createTime timestamp DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
@@ -61,6 +62,8 @@ CREATE TABLE dt_students (
    paimin1 varchar(4),
    paimin2 varchar(4),
    sts varchar(8),
+   role varchar(12),
+   interview varchar(32),
    primary key(id)
 );
 

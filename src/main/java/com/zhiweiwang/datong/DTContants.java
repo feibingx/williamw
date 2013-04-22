@@ -5,7 +5,8 @@ public class DTContants {
 	public static final String USER_IN_SESSION = "dtuser";
 	public static final String DT_STUDENT = "dtstudent";
 	public static final String MSG_ERRER = "errmessage";
-
+	public static final String DT_STUDENT_LIST = "dtstudentlist";
+	
 	public static final String DT_ID = "id";
 	public static final String DT_USERNAME = "username";
 	public static final String DT_NAME = "name";
@@ -48,5 +49,7 @@ public class DTContants {
 	public static final String DT_ZONGFEN2 = "zongfen2";
 	public static final String DT_PAIMIN1 = "paimin1";
 	public static final String DT_PAIMIN2 = "paimin2";
+	
+	
 
 }

@@ -27,6 +27,22 @@ input {
 	font-family: "FangSong";
 	font-size: 14px;
 }
+.wrapper tr td {
+    padding: 1px 2px;
+    margin: 2px;
+    text-align: left;
+    border: solid 1px #888888 !important;
+}
+
+.wrapper table {
+    width: 790px;
+}
+
+.wrapper div {
+    text-align: center;
+    margin: 2px auto;
+}
+
 </style>
 </head>
 <body>

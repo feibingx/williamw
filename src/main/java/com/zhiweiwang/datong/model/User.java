@@ -6,6 +6,7 @@ public class User {
 	String passwd;
 	String email;
 	String createtime;
+	String role;
 	
 	public String getUsername() {
 		return username;
@@ -41,4 +42,12 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
 }

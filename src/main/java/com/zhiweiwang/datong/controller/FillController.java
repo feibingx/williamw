@@ -21,10 +21,6 @@ import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created with IntelliJ IDEA. User: WilliamW Date: 13-4-18 Time: 上午10:26 To
- * change this template use File | Settings | File Templates.
- */
 @Controller
 @SessionAttributes(DTContants.USER_IN_SESSION)
 public class FillController {
@@ -68,11 +64,10 @@ public class FillController {
 
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/fillin", method = GET)
-	public Map get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
+	public Map<?,?> get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
 		logger.info("user:  {} ",user.getId());
-//		ModelAndView mav = new ModelAndView();
         return studentMapper.getStudent(user.getId());
-//		return mav;
+
 	}
 
 }

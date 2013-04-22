@@ -9,7 +9,7 @@ body {
 }
 
 .content {
-    background: url("../../assets/img/tiny_grid.png");
+   
     height: 500px;
     width: 819px;
     border-radius: 5px 0 0 0;
@@ -74,21 +74,6 @@ body {
     margin-left: 100px !important;;
 }
 
-.wrapper tr td {
-    padding: 1px 2px;
-    margin: 2px;
-    text-align: left;
-    border: solid 1px #888888 !important;
-}
-
-.wrapper table {
-    width: 790px;
-}
-
-.wrapper div {
-    text-align: center;
-    margin: 2px auto;
-}
 
 .input-xsmall {
     width: 50px;

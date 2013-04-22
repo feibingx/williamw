@@ -19,8 +19,7 @@
 	<tx:annotation-driven/>
 	
 	<mvc:interceptors>
-		<bean
-			class="com.zhiweiwang.datong.interceptor.UserAuthenticationInterceptor">
+		<bean class="com.zhiweiwang.datong.interceptor.UserAuthenticationInterceptor">
 			<property name="noFilters">
 				<list>
 					<value>assets</value>
@@ -28,6 +27,16 @@
 					<value>register</value>
 					<value>message</value>
 					<value>getUser</value>
+					<value>admin</value>
+					<value>detail</value>
+				</list>
+			</property>
+		</bean>
+		<bean class="com.zhiweiwang.datong.interceptor.AdminAuthenticationInterceptor">
+			<property name="inFilters">
+				<list>
+					<value>admin</value>
+					<value>detail</value>
 				</list>
 			</property>
 		</bean>

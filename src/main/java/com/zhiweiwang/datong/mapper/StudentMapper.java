@@ -1,5 +1,6 @@
 package com.zhiweiwang.datong.mapper;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
@@ -23,4 +24,7 @@ public interface StudentMapper {
 
 	@Select("select * FROM dt_students WHERE id = #{id}")
 	Map<?, ?> getStudent(int id);
+	
+	@Select("select * FROM dt_students limit #{start},#{limit}  ")
+	List<Map<?,?>> getStudentsLimit(@Param("start") int start, @Param("limit") int limit);
 }
