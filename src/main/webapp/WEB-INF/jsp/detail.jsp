@@ -85,12 +85,7 @@
 	width: 320px;
 	margin:-200px 0 0 -160px;
 }
-.center {
-	width: auto;
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-}
+
 </style>
 </head>
 <body>
@@ -99,8 +94,8 @@
 		<div class="mynav">
 			<span class="center"> 
 			<a id="pass" name="pass" onClick="setDatetime();" class="btn btn-large btn-success">通过</a>
-			<a href="../deal?action=WAIT" class="btn btn-large btn-warning">待定</a>
-			<a href="../deal?action=REJECT" class="btn btn-large btn-danger">拒绝</a>
+			<a href="../deal?action=sts_wait" class="btn btn-large btn-warning">待定</a>
+			<a href="../deal?action=sts_reject" class="btn btn-large btn-danger">拒绝</a>
 			<a href="../admin" class="btn btn-large btn-info">返回</a>
 			</span>
 		</div>
@@ -118,7 +113,11 @@
 		<div class="wrapper">
 			<!-- form begin -->
 			<!--startprint-->
-			<div class="pull-right">当前状态：${dtstudent.sts}</div>
+			<div class="pull-right">当前状态：<fmt:message key="${dtstudent.sts}" />
+					<c:if test="${dtstudent.sts == 'sts_pass'}">
+						审阅人: ${dtstudent.role} &nbsp; 面试时间：${dtstudent.interview}
+					</c:if>
+			</div>
 			<table>
 				<tr>
 					<td style="width:15%">姓名</td>
@@ -216,7 +215,7 @@
 					<td class="inputfield">${dtstudent.wuli1}</td>
 					<td class="inputfield">${dtstudent.huaxue1}</td>
 					<td class="inputfield">${dtstudent.zongfen1}</td>
-					<td class="inputfield">${dtstudent.paiping1}</td>
+					<td class="inputfield">${dtstudent.paimin1}</td>
 				</tr>
 				<tr>
 					<td>第二次</td>
@@ -226,7 +225,7 @@
 					<td class="inputfield">${dtstudent.wuli2}</td>
 					<td class="inputfield">${dtstudent.huaxue2}</td>
 					<td class="inputfield">${dtstudent.zongfen2}</td>
-					<td class="inputfield">${dtstudent.paiping2}</td>
+					<td class="inputfield">${dtstudent.paimin2}</td>
 				</tr>
 			</table>
 			<table id="tblLevel">
@@ -270,7 +269,8 @@
 
   <div data-backdrop="false" tabindex="-1" class="modal fade hide in model-size" id="winModal" >
   	<form action="../deal" method="post">
-  		<input type="hidden" value="PASS" id="action" name="action">
+  		<input type="hidden" value="sts_pass" id="action" name="action">
+  		<input type="hidden" id="id" name="id">
 		<div class="modal-header">
 	      <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 	      <h3 id="myModalLabel">设定面试时间</h3>

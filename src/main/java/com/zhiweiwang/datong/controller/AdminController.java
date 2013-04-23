@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import static com.zhiweiwang.datong.DTContants.QUERY_CONF;
 import static com.zhiweiwang.datong.DTContants.DT_STUDENT_LIST;
 import static com.zhiweiwang.datong.DTContants.LINES_PER_PAGE;
-
+import static com.zhiweiwang.datong.DTContants.TOTAL_COUNT;
 /**
  * Created with IntelliJ IDEA.
  * User: WilliamW
@@ -60,56 +60,60 @@ public class AdminController {
 			if(map.get("limit")!=null)
 				intlimit = (Integer)map.get("limit");
 
-			if(sts == null && map.get("sts")!=null){
-				logger.debug("sts {}", new Object[]{sts});
-				sts = map.get("sts").toString();
-			}
-			else if("clear".equals(sts)==false){
-				logger.debug("sts {}", new Object[]{sts});
-				map.put("sts", sts);
-			}else{
-				sts = null;
-				map.remove("sts");
-			}
 		}
 		if (start != null)
 			intstart = Integer.parseInt(start);
-
-		
-		List<Map<?, ?>> list = null;
-		if(sts != null){
-			logger.debug("sts {}", new Object[]{sts});
-			list = studentMapper.getStudentsBySts(intstart, intlimit, sts);
-		}else{
-			list = studentMapper.getStudentsLimit(intstart, intlimit);
-		}
-		ModelAndView mav =  new ModelAndView("admin", DT_STUDENT_LIST, list);
-		
 		map.put("nextstart", intstart+intlimit);
-		map.put("start", intstart);
+		map.put("start", intstart);		
+
 		if(intstart - intlimit >0){
 			map.put("perviousstart", intstart - intlimit);
 		}else{
 			map.put("perviousstart", 0);
 		}
-		map.put("limit", intlimit);
+		
+		Object msts = map.get("sts");
+		if(sts == null){
+			if(msts != null )
+				sts = msts.toString();
+		}else if("clear".equals(sts)){
+			sts = null;
+			map = new HashMap<String, Object>();
+		}else if(msts!=null && msts.equals(sts)==false){
+			//状态变更 重置页数
+			map = new HashMap<String, Object>();
+		}
+		
+		List<Map<?, ?>> list = null;
+		if(sts != null){
+			logger.debug("sts {}", new Object[]{sts});
+			list = studentMapper.getStudentsBySts(intstart, intlimit, sts);
+			map.put("sts",sts);
+		}else{
+			list = studentMapper.getStudentsLimit(intstart, intlimit);
+		}
 
+		map.put("limit", intlimit);
+		map.put("listsize", list.size());
+		
+		ModelAndView mav =  new ModelAndView("admin", DT_STUDENT_LIST, list);
+
+		// 状态栏
+		List<Map<String, ?>> totalcountlist = studentMapper.getCounting();
+		Map<String, Object> cnts = new HashMap<String, Object>();
+		for(Map m : totalcountlist){
+			if(m.get("sts")!=null){
+				cnts.put(m.get("sts").toString(), m.get("cnt"));
+			}
+		}
 		mav.addObject(QUERY_CONF, map);
+		mav.addObject(TOTAL_COUNT, cnts);
 		session.setAttribute(QUERY_CONF, map);
 		return mav;
     }
 	
-//	@ModelAttribute(DTContants.DT_STUDENT_LIST)
-//	@RequestMapping(value = "/admin", method = GET)
-//	public /*List<?>*/ ModelAndView getinit() {
-//		List<Map<?, ?>> list = studentMapper.getStudentsLimit(0, 20);
-//		//redirectAttrs.addAttribute(DTContants.DT_STUDENT_LIST,studentMapper.getStudentsLimit(start, limit));
-//		//return ;
-//		ModelAndView mav =  new ModelAndView("admin", DTContants.DT_STUDENT_LIST, list);
-//		mav.addObject("nextstart", 20);
-//		mav.addObject("perviousstart", 0);
-//		mav.addObject("limit", 20);
-//		return mav;
-//    } 
-
+	@RequestMapping(value = "/counting", method = GET)
+	public List<?> counting(){
+		return studentMapper.getCounting();
+	}
 }

@@ -19,6 +19,7 @@
 	<appender name="ROLLING"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<Prudent>true</Prudent>
+		<Encoding>UTF-8</Encoding>
 		<file>${USER_HOME}/${LOG_FILE_NAME_MSG}.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>${USER_HOME}/${LOG_FILE_NAME_MSG}.%d{yyyy-MM-dd}.log
@@ -33,13 +34,10 @@
 		</encoder>
 	</appender>
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<Encoding>UTF-8</Encoding>
 		<layout name="StandardFormat" class="ch.qos.logback.classic.PatternLayout">
 			<pattern>${consoleLayoutPattern}</pattern>
 		</layout>
-		<encoder>
-			<charset>UTF-8</charset>
-			<pattern>${consoleLayoutPattern}</pattern>
-		</encoder>
 	</appender>
 
 	<root level="${LEVEL}">

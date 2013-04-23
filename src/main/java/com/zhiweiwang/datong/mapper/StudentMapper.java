@@ -33,4 +33,7 @@ public interface StudentMapper {
 
 	@Select("select * FROM dt_students where sts=#{sts} limit #{start},#{limit}  ")
 	List<Map<?, ?>> getStudentsBySts(@Param("start")int start,@Param("limit") int limit,@Param("sts") String sts);
+
+	@Select("select sts,count(*) as cnt from dt_students group by sts")
+	List<Map<String, ?>> getCounting();
 }

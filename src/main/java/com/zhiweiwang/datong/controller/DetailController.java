@@ -38,32 +38,34 @@ public class DetailController {
     
 	@RequestMapping(value="/deal",method = POST)
     public String postDeal(@RequestParam(value="action",required=false) String action,@RequestParam(required=false) String interview, HttpSession session){
-    	return deal(action, interview, session);
+    	return deal(action, interview, (Integer)session.getAttribute(DTContants.STUDENT_ID_IN_SESSION), ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
     }
 	
 	@RequestMapping(value="/deal",method = GET)
     public String getDeal(@RequestParam(required=false) String action,@RequestParam(required=false) String interview, HttpSession session) {
-    	return deal(action, interview, session);
+    	return deal(action, interview, (Integer)session.getAttribute(DTContants.STUDENT_ID_IN_SESSION), ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
+
     }
 
+	@RequestMapping(value="/pass",method = POST)
+    public String pass(@RequestParam(required=false) int id,@RequestParam(required=false) String action,@RequestParam(required=false) String interview, HttpSession session) {
+    	return deal(action, interview, id, ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
+    }
+	
+	@RequestMapping(value="/reject",method = GET)
+    public String reject(@RequestParam int id, HttpSession session) {
+    	return deal("sts_reject", null, id, ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
+    }
+	
     @SuppressWarnings({ "rawtypes", "unchecked" })
-	protected String deal(String action, String interview, HttpSession session) {
+	protected String deal(String action, String interview, int id, String role) {
     	logger.debug("action {}", new Object[]{action});
-		Map map = new HashMap();
-		int id = (Integer)session.getAttribute(DTContants.STUDENT_ID_IN_SESSION);
-		map.put("id", id);
-    	User admin = (User)session.getAttribute(DTContants.USER_IN_SESSION);
-    	
-		map.put("role", admin.getRole());
-    	if("PASS".equals(action)){    		
-    		map.put("interview", interview);
-    		map.put("sts", "通过");
-    	}else if("REJECT".equals(action)){
-    		map.put("sts", "拒绝");
-    	}else if("WAIT".equals(action)){
-    		map.put("sts", "待定");
-    	}
-    	logger.debug("Map: {}", new Object[]{map});
+		Map map = new HashMap();		
+		map.put("id", id);    	
+		map.put("role", role );
+		map.put("interview", interview);
+		map.put("sts", action);
+
     	studentMapper.updateSts(map);
         return "redirect:/admin";
 	}
