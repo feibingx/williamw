@@ -61,7 +61,7 @@ CREATE TABLE dt_students (
    zongfen2 varchar(4),
    paimin1 varchar(4),
    paimin2 varchar(4),
-   sts varchar(8),
+   sts varchar(8) default '未审核',
    role varchar(12),
    interview varchar(32),
    primary key(id)

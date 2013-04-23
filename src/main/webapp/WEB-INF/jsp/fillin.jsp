@@ -279,8 +279,8 @@ input {
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
-						<td><input id="paiping1" name="paiming1" type="text"
-							value="${dtstudent.paiping1}" class="input-small"
+						<td><input id="paimin1" name="paimin1" type="text"
+							value="${dtstudent.paimin1}" class="input-small"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
@@ -324,8 +324,8 @@ input {
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
-						<td><input id="paiping2" name="paiming2" type="text"
-							value="${dtstudent.paiping2}" class="input-small"
+						<td><input id="paimin2" name="paimin2" type="text"
+							value="${dtstudent.paimin2}" class="input-small"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">

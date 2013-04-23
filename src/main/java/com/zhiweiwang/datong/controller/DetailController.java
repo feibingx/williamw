@@ -23,44 +23,59 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 
-/**
- * Created with IntelliJ IDEA.
- * User: WilliamW
- * Date: 13-4-18
- * Time: 上午10:26
- * To change this template use File | Settings | File Templates.
- */
 @Controller
-@SessionAttributes(DTContants.USER_IN_SESSION)
 public class DetailController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private StudentMapper studentMapper;
-
-    @Autowired
-    private ReloadableResourceBundleMessageSource message;
     
-    @RequestMapping(value="/detail",method = POST)
-    public ModelAndView admin(@RequestParam String name,@RequestParam String password) throws UnsupportedEncodingException {
-        logger.info("adminLogin selected User is {} ", new Object[]{name});
-
-        ModelAndView mav = new ModelAndView();
-
-        return mav;
+	@RequestMapping(value="/deal",method = POST)
+    public String postDeal(@RequestParam(value="action",required=false) String action,@RequestParam(required=false) String interview, HttpSession session){
+    	return deal(action, interview, session);
     }
 	
+	@RequestMapping(value="/deal",method = GET)
+    public String getDeal(@RequestParam(required=false) String action,@RequestParam(required=false) String interview, HttpSession session) {
+    	return deal(action, interview, session);
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	protected String deal(String action, String interview, HttpSession session) {
+    	logger.debug("action {}", new Object[]{action});
+		Map map = new HashMap();
+		int id = (Integer)session.getAttribute(DTContants.STUDENT_ID_IN_SESSION);
+		map.put("id", id);
+    	User admin = (User)session.getAttribute(DTContants.USER_IN_SESSION);
+    	
+		map.put("role", admin.getRole());
+    	if("PASS".equals(action)){    		
+    		map.put("interview", interview);
+    		map.put("sts", "通过");
+    	}else if("REJECT".equals(action)){
+    		map.put("sts", "拒绝");
+    	}else if("WAIT".equals(action)){
+    		map.put("sts", "待定");
+    	}
+    	logger.debug("Map: {}", new Object[]{map});
+    	studentMapper.updateSts(map);
+        return "redirect:/admin";
+	}
+    
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/detail/{nid}")
-	public ModelAndView get(@PathVariable("nid") int id) {
+	public ModelAndView get(@PathVariable("nid") int id, HttpSession session) {
+		session.removeAttribute(DTContants.STUDENT_ID_IN_SESSION);
 		logger.info("user:  {} ", id);
 		Map<?, ?> student = studentMapper.getStudent(id);
+		session.setAttribute(DTContants.STUDENT_ID_IN_SESSION, id);
 		return new ModelAndView("detail", DTContants.DT_STUDENT, student);
-
 	}
 
 }

@@ -3,9 +3,14 @@ package com.zhiweiwang.datong;
 public class DTContants {
 
 	public static final String USER_IN_SESSION = "dtuser";
+	public static final String STUDENT_IN_SESSION = "sis";
+
+	public static final String STUDENT_ID_IN_SESSION = "student_id";
 	public static final String DT_STUDENT = "dtstudent";
 	public static final String MSG_ERRER = "errmessage";
 	public static final String DT_STUDENT_LIST = "dtstudentlist";
+	public static final String QUERY_CONF ="query_conf";
+	public static final int LINES_PER_PAGE = 20;
 	
 	public static final String DT_ID = "id";
 	public static final String DT_USERNAME = "username";

@@ -44,7 +44,7 @@ public class LoginController {
     private ReloadableResourceBundleMessageSource message;
     
     @RequestMapping(method = POST)
-    public ModelAndView login(@RequestParam String name,@RequestParam String password) throws UnsupportedEncodingException {
+    public ModelAndView login(@RequestParam String name,@RequestParam String password) {
         logger.info("login selected User is {} ", new Object[]{name});
 
         ModelAndView mav = new ModelAndView();

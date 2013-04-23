@@ -13,13 +13,13 @@
 <meta name="author" content="">
 
 <!-- Le styles -->
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 <style>
 .container {
@@ -39,6 +39,10 @@
 				<a href="logout" class="pull-right">注销</a>
 			</div>
 		</div>
+		<div>
+			<a href="admin?start=${query_conf.nextstart}&limit=${query_conf.limit}">下一页</a>&nbsp;
+			<a href="admin?start=${query_conf.perviousstart}&limit=${query_conf.limit}">上一页</a>
+		</div>
 		<div class="wrapper container">
 			<table class="table table-hover">
 				<thead>
@@ -47,6 +51,11 @@
 						<th>姓名</th>
 						<th>性别</th>
 						<th>毕业学校</th>
+						<th>当前状态
+							<c:if test="${query_conf.sts!=null}">
+								<a href="admin?sts=null">全部</a>
+							</c:if>
+						</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -62,9 +71,18 @@
 							<td>${dtstudent.name}</td>
 							<td>${dtstudent.sex}</td>
 							<td>${dtstudent.gradeschool}</td>
-							<td><div class="pull-right"></div><a href="detail/${dtstudent.id}" class="btn btn-info">审阅</a>
+							<td>
+								<c:if test="${dtstudent.sts!=null && fn:length(dtstudent.sts)>0}">
+									<a href="admin?sts=${dtstudent.sts}">${dtstudent.sts}</a>
+								</c:if>
+								<c:if test="${dtstudent.sts==null || fn:length(dtstudent.sts)<1}">
+									<a href="admin?sts=未审核">error</a>
+								</c:if>
+							</td>
+							<td>
+							<a href="detail/${dtstudent.id}" class="btn btn-info">审阅</a>
 							<a href="detail/${dtstudent.id}" class="btn btn-success">通过</a>
-							<a href="#${dtstudent.id}" class="btn btn-danger">拒绝</a></div></td>
+							<a href="#${dtstudent.id}" class="btn btn-danger">拒绝</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

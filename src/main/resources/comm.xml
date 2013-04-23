@@ -29,6 +29,7 @@
 					<value>getUser</value>
 					<value>admin</value>
 					<value>detail</value>
+					<value>deal</value>
 				</list>
 			</property>
 		</bean>
@@ -37,6 +38,7 @@
 				<list>
 					<value>admin</value>
 					<value>detail</value>
+					<value>deal</value>
 				</list>
 			</property>
 		</bean>

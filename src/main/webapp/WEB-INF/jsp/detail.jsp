@@ -81,7 +81,10 @@
 	box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0, 0, 0, .1);
 	filter: progid : DXImageTransform.Microsoft.gradient ( enabled = false );
 }
-
+.model-size{
+	width: 320px;
+	margin:-200px 0 0 -160px;
+}
 .center {
 	width: auto;
 	display: table;
@@ -95,9 +98,9 @@
 	<div class="navbar navbar-fixed-top ">
 		<div class="mynav">
 			<span class="center"> 
-			<a id="pass" name="pass" type="button" class="btn btn-large btn-success">通过</a>
-			<a href="../admin" class="btn btn-large btn-warning">待定</a>
-			<a href="#${dtstudent.id}" class="btn btn-large btn-danger">拒绝</a>
+			<a id="pass" name="pass" onClick="setDatetime();" class="btn btn-large btn-success">通过</a>
+			<a href="../deal?action=WAIT" class="btn btn-large btn-warning">待定</a>
+			<a href="../deal?action=REJECT" class="btn btn-large btn-danger">拒绝</a>
 			<a href="../admin" class="btn btn-large btn-info">返回</a>
 			</span>
 		</div>
@@ -115,6 +118,7 @@
 		<div class="wrapper">
 			<!-- form begin -->
 			<!--startprint-->
+			<div class="pull-right">当前状态：${dtstudent.sts}</div>
 			<table>
 				<tr>
 					<td style="width:15%">姓名</td>
@@ -264,6 +268,24 @@
 	</div>
 	<!--endprint-->
 
+  <div data-backdrop="false" tabindex="-1" class="modal fade hide in model-size" id="winModal" >
+  	<form action="../deal" method="post">
+  		<input type="hidden" value="PASS" id="action" name="action">
+		<div class="modal-header">
+	      <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+	      <h3 id="myModalLabel">设定面试时间</h3>
+	    </div>
+	    <div class="modal-body">
+	      <input type="text" class="input-xlarge" id="interview" name="interview">
+	    </div>
+	    <div class="modal-footer">
+	      <button aria-hidden="true" data-dismiss="modal" class="btn" type="button">取消</button>
+	      <input type="submit" value="提交" class="btn btn-primary">
+	    </div>
+  	</form>
+    
+  </div>
+
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -309,6 +331,14 @@
 			prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));
 			window.document.body.innerHTML = prnhtml;
 			window.print();
+		}
+
+		function setDatetime(){
+				$('#winModal').modal({
+					backdrop:true,
+					keyboard:true,
+					show:true
+				});
 		}
 	</script>
 </body>
