@@ -46,7 +46,7 @@ CREATE TABLE dt_students (
    honors text,
    prices text,
    history text,
-   applyreason text,
+   reason text,
    yuwem1 varchar(4),
    yuwem2 varchar(4),
    shuxue1  varchar(4),
@@ -67,3 +67,6 @@ CREATE TABLE dt_students (
    primary key(id)
 );
 
+
+
+insert into dt_students(id,username,name,pid,sex,policy,birthyear,birthmonth,birthday,healthy,city,address,addcode,phone,cell,gradeschool,gradesection,number,daddy,daddyname,daddyjob,daddyphone,mummy,mummyname,mummyjob,mummyphone,honors,prices,history,reason,yuwem1,yuwem2,shuxue1,shuxue2,yingyu1,yingyu2,wuli1,wuli2,huaxue1,huaxue2,zongfen1,zongfen2,paimin1,paimin2,sts,role,interview) values(1,'1','姓名我','1','男','党员','1997','6','29','你再猜','你再猜','住址','200002','2222222','222','你猜','你猜','你猜猜猜','','','','','','','','','',NULL,'',NULL,'','','','','','','','','','','','',NULL,NULL,NULL,NULL,NULL)

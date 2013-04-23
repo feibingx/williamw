@@ -28,12 +28,6 @@
 	<![endif]-->
 
 <style type="text/css">
-input {
-	border: 0px #000000 !important;
-	font-family: "FangSong";
-	font-size: 14px;
-}
-
 .wrapper tr td {
 	padding: 1px 2px;
 	margin: 2px;
@@ -58,6 +52,8 @@ input {
 .inputfield p {
 	font-family: "FangSong";
 	font-size: 14px;
+	max-width: 788px;
+	padding: auto 12px;
 }
 
 .mynav {
@@ -98,14 +94,15 @@ input {
 	<!--startprint-->
 	<div class="navbar navbar-fixed-top ">
 		<div class="mynav">
-			<span class="center"> <a href="detail/${dtstudent.id}"
-				class="btn btn-large btn-success">通过</a> <a href="../admin"
-				class="btn btn-large btn-warning">待定</a> <a href="#${dtstudent.id}"
-				class="btn btn-large btn-danger">拒绝</a> <a href="../admin"
-				class="btn btn-large btn-info">返回</a> </span>
+			<span class="center"> 
+			<a id="pass" name="pass" type="button" class="btn btn-large btn-success">通过</a>
+			<a href="../admin" class="btn btn-large btn-warning">待定</a>
+			<a href="#${dtstudent.id}" class="btn btn-large btn-danger">拒绝</a>
+			<a href="../admin" class="btn btn-large btn-info">返回</a>
+			</span>
 		</div>
 		<span class="pull-right"> <a href="javascript:;"
-			onClick="doPrint()" class="btn">打印</a> <a href="logout" class="btn">注销</a>
+			onClick="doPrint()" class="btn">打印</a> <a href="../logout" class="btn">注销</a>
 		</span>
 
 	</div>
@@ -120,11 +117,11 @@ input {
 			<!--startprint-->
 			<table>
 				<tr>
-					<td>姓名</td>
+					<td style="width:15%">姓名</td>
 					<td class="inputfield">${dtstudent.name}</td>
-					<td>性别</td>
+					<td style="width:15%">性别</td>
 					<td class="inputfield">${dtstudent.sex}</td>
-					<td>政治面貌</td>
+					<td style="width:15%">政治面貌</td>
 					<td class="inputfield">${dtstudent.policy}</td>
 				</tr>
 				<tr>
@@ -133,7 +130,7 @@ input {
 					<td>毕业区县</td>
 					<td class="inputfield">${dtstudent.gradesection}</td>
 					<td>中考报名号</td>
-					<td class="inputfield">${dtstudent.number</td>
+					<td class="inputfield">${dtstudent.number}</td>
 				</tr>
 				<tr>
 					<td>出生年月</td>
@@ -145,8 +142,9 @@ input {
 			</table>
 			<table>
 				<tr>
-					<td>户口所在地</td>
-					<td class="inputfield">${dtstudent.city}"</td>
+					<td style="width:120px;">户口所在地</td>
+					
+					<td class="inputfield">${dtstudent.city}</td>
 				</tr>
 				<tr>
 					<td>家庭住址</td>
@@ -154,15 +152,15 @@ input {
 				</tr>
 				<tr>
 					<td>邮政编码</td>
-					<td class="inputfield">${dtstudent.addcode}"></td>
+					<td class="inputfield">${dtstudent.addcode}</td>
 				</tr>
 				<tr>
 					<td>联系电话</td>
-					<td class="inputfield">${dtstudent.phone}></td>
+					<td class="inputfield">${dtstudent.phone}</td>
 				</tr>
 				<tr>
 					<td>手机</td>
-					<td class="inputfield">${dtstudent.cell}></td>
+					<td class="inputfield">${dtstudent.cell}</td>
 				</tr>
 				<tr>
 					<td>身份证号码</td>
@@ -181,14 +179,14 @@ input {
 				</tr>
 				<tr>
 					<td class="inputfield">${dtstudent.daddy}</td>
-					<td class="inputfield">${dtstudent.daddyname}"</td>
-					<td class="inputfield">${dtstudent.daddyjob}"</td>
-					<td class="inputfield">${dtstudent.daddyphone}"</td>
+					<td class="inputfield">${dtstudent.daddyname}</td>
+					<td class="inputfield">${dtstudent.daddyjob}</td>
+					<td class="inputfield">${dtstudent.daddyphone}</td>
 				</tr>
 				<tr>
 					<td class="inputfield">${dtstudent.mummy}</td>
-					<td class="inputfield">"${dtstudent.mummyname}</td>
-					<td class="inputfield">${dtstudent.mummyjob}"</td>
+					<td class="inputfield">${dtstudent.mummyname}</td>
+					<td class="inputfield">${dtstudent.mummyjob}</td>
 					<td class="inputfield">${dtstudent.mummyphone}</td>
 				</tr>
 			</table>
@@ -232,12 +230,12 @@ input {
 					<td style="text-align: center;" colspan="2">初中阶段主要获得的荣誉称号</td>
 				</tr>
 				<tr>
-					<td>级别</td>
+					<td style="width:120px;">级别</td>
 					<td>名称</td>
 				</tr>
 				<tr>
 					<td class="inputfield">${plev0}</td>
-					<td class="inputfield">${pname0}"</td>
+					<td class="inputfield">${pname0}</td>
 				</tr>
 			</table>
 			<table>

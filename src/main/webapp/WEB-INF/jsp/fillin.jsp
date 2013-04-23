@@ -99,7 +99,7 @@ input {
 					</tr>
 					<tr>
 						<td>出生年月</td>
-						<td colspan="3"><select class="span2" id="birthyear"
+						<td colspan="3"><select class="span1 pull-left" id="birthyear"
 							name="birthyear">
 								<option value="1996"
 									<c:if test="${dtstudent.birthyear=='1996' }">selected</c:if>>1996
@@ -116,19 +116,19 @@ input {
 								<option value="2000"
 									<c:if test="${dtstudent.birthyear=='2000' }">selected</c:if>>2000
 								</option>
-						</select> 年 <select class="span1" id="birthmonth" name="birthmonth">
+						</select>年</span> <select class="span1 pull-left" id="birthmonth" name="birthmonth">
 								<c:forEach var="x" begin="1" end="12" step="1">
 									<option value="${x}"
 										<c:if test="${dtstudent.birthmonth==x }">selected</c:if>>${x}
 									</option>
 								</c:forEach>
-						</select> 月 <select class="span1" id="birthday" name="birthday">
+						</select>月<select class="span1 pull-left" id="birthday" name="birthday">
 								<c:forEach var="x" begin="1" end="31" step="1">
 									<option value="${x}"
 										<c:if test="${dtstudent.birthday==x }">selected</c:if>>${x}
 									</option>
 								</c:forEach>
-						</select> 日</td>
+						</select>日</td>
 						<td>身体状况</td>
 						<td><input type="text" id="healthy" name="healthy"
 							placeholder="请输入" class="input" value="${dtstudent.city}">
