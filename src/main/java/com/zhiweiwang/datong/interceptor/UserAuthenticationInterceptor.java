@@ -39,6 +39,11 @@ public class UserAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			}
 		}
 
+		if(servletPath.contains("superadmin")){
+			if(admin == null || ((User) admin).getId()!=0){
+				return returnFalse(request, response);
+			}
+		}
 		return true;
     }
 

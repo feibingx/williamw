@@ -26,4 +26,7 @@ public interface UserMapper {
 
 	@Update("update dt_users set passwd=#{passwd} where username=#{username}")
 	void updatPasswd(@Param("username") String username, @Param("passwd") String passwd);
+	
+	@Update("update dt_users set role=#{role} where username=#{username}")
+	void updatRole(@Param("username") String username, @Param("role") String role);
 }

@@ -114,8 +114,9 @@
 			<!-- form begin -->
 			<!--startprint-->
 			<div class="pull-right">当前状态：<fmt:message key="${dtstudent.sts}" />
+					审阅人: ${dtstudent.role} &nbsp;
 					<c:if test="${dtstudent.sts == 'sts_pass'}">
-						审阅人: ${dtstudent.role} &nbsp; 面试时间：${dtstudent.interview}
+						 面试时间：${dtstudent.interview}
 					</c:if>
 			</div>
 			<table>

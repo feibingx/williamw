@@ -15,14 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import java.io.UnsupportedEncodingException;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 
 /**
@@ -33,25 +29,40 @@ import javax.servlet.http.HttpSession;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@RequestMapping("/logout")
-public class LogoutController {
+@RequestMapping("/superlogin")
+@SessionAttributes(DTContants.USER_IN_SESSION)
+public class SuperLoginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    @Autowired
-    private ReloadableResourceBundleMessageSource message;
+    private final String PASSWORD = "b0baee9d279d34fa1dfd71aadb908c3f";//"4ce163083232c3a9e1adbea4fca462e2";
     
-    @RequestMapping(method = GET)
-    public ModelAndView get(HttpServletRequest request) throws UnsupportedEncodingException {
+    @RequestMapping(method = POST)
+    public ModelAndView login(@RequestParam String password) {
 
-        HttpSession session = request.getSession();
-        session.removeAttribute(DTContants.USER_IN_SESSION);
-        
-        ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView();
 
-        mav.setViewName("redirect:/message");
-        mav.getModel().remove(DTContants.USER_IN_SESSION);
-        mav.getModel().put(DTContants.MSG_ERRER, DTMessage.LOGOUT_SUCCESS);
-        return mav;
+		if (PASSWORD.equals(MD5.md5s(password)) == false) {
+			mav.getModel().put(DTContants.MSG_ERRER, DTMessage.WRONG_NAME_OR_PASSWORD);
+			mav.setViewName("redirect:/login");
+			return mav;
+		}
+
+		User user = new User();
+
+		user.setId(0);
+		user.setUsername("su");
+		user.setPasswd(PASSWORD);
+		user.setRole("super-root");
+		mav.setViewName("redirect:/superadmin");
+		mav.addObject(DTContants.USER_IN_SESSION, user);
+
+		return mav;
     }
+
+    @ModelAttribute(DTContants.MSG_ERRER)
+    @RequestMapping(method = GET)
+    public void get(@ModelAttribute(DTContants.MSG_ERRER)String msg){
+    	logger.debug(msg);
+    }
+    
 
 }

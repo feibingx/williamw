@@ -29,5 +29,8 @@ public class MD5 {
 		
 		return null;
 	}
-	
+
+	public static void main(String[] args){
+		System.out.println(md5s("P@ssw0rd098"));
+	}
 }

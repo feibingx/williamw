@@ -32,32 +32,20 @@
     .control-label{ width: 90px !important;}
     .controls {margin-left: 100px !important;;}
     .errmsg{ margin-left: 100px;}
-    .hidden-link { color: white; }
-    .hidden-link:hover { color: #EDEDED; }
     </style>
   </head>
 <body>
 <div class="page">
 		<div class="logo">
 			<img class="pull-left title" src="assets/img/logo.png">
-			<div class="pull-left title">自主招生系统</div>
-			<a class="pull-right hidden-link" href="superlogin">管理员登陆</a>
+			<div class="pull-left title">自主招生系统 管理后台</div>
 		</div>
 		<div class="centerw wrapper">
-<!--      <div class="row-fluid">-->
-            <!-- login form begin -->
             <c:if test="${errmessage!=null && fn:length(errmessage)>0}">  
 			    <div class="help-inline error"><fmt:message key="${errmessage}" /></div>
 			</c:if>  
             
-            <form class="form-horizontal" action="login" method="post">
-				<div class="control-group">
-					<label class="control-label" for="inputEmail">用户名</label>
-					<div class="controls">
-						 <input type="text" id="name" name="name" placeholder="请输入姓名" class="input-large">
-					<span id="input01alert"  class="help-inline hidden">不能为空</span>
-					</div>
-				</div>
+            <form class="form-horizontal" action="superlogin" method="post">
 				<div class="control-group">
 			    	<label class="control-label" for="inputPassword">密码</label>
 					<div class="controls">
@@ -68,23 +56,16 @@
 				<div class="control-group">
 					<div class="controls">
 						<button type="submit" class="btn">登录</button>
-						<span class="help-inline hidden">nbsp;</span>
-						<a href="register">注册</a>
-						<span class="help-inline hidden">nbsp;</span>
-						<a href="#">忘记密码</a>
 					</div>
 				</div>
 			</form>
-            <!-- login form end-->
-<!--      </div>-->
     </div>
 
 </div>
 <footer>
 
 </footer>
-    <!-- Le javascript
-    ================================================== -->
+    <!-- Le javascript   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap-transition.js"></script>
