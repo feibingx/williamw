@@ -16,6 +16,7 @@
 	<mvc:annotation-driven />
 
 	<mvc:resources mapping="/assets/**" location="/assets/" />
+	<mvc:resources mapping="/upload/**" location="/upload/" />
 	<tx:annotation-driven/>
 	
 	<mvc:interceptors>
@@ -100,4 +101,9 @@
 			</list>
 		</property>
 	</bean>
+
+	<!-- file uploader resolver -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="utf-8" />       
 </beans>

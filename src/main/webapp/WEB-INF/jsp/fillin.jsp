@@ -58,9 +58,8 @@ input {
 
 			
 			<div class="wrapper">
-			<div class="pull-right">
-					<a href="javascript:;" onClick="doPrint()" class="btn">打印</a> 
-			</div>
+					<a href="javascript:;" onClick="doPrint()" class="btn pull-right">打印</a> 
+			
 			<!-- form begin -->
 			<form class="form-horizontal" action="fillin" id="fillform"
 				method="post">
@@ -79,7 +78,10 @@ input {
 						</select></td>
 						<td>政治面貌</td>
 						<td><input type="text" id="policy" name="policy"
-							placeholder="请输入" class="input" value="${dtstudent.policy}">
+							placeholder="请输入" class="input-small" value="${dtstudent.policy}">
+						</td>
+						<td rowspan="5" style="width:110px;">
+							<iframe src="pic" width="120" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">					</iframe>
 						</td>
 					</tr>
 					<tr>
@@ -92,14 +94,15 @@ input {
 							value="${dtstudent.gradesection}" placeholder="请输入"
 							class="input-small">
 						</td>
-						<td>中考报名号</td>
-						<td><input type="text" id="number" name="number"
-							placeholder="请输入" class="input" value="${dtstudent.number}">
+
+						<td>身体状况</td>
+						<td><input type="text" id="healthy" name="healthy"
+							placeholder="请输入" class="input-small" value="${dtstudent.city}">
 						</td>
 					</tr>
 					<tr>
 						<td>出生年月</td>
-						<td colspan="3"><select class="span1 pull-left" id="birthyear"
+						<td colspan="5"><select class="span2 pull-left" id="birthyear"
 							name="birthyear">
 								<option value="1996"
 									<c:if test="${dtstudent.birthyear=='1996' }">selected</c:if>>1996
@@ -129,37 +132,40 @@ input {
 									</option>
 								</c:forEach>
 						</select>日</td>
-						<td>身体状况</td>
-						<td><input type="text" id="healthy" name="healthy"
-							placeholder="请输入" class="input" value="${dtstudent.city}">
+					</tr>
+					<tr>
+						<td>中考报名号</td>
+						<td colspan="5"><input type="text" id="number" name="number"
+							placeholder="请输入" class="input" value="${dtstudent.number}">
 						</td>
 					</tr>
+					<tr>
+						<td>户口所在地</td>
+						<td colspan="5"><input id="city" name="city" value="${dtstudent.city}"
+							type="text" class="input">
+						</td>
+					</tr>
+					
+				
 				</table>
 				<table>
 					<tr>
-						<td>户口所在地</td>
-						<td><input id="city" name="city" value="${dtstudent.city}"
-							type="text" class="input-xxlarge">
-						</td>
-					</tr>
-					<tr>
-						<td>家庭住址</td>
-						<td><input id="address" name="address" type="text"
+						<td colspan="2">家庭住址</td>
+						<td colspan="5"><input id="address" name="address" type="text"
 							value="${dtstudent.address}" class="input-xxlarge">
 						</td>
 					</tr>
 					<tr>
-						<td>邮政编码</td>
+						<td colspan="2">邮政编码</td>
 						<td><input id="addcode" name="addcode" type="text"
 							value="${dtstudent.addcode}" class="input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="6">
 						</td>
-					</tr>
-					<tr>
-						<td>联系电话</td>
-						<td><input id="phone" name="phone" type="text"
+						<td rowspan="2">联系方式</td>
+						<td colspan="1">电话</td>
+						<td ><input id="phone" name="phone" type="text"
 							value="${dtstudent.phone}" class="input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
@@ -167,18 +173,16 @@ input {
 						</td>
 					</tr>
 					<tr>
+						<td colspan="2">身份证号码</td>
+						<td><input id="pid" name="pid" type="text"
+							value="${dtstudent.pid}" class="input-large" maxlength="18">
+						</td>
 						<td>手机</td>
 						<td><input id="cell" name="cell" type="text"
 							value="${dtstudent.cell}" class="input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="21">
-						</td>
-					</tr>
-					<tr>
-						<td>身份证号码</td>
-						<td><input id="pid" name="pid" type="text"
-							value="${dtstudent.pid}" class="input-large" maxlength="18">
 						</td>
 					</tr>
 				</table>
@@ -369,13 +373,6 @@ input {
 						<td colspan="4"><textarea name="honors" id="honors">${dtstudent.honors}</textarea>
 						</td>
 					</tr>
-<!--					<tr>
-						<td style="text-align: center;" colspan="4">初中阶段主要获得的荣誉称号</td>
-					</tr>
-					<tr>
-						<td colspan="4"><textarea name="prices" id="prices">${dtstudent.prices}</textarea>
-						</td>
-					</tr>-->
 					<tr>
 						<td style="text-align: center;" colspan="4">初中阶段主要社会经历（包括社会实践、社会活动等非学科学习经历）</td>
 					</tr>
@@ -385,13 +382,13 @@ input {
 						</td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" colspan="4">申请理由</td>
+						<td style="text-align: center;" colspan="4">个人自述</td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" colspan="4"><textarea
 								name="reason" id="reason">${dtstudent.reason}</textarea></td>
 					</tr>
-				</table>
+				</table><!--endprint-->
 				<div>
 					我保证以上信息真实有效 <input type="checkbox" name="allright" id="allright" />
 				</div>
@@ -402,7 +399,7 @@ input {
 			</form>
 			<!-- form end-->
 		</div>
-	</div><!--endprint-->
+	</div>
 
 	<!-- Le javascript
     ================================================== -->
@@ -468,12 +465,12 @@ input {
 		}
 
 		function doPrint() { 
-//bdhtml=window.document.body.innerHTML; 
-//sprnstr="<!--startprint-->"; 
-//eprnstr="<!--endprint-->"; 
-//prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17); 
-//prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); 
-//window.document.body.innerHTML=prnhtml; 
+bdhtml=window.document.body.innerHTML; 
+sprnstr="<!--startprint-->"; 
+eprnstr="<!--endprint-->"; 
+prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17); 
+prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); 
+window.document.body.innerHTML=prnhtml; 
 window.print(); 
 }
 	</script>

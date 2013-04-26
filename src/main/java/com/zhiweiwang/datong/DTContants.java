@@ -54,6 +54,7 @@ public class DTContants {
 	public static final String DT_ZONGFEN2 = "zongfen2";
 	public static final String DT_PAIMIN1 = "paimin1";
 	public static final String DT_PAIMIN2 = "paimin2";
+	public static final String IMG_PATH = "imgpath";
 	
 	
 
