@@ -8,4 +8,5 @@ public class DTMessage {
 	public static final Object FILLIN_UPATE_SUCCESS = "fillin_update_success";
 	public static final Object UPDATE_ADMIN_SUCCESS = "update_admin_success";
 	public static final Object LOGOUT_SUCCESS ="logout_success";
+	public static final Object UPLOAD_FILE_NOT_ALLOW = "upload_file_not_allowd";
 }

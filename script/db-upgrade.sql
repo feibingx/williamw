@@ -61,6 +61,7 @@ CREATE TABLE dt_students (
    zongfen2 varchar(4),
    paimin1 varchar(4),
    paimin2 varchar(4),
+   imgpath varchar(80),
    sts varchar(12) default 'sts_unprove',
    role varchar(12),
    interview varchar(32),

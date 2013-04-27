@@ -45,6 +45,11 @@ public class FillController {
         }
         map.put(DTContants.DT_ID, user.getId());
         map.put(DTContants.DT_USERNAME, user.getUsername());
+        
+        Object imgpath = request.getSession().getAttribute(DTContants.IMG_PATH);
+        if(imgpath != null){
+        	map.put(DTContants.IMG_PATH, imgpath);
+        }
         logger.info(map.toString());
         
         ModelAndView mav = new ModelAndView();

@@ -25,55 +25,93 @@
 	border: medium none;
 	background: none repeat scroll 0% 0% transparent;
 	outline: medium none;
-	position: static;
 	opacity: 0;
-	width: 75px;
+	overflow: hidden;
+}
+.fileinput-ie {
+	border: medium none;
+	background: none repeat scroll 0% 0% transparent;
+	outline: medium none;
+	margin: 20px 15px;
+	width: 35px;
 	height: 25px;
 	left: 0px;
 	top: 0px;
-	overflow: hidden;
-}
-.fileinput{
-	width: 35px;
 }
 .picform{
 	border-radius: 5px;
-	width: 105px;
-	height: 125px;
+	width: 100px;
+	height: 150px;
+	border: 1px dashed #DFDFDF;
+	margin: 5px;
 }
 .upbtn{
 	text-align: center;
-	margin: 20px 15px 0 ;
+	margin: 40px 8px 0 ;
+}
+.delbtn{
+	margin: -70px 23px 0;
+}
+.submitbtn{
+	margin: 20px 28px 0;
+}
+.imgclass{
+	width: 100px;
+	height: 150px;
+}
+body{
+  padding: 0 !important;
 }
 </style>
 </head>
 <body>
 	<div id="content" class="picform">
-		<c:if test="${imgpath != null}">
-			<img src="${imgpath}" />
-		</c:if>
 		<form name="form" action="pic" method="POST" enctype="multipart/form-data">
-			<input id="fileToUpload" class="fileinput" name="fileToUpload" type="file" onchange="readURL(this);">
-			<input class="upbtn btn" type="button" value="上传图片" onClick="javascript:document.getElementById('fileToUpload').click();"/>
+			<c:if test="${imgpath != null}">
+				<img class="imgclass" src="${imgpath}" />
+			</c:if>
+			<c:if test="${imgpath == null}">
+				<input class="pull-right" id="fileToUpload" name="fileToUpload" type="file" onchange="readURL(this);">
+				<input id="onclickbtn" class="upbtn btn" type="button" value="上传图片"/>
+				<input type="hidden" value="add" id="action" name="action" >
+				<input type="submit" value="提交" id="submitbtn" class="btn submitbtn"  name="submitbtn" />
+			</c:if>
+			<c:if test="${imgpath != null}">
+				<input class="delbtn btn" type="submit" value="删除"/>
+				<input type="hidden" value="del" id="action" name="action" >
+			</c:if>
+			
 		</form>
+
 	</div>
 
 	<script src="assets/js/jquery.js"></script>
 	<script type="text/javascript">
+		var filetype = new Array('jpg','jpeg','gif','png');
 		function readURL(input) {
-			if (input.files && input.files[0]) {
-				$('form').submit();
+			if(input.files && input.files[0]){
+				var file = input.files[0];
+				for(var tp in filetype){
+					var ftype = file.name.substring(file.name.lastIndexOf(".")+1).toLowerCase();
+					if(filetype[tp] == ftype){
+		            	$('form').submit();
+		            	return;	
+					}
+				}
+				alert("只能上传JPG、PNG、GIF文件");
 			}
 		}
 		$(document).ready(function() {
 			if($.browser.msie){
-				$('form').append("<div id=\"filename\"> </div>");
-				$('form').append("<input style=\"margin: 5px 30px ;\" type=\"submit\" value=\"提交\" >");
-
+				$("#onclickbtn").addClass("hidden");
+				$("#fileToUpload").addClass("fileinput-ie");
 			}
 			else{
-				$('#content').append();
 				$("#fileToUpload").addClass("fileinput");
+				$("#submitbtn").addClass("hidden");
+				$("#onclickbtn").bind("click", function(){
+					document.getElementById('fileToUpload').click();
+				})
 			}
 		});
 	</script>

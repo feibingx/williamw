@@ -81,7 +81,7 @@ input {
 							placeholder="请输入" class="input-small" value="${dtstudent.policy}">
 						</td>
 						<td rowspan="5" style="width:110px;">
-							<iframe src="pic" width="120" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">					</iframe>
+							<iframe src="pic" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">					</iframe>
 						</td>
 					</tr>
 					<tr>
