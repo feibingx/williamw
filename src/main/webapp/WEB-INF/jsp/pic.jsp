@@ -51,6 +51,7 @@
 }
 .delbtn{
 	margin: -70px 23px 0;
+	opacity: 0.5;
 }
 .submitbtn{
 	margin: 20px 28px 0;
@@ -77,7 +78,7 @@ body{
 				<input type="submit" value="提交" id="submitbtn" class="btn submitbtn"  name="submitbtn" />
 			</c:if>
 			<c:if test="${imgpath != null}">
-				<input class="delbtn btn" type="submit" value="删除"/>
+				<input class="delbtn btn" id="delbtn" name="delbtn" type="submit" value="删除"/>
 				<input type="hidden" value="del" id="action" name="action" >
 			</c:if>
 			
@@ -111,7 +112,12 @@ body{
 				$("#submitbtn").addClass("hidden");
 				$("#onclickbtn").bind("click", function(){
 					document.getElementById('fileToUpload').click();
-				})
+				});
+				$("#delbtn").mouseover(function(){
+					this.style.opacity=1;
+				}).mouseout(function(){
+					this.style.opacity=0.5;
+				});
 			}
 		});
 	</script>

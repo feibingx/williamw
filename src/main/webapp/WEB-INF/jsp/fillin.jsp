@@ -27,14 +27,14 @@ input {
 	font-family: "FangSong";
 	font-size: 14px;
 }
-.wrapper tr td {
+tr td {
     padding: 1px 2px;
     margin: 2px;
     text-align: left;
     border: solid 1px #888888 !important;
 }
 
-.wrapper table {
+table {
     width: 790px;
 }
 
@@ -43,26 +43,27 @@ input {
     margin: 2px auto;
 }
 
+.print-btn{
+	margin: 90px -37px 0 0;
+}
 </style>
 </head>
 <body>
-<!--startprint-->
+
+
 	<div class="page">
 		<div class="logo">
 			<img class="pull-left" src="assets/img/logo.png">
 			<div class="pull-left title">自主招生系统</div>
-			<div>
-				<a href="logout" class="pull-right">注销</a>
-			</div>
+			<a href="logout" class="pull-right">注销</a>
+			<a href="javascript:;" onClick="doPrint()" class="btn pull-right print-btn">打印</a> 
 		</div>
 
 			
-			<div class="wrapper">
-					<a href="javascript:;" onClick="doPrint()" class="btn pull-right">打印</a> 
-			
-			<!-- form begin -->
-			<form class="form-horizontal" action="fillin" id="fillform"
-				method="post">
+		<div class="wrapper">
+					<!-- form begin -->
+			<!--startprint-->			
+			<form class="form-horizontal" action="fillin" id="fillform" method="post">
 				<table>
 					<tr>
 						<td>姓名</td>
@@ -70,7 +71,7 @@ input {
 							value="${dtstudent.name}" placeholder="请输入姓名" class="input">
 						</td>
 						<td>性别</td>
-						<td><select class="span1" id="sex" name="sex" required>
+						<td><select id="sex" style="width:50px" name="sex" required>
 								<option <c:if test="${dtstudent.sex=='男' }">selected</c:if>>男
 								</option>
 								<option <c:if test="${dtstudent.sex=='女' }">selected</c:if>>女
@@ -81,7 +82,7 @@ input {
 							placeholder="请输入" class="input-small" value="${dtstudent.policy}">
 						</td>
 						<td rowspan="5" style="width:110px;">
-							<iframe src="pic" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">					</iframe>
+							<iframe src="pic" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">	</iframe>
 						</td>
 					</tr>
 					<tr>
@@ -102,7 +103,7 @@ input {
 					</tr>
 					<tr>
 						<td>出生年月</td>
-						<td colspan="5"><select class="span2 pull-left" id="birthyear"
+						<td colspan="5"><select style="width:100px" id="birthyear"
 							name="birthyear">
 								<option value="1996"
 									<c:if test="${dtstudent.birthyear=='1996' }">selected</c:if>>1996
@@ -119,13 +120,13 @@ input {
 								<option value="2000"
 									<c:if test="${dtstudent.birthyear=='2000' }">selected</c:if>>2000
 								</option>
-						</select>年</span> <select class="span1 pull-left" id="birthmonth" name="birthmonth">
+						</select>年</span> <select style="width:55px" id="birthmonth" name="birthmonth">
 								<c:forEach var="x" begin="1" end="12" step="1">
 									<option value="${x}"
 										<c:if test="${dtstudent.birthmonth==x }">selected</c:if>>${x}
 									</option>
 								</c:forEach>
-						</select>月<select class="span1 pull-left" id="birthday" name="birthday">
+						</select>月<select style="width:55px" id="birthday" name="birthday">
 								<c:forEach var="x" begin="1" end="31" step="1">
 									<option value="${x}"
 										<c:if test="${dtstudent.birthday==x }">selected</c:if>>${x}
@@ -243,7 +244,7 @@ input {
 						<td style="text-align: center;">物理</td>
 						<td style="text-align: center;">化学</td>
 						<td style="text-align: center;">总分</td>
-						<td style="text-align: center;">定位分（或区排名）</td>
+						<td style="text-align: center;">区定位分</td>
 					</tr>
 					<tr>
 						<td>第一次</td>
@@ -339,42 +340,119 @@ input {
 				<table id="tblLevel">
 					<tr>
 						<td style="text-align: center;" colspan="2">
-							初中阶段主要获得的荣誉称号<a class="btn pull-right"
-							onclick="addlevel()">+</a></td>
+							初中阶段获得的主要荣誉称号<a class="btn pull-right"
+							onclick="addlevel()">点此添加</a></td>
 					</tr>
 					<tr>
 						<td>级别</td>
 						<td>名称</td>
 					</tr>
+				<c:if test="${dtstudent.honorslist==null}">
 					<tr>
 						<td>
-							<select class="span2" id="plev0" name="plev0">
+							<select class="span2" id="hlev0" name="hlev0">
 								<option value="市级"
-									<c:if test="${plev0=='市级' }">selected</c:if>>市级
+									<c:if test="${dtstudent.hlev0=='市级' }">selected</c:if>>市级
 								</option>
 								<option value="区级"
-									<c:if test="${plev0=='区级' }">selected</c:if>>区级
+									<c:if test="${dtstudent.hlev0=='区级' }">selected</c:if>>区级
 								</option>
 								<option value="校级"
-									<c:if test="${plev0=='校级' }">selected</c:if>>校级
+									<c:if test="${dtstudent.hlev0=='校级' }">selected</c:if>>校级
 								</option>
 							</select>
 						</td>
-						<td><input id="pname0" name="pname0" type="text"
-							class="input-xxlarge">
+						<td><input id="hname0" name="hname0" type="text"
+							class="input-xxlarge" value="${dtstudent.hname0}">
 						</td>
 					</tr>
+				</c:if>
+				<c:if test="${dtstudent.honorslist!=null}">
+					<c:forEach var="honor" items="${dtstudent.honorslist}">
+						<tr>
+							<td><select class="span2" id="hlev${honor.index}" name="hlev${honor.index}">
+								<option value="市级"
+									<c:if test="${honor.hlev=='市级' }">selected</c:if>>市级
+								</option>
+								<option value="区级"
+									<c:if test="${honor.hlev=='区级' }">selected</c:if>>区级
+								</option>
+								<option value="校级"
+									<c:if test="${honor.hlev=='校级' }">selected</c:if>>校级
+								</option>
+							</select></td>
+							<td>
+								<input id="hname${honor.index}" name="hname${honor.index}" type="text" class="input-xxlarge" value="${honor.hname}">
+							</td>
+						</tr>
+					</c:forEach>
+				</c:if>
 				</table>
+				<table id="tblhonor">
+                    <tr>
+                        <td style="text-align: center;" colspan="4">
+                            初中阶段参加各类比赛获奖情况
+                            <a class="btn pull-right" onclick="addhonor()">点此添加</a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>获奖时间</td>
+                        <td>名称</td>
+                        <td>级别</td>
+                        <td>颁奖单位</td>
+                    </tr>
+                    <c:if test="${dtstudent.priceslist==null}">
+	                    <tr>
+	 						<td>
+	                        	<select class="span1" id="ptime0" name="ptime0">
+	                        		<option value="预初" <c:if test="${dtstudent.ptime0=='预初' }">selected</c:if>>预初</option>
+	                        		<option value="初一" <c:if test="${dtstudent.ptime0=='初一' }">selected</c:if>>初一</option>
+	                        		<option value="初二" <c:if test="${dtstudent.ptime0=='初二' }">selected</c:if>>初二</option>
+	                        		<option value="初三" <c:if test="${dtstudent.ptime0=='初三' }">selected</c:if>>初三</option>
+	                        	</select>
+	                        </td>
+	                        <td>
+	                            <input id="pname0" name="pname0" type="text" class="input-large"></td>
+	                        <td>
+	                        	<select class="span1" id="plev0" name="plev0">
+	                        		<option value="市级" <c:if test="${dtstudent.plev0=='市级' }">selected</c:if>>市级</option>
+	                        		<option value="区级" <c:if test="${dtstudent.plev0=='区级' }">selected</c:if>>区级</option>
+	                        		<option value="校级" <c:if test="${dtstudent.plev0=='校级' }">selected</c:if>>校级</option>
+	                        	</select>
+	                        </td>
+	                        <td>
+	                            <input id="pcell0" name="pcell0" type="text" class="input"></td>
+	                    </tr>
+                    </c:if>
+                    <c:if test="${dtstudent.priceslist!=null}">
+                    	<c:forEach var="price" items="${dtstudent.priceslist}">
+						<tr>
+							<td>
+	                        	<select class="span1" id="ptime${price.index}" name="ptime${price.index}">
+	                        		<option value="预初" <c:if test="${price.ptime=='预初' }">selected</c:if>>预初</option>
+	                        		<option value="初一" <c:if test="${price.ptime=='初一' }">selected</c:if>>初一</option>
+	                        		<option value="初二" <c:if test="${price.ptime=='初二' }">selected</c:if>>初二</option>
+	                        		<option value="初三" <c:if test="${price.ptime=='初三' }">selected</c:if>>初三</option>
+	                        	</select>
+	                        </td>
+	                        <td>
+	                            <input id="pname${price.index}" name="pname${price.index}" value="${price.pname}" type="text" class="input-large"></td>
+	                        <td>
+	                        	<select class="span1" id="plev${price.index}" name="plev${price.index}">
+	                        		<option value="市级" <c:if test="${price.plev=='市级' }">selected</c:if>>市级</option>
+	                        		<option value="区级" <c:if test="${price.plev=='区级' }">selected</c:if>>区级</option>
+	                        		<option value="校级" <c:if test="${price.plev=='校级' }">selected</c:if>>校级</option>
+	                        	</select>
+	                        </td>
+	                        <td>
+	                            <input id="pcell${price.index}" name="pcell${price.index}" value="${price.pcell}" type="text" class="input"></td>
+						</tr>
+					</c:forEach>
+                	</c:if>
+                </table>
 				<table>
 					<tr>
-						<td style="text-align: center;" colspan="4">初中阶段参加各类比赛获奖情况（市级及以上奖项名称、等第、获奖时间、颁奖单位）</td>
-					</tr>
-					<tr>
-						<td colspan="4"><textarea name="honors" id="honors">${dtstudent.honors}</textarea>
-						</td>
-					</tr>
-					<tr>
-						<td style="text-align: center;" colspan="4">初中阶段主要社会经历（包括社会实践、社会活动等非学科学习经历）</td>
+						<td style="text-align: center;" colspan="4">初中阶段主要社会经历<br/>（包括社会实践、社会活动、学生干部经历等非学科学习经历）</td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" colspan="4"><textarea
@@ -382,7 +460,7 @@ input {
 						</td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" colspan="4">个人自述</td>
+						<td style="text-align: center;" colspan="4">个人自述<br/>[至少包括以下内容：申请者自荐的优势分析；最近一年阅读过的课外书籍简单介绍；对自己成长影响比较大的书、人或事及其原因的介绍；做过的最让自己自豪的事或决定；最难忘的探究经历、实验操作或社会实践活动；自己对未来的展望等]</td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" colspan="4"><textarea
@@ -442,37 +520,74 @@ input {
 				}
 			});
 		});
-		var initlevel = 1;
-
+		<c:choose>
+		   <c:when test="${dtstudent.pricessize !=null}">
+		   var pricesLevel = ${dtstudent.pricessize};
+		   </c:when>		   
+		   <c:otherwise>
+		   var pricesLevel = 1;
+		   </c:otherwise>		  
+		</c:choose>
+		<c:choose>
+		   <c:when test="${dtstudent.honorssize !=null}">
+		   var honorlevel = ${dtstudent.honorssize};
+		   </c:when>		   
+		   <c:otherwise>
+		   var honorlevel = 1;
+		   </c:otherwise>		  
+		</c:choose>
 		var editor = new UE.ui.Editor();
 		//editor.render("prices");
 		var editor2 = new UE.ui.Editor();
 		editor2.render("history");
 		new UE.ui.Editor().render("reason");
-		new UE.ui.Editor().render("honors");
 		function addlevel() {
 			$("#tblLevel")
-					.append(
-							"<tr><td>"
-+"<select class=\"span2\" id=\"plev"+initlevel+"\" name=\"plev"+initlevel+"\">"
-+"<option value=\"市级\">市级</option>"
-+"<option value=\"区级\">区级</option>"
-+"<option value=\"校级\">校级</option>"
-+"</select></td>"
-+"<td><input id=\"pname"+initlevel+"\" name=\"pname"+initlevel+"\" type=\"text\" class=\"input-xxlarge\">"
-+"</td>"
-+"</tr>");
+					.append("<tr><td>"
+							+"<select class=\"span2\" id=\"hlev"+honorlevel+"\" name=\"hlev"+honorlevel+"\">"
+							+"<option value=\"市级\">市级</option>"
+							+"<option value=\"区级\">区级</option>"
+							+"<option value=\"校级\">校级</option>"
+							+"</select></td>"
+							+"<td><input id=\"hname"+honorlevel+"\" name=\"hname"+honorlevel+"\" type=\"text\" class=\"input-xxlarge\">"
+							+"</td>"
+							+"</tr>");
+			honorlevel++;
 		}
 
+		function addhonor() {
+			 $("#tblhonor").append("<tr><td>"
+					+"<select class=\"span1\" id=\"ptime"+pricesLevel+"\" name=\"ptime"+pricesLevel+"\">"
+					+"<option value=\"预初\">预初</option>"
+					+"<option value=\"初一\">初一</option>"
+					+"<option value=\"初二\">初二</option>"
+					+"<option value=\"初三\">初三</option>"
+					+"</select>"
+					+"</td>"
+					+"<td>"
+					+"<input id=\"pname"+pricesLevel+"\" name=\"pname"+pricesLevel+"\" type=\"text\" class=\"input-large\"></td>"
+					+"<td>"
+					+"<select class=\"span1\" id=\"plev"+pricesLevel+"\" name=\"plev"+pricesLevel+"\">"
+					+"<option value=\"市级\">市级</option>"
+					+"<option value=\"区级\">区级</option>"
+					+"<option value=\"校级\">校级</option>"
+					+"</select>"
+					+"</td>"
+					+"<td>"
+					+"<input id=\"pcell"+pricesLevel+"\" name=\"pcell"+pricesLevel+"\" type=\"text\" class=\"input\"></td>"
+					+"</tr>");
+			 pricesLevel++;
+		}
+		
 		function doPrint() { 
-bdhtml=window.document.body.innerHTML; 
-sprnstr="<!--startprint-->"; 
-eprnstr="<!--endprint-->"; 
-prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17); 
-prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); 
-window.document.body.innerHTML=prnhtml; 
-window.print(); 
-}
+			bdhtml=window.document.body.innerHTML; 
+			sprnstr="<!--startprint-->"; 
+			eprnstr="<!--endprint-->"; 
+			prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17); 
+			prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); 
+			window.document.body.innerHTML=prnhtml; 
+			window.print(); 
+		}
 	</script>
 </body>
 </html>
