@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -12,11 +11,11 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<!-- Le styles -->
+<!-- Author: William Wang -->
+<!--  www.zhiweiwang.com  -->
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -58,8 +57,7 @@ table {
 			<a href="logout" class="pull-right">注销</a>
 			<a href="javascript:;" onClick="doPrint()" class="btn pull-right print-btn">打印</a> 
 		</div>
-
-			
+		
 		<div class="wrapper">
 					<!-- form begin -->
 			<!--startprint-->			
@@ -68,7 +66,7 @@ table {
 					<tr>
 						<td>姓名</td>
 						<td><input type="text" id="name" name="name"
-							value="${dtstudent.name}" placeholder="请输入姓名" class="input">
+							value="${dtstudent.name}" placeholder="请输入姓名" class="required input">
 						</td>
 						<td>性别</td>
 						<td><select id="sex" style="width:50px" name="sex" required>
@@ -79,7 +77,7 @@ table {
 						</select></td>
 						<td>政治面貌</td>
 						<td><input type="text" id="policy" name="policy"
-							placeholder="请输入" class="input-small" value="${dtstudent.policy}">
+							placeholder="请输入" class="required input-small" value="${dtstudent.policy}">
 						</td>
 						<td rowspan="5" style="width:110px;">
 							<iframe src="pic" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">	</iframe>
@@ -88,17 +86,16 @@ table {
 					<tr>
 						<td>毕业学校</td>
 						<td><input type="text" id="gradeschool" name="gradeschool"
-							value="${dtstudent.gradeschool}" placeholder="请输入" class="input">
+							value="${dtstudent.gradeschool}" placeholder="请输入" class="required input">
 						</td>
 						<td>毕业区县</td>
 						<td><input type="text" id="gradesection" name="gradesection"
 							value="${dtstudent.gradesection}" placeholder="请输入"
-							class="input-small">
+							class="required input-small">
 						</td>
-
 						<td>身体状况</td>
 						<td><input type="text" id="healthy" name="healthy"
-							placeholder="请输入" class="input-small" value="${dtstudent.city}">
+							placeholder="请输入" class="required input-small" value="${dtstudent.city}">
 						</td>
 					</tr>
 					<tr>
@@ -137,13 +134,13 @@ table {
 					<tr>
 						<td>中考报名号</td>
 						<td colspan="5"><input type="text" id="number" name="number"
-							placeholder="请输入" class="input" value="${dtstudent.number}">
+							placeholder="请输入" class="required input" value="${dtstudent.number}">
 						</td>
 					</tr>
 					<tr>
 						<td>户口所在地</td>
 						<td colspan="5"><input id="city" name="city" value="${dtstudent.city}"
-							type="text" class="input">
+							type="text" class="required input">
 						</td>
 					</tr>
 					
@@ -153,13 +150,13 @@ table {
 					<tr>
 						<td colspan="2">家庭住址</td>
 						<td colspan="5"><input id="address" name="address" type="text"
-							value="${dtstudent.address}" class="input-xxlarge">
+							value="${dtstudent.address}" class="required input-xxlarge">
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">邮政编码</td>
 						<td><input id="addcode" name="addcode" type="text"
-							value="${dtstudent.addcode}" class="input-large"
+							value="${dtstudent.addcode}" class="required input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="6">
@@ -167,7 +164,7 @@ table {
 						<td rowspan="2">联系方式</td>
 						<td colspan="1">电话</td>
 						<td ><input id="phone" name="phone" type="text"
-							value="${dtstudent.phone}" class="input-large"
+							value="${dtstudent.phone}" class="required input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="21">
@@ -176,11 +173,11 @@ table {
 					<tr>
 						<td colspan="2">身份证号码</td>
 						<td><input id="pid" name="pid" type="text"
-							value="${dtstudent.pid}" class="input-large" maxlength="18">
+							value="${dtstudent.pid}" class="required input-large" maxlength="18">
 						</td>
 						<td>手机</td>
 						<td><input id="cell" name="cell" type="text"
-							value="${dtstudent.cell}" class="input-large"
+							value="${dtstudent.cell}" class="required input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="21">
@@ -199,16 +196,16 @@ table {
 					</tr>
 					<tr>
 						<td><input id="daddy" name="daddy" type="text"
-							value="${dtstudent.daddy}" class="input-small">
+							value="${dtstudent.daddy}" class="required input-small">
 						</td>
 						<td><input id="daddyname" name="daddyname" type="text"
-							value="${dtstudent.daddyname}" class="input-small">
+							value="${dtstudent.daddyname}" class="required input-small">
 						</td>
 						<td><input id="daddyjob" name="daddyjob" type="text"
-							value="${dtstudent.daddyjob}" class="input-xlarge">
+							value="${dtstudent.daddyjob}" class="required input-xlarge">
 						</td>
 						<td><input id="daddyphone" name="daddyphone" type="text"
-							value="${dtstudent.daddyphone}" class="input-large"
+							value="${dtstudent.daddyphone}" class="required input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="21">
@@ -216,16 +213,16 @@ table {
 					</tr>
 					<tr>
 						<td><input id="mummy" name="mummy" type="text"
-							value="${dtstudent.mummy}" class="input-small">
+							value="${dtstudent.mummy}" class="required input-small">
 						</td>
 						<td><input id="mummyname" name="mummyname" type="text"
-							value="${dtstudent.mummyname}" class="input-small">
+							value="${dtstudent.mummyname}" class="required input-small">
 						</td>
 						<td><input id="mummyjob" name="mummyjob" type="text"
-							value="${dtstudent.mummyjob}" class="input-xlarge">
+							value="${dtstudent.mummyjob}" class="required input-xlarge">
 						</td>
 						<td><input id="mummyphone" name="mummyphone" type="text"
-							value="${dtstudent.mummyphone}" class="input-large"
+							value="${dtstudent.mummyphone}" class="required input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="21">
@@ -249,43 +246,43 @@ table {
 					<tr>
 						<td>第一次</td>
 						<td><input id="yuwem1" name="yuwem1" type="text"
-							value="${dtstudent.yuwem1}" class="input-xsmall"
+							value="${dtstudent.yuwem1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="shuxue1" name="shuxue1" type="text"
-							value="${dtstudent.shuxue1}" class="input-xsmall"
+							value="${dtstudent.shuxue1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="yingyu1" name="yingyu1" type="text"
-							value="${dtstudent.yingyu1}" class="input-xsmall"
+							value="${dtstudent.yingyu1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="wuli1" name="wuli1" type="text"
-							value="${dtstudent.wuli1}" class="input-xsmall"
+							value="${dtstudent.wuli1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="huaxue1" name="huaxue1" type="text"
-							value="${dtstudent.huaxue1}" class="input-xsmall"
+							value="${dtstudent.huaxue1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="zongfen1" name="zongfen1" type="text"
-							value="${dtstudent.zongfen1}" class="input-xsmall"
+							value="${dtstudent.zongfen1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="paimin1" name="paimin1" type="text"
-							value="${dtstudent.paimin1}" class="input-small"
+							value="${dtstudent.paimin1}" class="required input-small"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
@@ -294,43 +291,43 @@ table {
 					<tr>
 						<td>第二次</td>
 						<td><input id="yuwem2" name="yuwem2" type="text"
-							value="${dtstudent.yuwem2}" class="input-xsmall"
+							value="${dtstudent.yuwem2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="shuxue2" name="shuxue2" type="text"
-							value="${dtstudent.shuxue2}" class="input-xsmall"
+							value="${dtstudent.shuxue2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="yingyu2" name="yingyu2" type="text"
-							value="${dtstudent.yingyu2}" class="input-xsmall"
+							value="${dtstudent.yingyu2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="wuli2" name="wuli2" type="text"
-							value="${dtstudent.wuli2}" class="input-xsmall"
+							value="${dtstudent.wuli2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="huaxue2" name="huaxue2" type="text"
-							value="${dtstudent.huaxue2}" class="input-xsmall"
+							value="${dtstudent.huaxue2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="zongfen2" name="zongfen2" type="text"
-							value="${dtstudent.zongfen2}" class="input-xsmall"
+							value="${dtstudent.zongfen2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
 						<td><input id="paimin2" name="paimin2" type="text"
-							value="${dtstudent.paimin2}" class="input-small"
+							value="${dtstudent.paimin2}" class="required input-small"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">

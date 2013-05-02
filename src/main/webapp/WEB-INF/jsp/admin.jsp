@@ -12,11 +12,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<!-- Le styles -->
 <link href="${pageContext.request.contextPath}/assets/css/bootstrap.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet">
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -43,15 +41,16 @@
 				<a  class="alert"  href="?sts=sts_wait">待定：${totalcount.sts_wait}</a>
 				<a  class="alert alert-error"  href="?sts=sts_reject">拒绝：${totalcount.sts_reject}</a>
 				<span class="pull-right">
-							<c:if test="${query_conf.sts!=null}">
-								<a href="admin?sts=clear">全部</a>
-							</c:if>
+					<c:if test="${query_conf.sts!=null}">
+						<a href="admin?sts=clear">全部</a>
+					</c:if>
 					<c:if test="${query_conf.start > 0}">
 						<a href="admin?start=${query_conf.perviousstart}&limit=${query_conf.limit}">上一页</a>
 					</c:if>&nbsp;
 					<c:if test="${query_conf.listsize >= query_conf.limit}">
 						<a href="admin?start=${query_conf.nextstart}&limit=${query_conf.limit}">下一页</a>
 					</c:if>
+					<a href="search" class="btn">精确搜索</a>
 				</span>
 			</div>
 			<table class="table table-hover">

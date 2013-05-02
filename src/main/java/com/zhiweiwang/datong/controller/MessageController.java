@@ -32,15 +32,4 @@ public class MessageController {
 		return msg;
     }
 
-    @RequestMapping(value="/getUser", method = RequestMethod.GET)
-    @ResponseBody
-    public String getUser(@RequestParam String username)  {
-    	logger.debug("try finding user "+username);
-    	User user = userMapper.get_user(username);
-    	if(user!=null){
-    		return "true";
-    	}
-    	return "false";
-    }
-    
 }

@@ -14,7 +14,7 @@
 			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/release</url>
 		</repository>
-	
+
 		<repository>
 			<id>com.springsource.repository.bundles.external</id>
 			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
@@ -62,6 +62,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.4-701.jdbc4</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8</version>
@@ -95,9 +100,9 @@
 			<version>1.8.4</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>com.springsource.org.apache.commons.fileupload</artifactId>
-		    <version>1.2.0</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.fileupload</artifactId>
+			<version>1.2.0</version>
 		</dependency>
 	</dependencies>
 	<profiles>
@@ -127,10 +132,10 @@
 	</profiles>
 	<build>
 		<plugins>
-<!--			<plugin>-->
-<!--				<groupId>org.eclipse.jetty</groupId>-->
-<!--				<artifactId>jetty-maven-plugin</artifactId>-->
-<!--			</plugin>-->
+			<!-- <plugin> -->
+			<!-- <groupId>org.eclipse.jetty</groupId> -->
+			<!-- <artifactId>jetty-maven-plugin</artifactId> -->
+			<!-- </plugin> -->
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

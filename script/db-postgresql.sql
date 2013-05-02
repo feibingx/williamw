@@ -2,11 +2,13 @@ create database apply character set utf8;
 
 use apply;
 
+create sequence id_seq increment 1 minvalue 1 maxvalue 9223372036854775807  cache 1;
+
 drop table IF EXISTS dt_users;
 drop table IF EXISTS dt_students;
 
-create table apply.dt_users(
-	id int NOT NULL AUTO_INCREMENT,
+create table dt_users(
+	id int not null primary key default nextval('id_seq'),
 	username varchar(32) unique not null,
 	passwd varchar(32) not null,
 	email varchar(120),
@@ -16,7 +18,7 @@ create table apply.dt_users(
 );
 
 
-CREATE TABLE apply.dt_students (
+CREATE TABLE dt_students (
    id int not null unique,
    username varchar(32) unique not null,
    name varchar(32),

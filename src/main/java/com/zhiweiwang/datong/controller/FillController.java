@@ -2,6 +2,7 @@ package com.zhiweiwang.datong.controller;
 
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTMessage;
+import com.zhiweiwang.datong.DTUtils;
 import com.zhiweiwang.datong.mapper.StudentMapper;
 import com.zhiweiwang.datong.model.User;
 
@@ -39,7 +40,6 @@ public class FillController {
 	@Autowired
 	protected StudentMapper studentMapper;
 	
-	ObjectMapper objMapper = new ObjectMapper();
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/fillin", method = RequestMethod.POST)
@@ -56,8 +56,8 @@ public class FillController {
             logger.info("params:  {} - {}",new Object[]{key, student});
         }
         
-      	makeMap2Json(map, HONOR_NAMES, "honors");
-      	makeMap2Json(map, PRICE_NAMES, "prices");
+      	DTUtils.makeMap2Json(map, HONOR_NAMES, "honors");
+      	DTUtils.makeMap2Json(map, PRICE_NAMES, "prices");
         map.put(DTContants.DT_ID, user.getId());
         map.put(DTContants.DT_USERNAME, user.getUsername());
         
@@ -88,76 +88,18 @@ public class FillController {
 	public Map<?,?> get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
 		logger.info("user:  {} ",user.getId());
 		Map model = new HashMap();
-        model.putAll(studentMapper.getStudent(user.getId()));
+		Map<?, ?> result = studentMapper.getStudent(user.getId());
+		if(result != null)
+			model.putAll(result);
         
-        makeJson2Map(model, "honors");
-        makeJson2Map(model, "prices");
+        DTUtils.makeJson2Map(model, "honors");
+        DTUtils.makeJson2Map(model, "prices");
         return model;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void makeMap2Json(Map map, String[] names, String mapname) {
-		
-		if(map.get(names[0]+"0") == null){
-			return;
-		}
-		
-		// make list
-		int num=0;
-		Object key = "";
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-		do{
-			Map<String, Object> value = new HashMap<String, Object>();
-
-			for(String name : names)
-				value.put(name, map.get(name+num).toString());
-			value.put("index", num);
-			list.add(value);
-			num++;
-			key = map.get(names[0]+num);
-		}while(key != null && key.toString().length()>0);
-		
-		// transform and put into map
-		try {
-			String string = objMapper.writeValueAsString(list);
-			logger.debug(string);
-			map.put(mapname, string);
-		} catch (JsonGenerationException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
+	
 
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void makeJson2Map(Map model, String name){
-		if(model.get(name) == null )
-			return;
-		
-		String text = model.get(name).toString();
-		
-		if(text.length()<1)
-			return;
-		
-		try {
-			List<HashMap<String,Object>> list = (List<HashMap<String,Object>>)objMapper.readValue(text, new TypeReference<List<HashMap<String,Object>>>() {});
-			model.put(name+"list", list);
-			if(list!=null && list.size()>0)
-			model.put(name+"size", list.size());
-			
-			logger.debug("real model  {}",model);
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	
 	private static final String[] PRICE_NAMES = {"pname","plev","pcell","ptime"};

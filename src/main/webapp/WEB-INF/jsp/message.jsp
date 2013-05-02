@@ -39,14 +39,17 @@
 		</div>
 	</div>
 		<div class="wrapper container">
-			<div class="message">
+			<div class="hero-unit">
 				<c:if test="${errmessage!=null && fn:length(errmessage)>0}">
 					<div class="help-inline error">
 						<fmt:message key="${errmessage}" />
 					</div>
 				</c:if>
 			</div>
-			<div><a href="fillin">返回</a></div>
+			<div>	
+					<c:if test="${fn:startsWith(errmessage, \"search_\")}"><a href="admin">返回</a></c:if>
+					<c:if test="${fn:startsWith(errmessage, \"search\")== false}"><a href="fillin">返回</a>
+					</c:if></div>
 		</div>
 		<script src="assets/js/jquery.js"></script>
 </html>

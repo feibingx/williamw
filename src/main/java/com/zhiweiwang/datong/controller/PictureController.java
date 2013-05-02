@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -87,6 +88,20 @@ public class PictureController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/pic/{nid}", method = GET)
+	public ModelAndView getPica(@PathVariable("nid") int id) {
+		ModelAndView mav = new ModelAndView("pic");
+		Map<?, ?> student = studentMapper.getStudent(id);
+
+		if(student != null){
+			Object img = student.get(DTContants.IMG_PATH);
+			if(img != null){
+				mav.getModel().put(DTContants.IMG_PATH, img.toString());
+			}
+		}
+		return mav;
+		
+	}
 
 	private boolean fileIsAllowed(String filetype) {
 		

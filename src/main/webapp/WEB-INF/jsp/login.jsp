@@ -27,13 +27,15 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-    .wrapper {margin:auto; height: 160px; background: #FFF; width: 400px;}
+    .wrapper {margin:auto; height: 160px; background: #FFF; width: 400px; }
+    .page{margin: 0 auto; max-width: 800px; height: 100%; min-height:100%; _height:100%; margin-bottom:-55px;}
     .error {color: #B94A48;}
     .control-label{ width: 90px !important;}
     .controls {margin-left: 100px !important;;}
     .errmsg{ margin-left: 100px;}
     .hidden-link { color: white; }
     .hidden-link:hover { color: #EDEDED; }
+    html, body{height:100%;}
     </style>
   </head>
 <body>
@@ -78,11 +80,16 @@
             <!-- login form end-->
 <!--      </div>-->
     </div>
-
+    <div class="footer-span"></div>
 </div>
-<footer>
+<!-- Footer ================================================== -->
+<footer class="footer"  valign="bottom">
+    <div class="container">
+        <p class="pull-right">本站推荐使用Firefox、Chrome浏览</p>
+        <p>Copyrigth ©2013 大同高级中学</p>
+    </div>
+ </footer>
 
-</footer>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

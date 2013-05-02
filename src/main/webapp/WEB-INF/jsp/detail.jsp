@@ -29,7 +29,7 @@
 
 <style type="text/css">
 .wrapper tr td {
-	padding: 1px 2px;
+	padding: 5px;
 	margin: 2px;
 	text-align: left;
 	border: solid 1px #888888 !important;
@@ -80,12 +80,15 @@
 	-moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0, 0, 0, .1);
 	box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0, 0, 0, .1);
 	filter: progid : DXImageTransform.Microsoft.gradient ( enabled = false );
+	padding: 2px;
 }
 .model-size{
 	width: 320px;
 	margin:-200px 0 0 -160px;
 }
-
+.wrapper{
+	padding: 20px;
+}
 </style>
 </head>
 <body>
@@ -105,163 +108,219 @@
 
 	</div>
 	<div class="page">
-		<!-- 		<div class="logo"> -->
-		<!-- 			<img class="pull-left" src="assets/img/logo.png"> -->
-		<!-- 			<div class="pull-left title">自主招生系统</div> -->
-		<!-- 		</div> -->
-
 		<div class="wrapper">
-			<!-- form begin -->
-			<!--startprint-->
 			<div class="pull-right">当前状态：<fmt:message key="${dtstudent.sts}" />
 					审阅人: ${dtstudent.role} &nbsp;
 					<c:if test="${dtstudent.sts == 'sts_pass'}">
 						 面试时间：${dtstudent.interview}
 					</c:if>
-			</div>
+			</div>			
+			<!--startprint-->
 			<table>
-				<tr>
-					<td style="width:15%">姓名</td>
-					<td class="inputfield">${dtstudent.name}</td>
-					<td style="width:15%">性别</td>
-					<td class="inputfield">${dtstudent.sex}</td>
-					<td style="width:15%">政治面貌</td>
-					<td class="inputfield">${dtstudent.policy}</td>
-				</tr>
-				<tr>
-					<td>毕业学校</td>
-					<td class="inputfield">${dtstudent.gradeschool}</td>
-					<td>毕业区县</td>
-					<td class="inputfield">${dtstudent.gradesection}</td>
-					<td>中考报名号</td>
-					<td class="inputfield">${dtstudent.number}</td>
-				</tr>
-				<tr>
-					<td>出生年月</td>
-					<td colspan="3" class="inputfield">${dtstudent.birthyear}
-						年${dtstudent.birthmonth }月 ${dtstudent.birthday}日</td>
-					<td>身体状况</td>
-					<td class="inputfield">${dtstudent.city}</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td style="width:120px;">户口所在地</td>
+					<tr>
+						<td>姓名</td>
+						<td>${dtstudent.name}</td>
+						<td>性别</td>
+						<td> ${dtstudent.sex} </td>
+						<td>政治面貌</td>
+						<td>${dtstudent.policy}</td>
+						<td rowspan="5" style="width:110px;">
+							<iframe src="../pic/${dtstudent.id}" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+						</td>
+					</tr>
+					<tr>
+						<td>毕业学校</td>
+						<td>${dtstudent.gradeschool}</td>
+						<td>毕业区县</td>
+						<td>${dtstudent.gradesection}</td>
+
+						<td>身体状况</td>
+						<td>${dtstudent.city}</td>
+					</tr>
+					<tr>
+						<td>出生年月</td>
+						<td colspan="5">${dtstudent.birthyear}年${dtstudent.birthmonth}月${dtstudent.birthday}日</td>
+					</tr>
+					<tr>
+						<td>中考报名号</td>
+						<td colspan="5">${dtstudent.number}</td>
+					</tr>
+					<tr>
+						<td>户口所在地</td>
+						<td colspan="5">${dtstudent.city}</td>
+					</tr>
 					
-					<td class="inputfield">${dtstudent.city}</td>
-				</tr>
-				<tr>
-					<td>家庭住址</td>
-					<td class="inputfield">${dtstudent.address}</td>
-				</tr>
-				<tr>
-					<td>邮政编码</td>
-					<td class="inputfield">${dtstudent.addcode}</td>
-				</tr>
-				<tr>
-					<td>联系电话</td>
-					<td class="inputfield">${dtstudent.phone}</td>
-				</tr>
-				<tr>
-					<td>手机</td>
-					<td class="inputfield">${dtstudent.cell}</td>
-				</tr>
-				<tr>
-					<td>身份证号码</td>
-					<td class="inputfield">${dtstudent.pid}</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td style="text-align: center;" colspan="4">家庭成员和主要社会关系</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">称谓</td>
-					<td style="text-align: center;">姓名</td>
-					<td style="text-align: center;">工作单位</td>
-					<td style="text-align: center;">联系电话</td>
-				</tr>
-				<tr>
-					<td class="inputfield">${dtstudent.daddy}</td>
-					<td class="inputfield">${dtstudent.daddyname}</td>
-					<td class="inputfield">${dtstudent.daddyjob}</td>
-					<td class="inputfield">${dtstudent.daddyphone}</td>
-				</tr>
-				<tr>
-					<td class="inputfield">${dtstudent.mummy}</td>
-					<td class="inputfield">${dtstudent.mummyname}</td>
-					<td class="inputfield">${dtstudent.mummyjob}</td>
-					<td class="inputfield">${dtstudent.mummyphone}</td>
-				</tr>
-			</table>
-			<table style="align: center;">
-				<tr>
-					<td style="text-align: center;" colspan="8">区统考成绩</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">&nbsp;</td>
-					<td style="text-align: center;">语文</td>
-					<td style="text-align: center;">数学</td>
-					<td style="text-align: center;">英语</td>
-					<td style="text-align: center;">物理</td>
-					<td style="text-align: center;">化学</td>
-					<td style="text-align: center;">总分</td>
-					<td style="text-align: center;">定位分（或区排名）</td>
-				</tr>
-				<tr>
-					<td>第一次</td>
-					<td class="inputfield">${dtstudent.yuwem1}</td>
-					<td class="inputfield">${dtstudent.shuxue1}</td>
-					<td class="inputfield">${dtstudent.yingyu1}</td>
-					<td class="inputfield">${dtstudent.wuli1}</td>
-					<td class="inputfield">${dtstudent.huaxue1}</td>
-					<td class="inputfield">${dtstudent.zongfen1}</td>
-					<td class="inputfield">${dtstudent.paimin1}</td>
-				</tr>
-				<tr>
-					<td>第二次</td>
-					<td class="inputfield">${dtstudent.yuwem2}</td>
-					<td class="inputfield">${dtstudent.shuxue2}</td>
-					<td class="inputfield">${dtstudent.yingyu2}</td>
-					<td class="inputfield">${dtstudent.wuli2}</td>
-					<td class="inputfield">${dtstudent.huaxue2}</td>
-					<td class="inputfield">${dtstudent.zongfen2}</td>
-					<td class="inputfield">${dtstudent.paimin2}</td>
-				</tr>
-			</table>
-			<table id="tblLevel">
-				<tr>
-					<td style="text-align: center;" colspan="2">初中阶段主要获得的荣誉称号</td>
-				</tr>
-				<tr>
-					<td style="width:120px;">级别</td>
-					<td>名称</td>
-				</tr>
-				<tr>
-					<td class="inputfield">${plev0}</td>
-					<td class="inputfield">${pname0}</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td style="text-align: center;" colspan="4">初中阶段参加各类比赛获奖情况（市级及以上奖项名称、等第、获奖时间、颁奖单位）</td>
-				</tr>
-				<tr>
-					<td colspan="4" class="inputfield">${dtstudent.honors}</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;" colspan="4">初中阶段主要社会经历（包括社会实践、社会活动等非学科学习经历）</td>
-				</tr>
-				<tr>
-					<td colspan="4" class="inputfield">${dtstudent.history}</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;" colspan="4">申请理由</td>
-				</tr>
-				<tr>
-					<td class="inputfield" colspan="4">${dtstudent.reason}</td>
-				</tr>
-			</table>
+				
+				</table>
+				<table>
+					<tr>
+						<td style="width:15%">家庭住址</td>
+						<td colspan="5">${dtstudent.address}</td>
+					</tr>
+					<tr>
+						<td>邮政编码</td>
+						<td style="width:33%">${dtstudent.addcode}</td>
+						<td rowspan="2"  style="width:10%">联系方式</td>
+						<td colspan="1"  style="width:7%">电话</td>
+						<td >${dtstudent.phone}</td>
+					</tr>
+					<tr>
+						<td>身份证号码</td>
+						<td>${dtstudent.pid}</td>
+						<td>手机</td>
+						<td>${dtstudent.cell}</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td style="text-align: center;" colspan="4">家庭成员和主要社会关系</td>
+					</tr>
+					<tr>
+						<td style="text-align: center; width:15%">称谓</td>
+						<td style="text-align: center; width:20%">姓名</td>
+						<td style="text-align: center; width:50%">工作单位</td>
+						<td style="text-align: center; width:15%">联系电话</td>
+					</tr>
+					<tr>
+						<td>${dtstudent.daddy}</td>
+						<td>${dtstudent.daddyname}</td>
+						<td>${dtstudent.daddyjob}</td>
+						<td>${dtstudent.daddyphone}</td>
+					</tr>
+					<tr>
+						<td>${dtstudent.mummy}</td>
+						<td>${dtstudent.mummyname}</td>
+						<td>${dtstudent.mummyjob}</td>
+						<td>${dtstudent.mummyphone}</td>
+					</tr>
+				</table>
+				<table style="align: center;text-align: center;">
+					<tr>
+						<td style="text-align: center;" colspan="8">区统考成绩</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">&nbsp;</td>
+						<td style="text-align: center;">语文</td>
+						<td style="text-align: center;">数学</td>
+						<td style="text-align: center;">英语</td>
+						<td style="text-align: center;">物理</td>
+						<td style="text-align: center;">化学</td>
+						<td style="text-align: center;">总分</td>
+						<td style="text-align: center;">区定位分</td>
+					</tr>
+					<tr >
+						<td>第一次</td>
+						<td style="text-align: center;">${dtstudent.yuwem1}
+						</td>
+						<td style="text-align: center;">${dtstudent.shuxue1}
+						</td>
+						<td style="text-align: center;">${dtstudent.yingyu1}
+						</td>
+						<td style="text-align: center;">${dtstudent.wuli1}
+						</td>
+						<td style="text-align: center;">${dtstudent.huaxue1}
+						</td>
+						<td style="text-align: center;">${dtstudent.zongfen1}
+						</td>
+						<td style="text-align: center;">${dtstudent.paimin1}
+						</td>
+					</tr>
+					<tr>
+						<td>第二次</td>
+						<td  style="text-align: center;">${dtstudent.yuwem2}
+						</td>
+						<td  style="text-align: center;">${dtstudent.shuxue2}
+						</td>
+						<td  style="text-align: center;">${dtstudent.yingyu2}
+						</td>
+						<td  style="text-align: center;">${dtstudent.wuli2}
+						</td>
+						<td  style="text-align: center;">${dtstudent.huaxue2}
+						</td>
+						<td  style="text-align: center;">${dtstudent.zongfen2}
+						</td>
+						<td  style="text-align: center;">${dtstudent.paimin2}
+						</td>
+					</tr>
+				</table>
+				<table id="tblLevel">
+					<tr>
+						<td style="text-align: center;" colspan="2">
+							初中阶段获得的主要荣誉称号</td>
+					</tr>
+					<tr>
+						<td style="width:15%">级别</td>
+						<td>名称</td>
+					</tr>
+				<c:if test="${dtstudent.honorslist==null}">
+					<tr>
+						<td>
+							${dtstudent.hlev0}
+						</td>
+						<td>${dtstudent.hname0}
+						</td>
+					</tr>
+				</c:if>
+				<c:if test="${dtstudent.honorslist!=null}">
+					<c:forEach var="honor" items="${dtstudent.honorslist}">
+						<tr>
+							<td>${honor.hlev}</td>
+							<td>${honor.hname}</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+				</table>
+				<table id="tblhonor">
+                    <tr>
+                        <td style="text-align: center;" colspan="4">
+                            初中阶段参加各类比赛获奖情况
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td style="width:10%">获奖时间</td>
+                        <td style="width:45%">名称</td>
+                        <td style="width:10%">级别</td>
+                        <td>颁奖单位</td>
+                    </tr>
+                    <c:if test="${dtstudent.priceslist==null}">
+	                    <tr>
+	                    	<td>&nbsp;</td>
+	                    	<td>&nbsp;</td>
+	                    	<td>&nbsp;</td>
+	                    	<td>&nbsp;</td>
+	                    </tr>
+                    </c:if>
+                    <c:if test="${dtstudent.priceslist!=null}">
+                    	<c:forEach var="price" items="${dtstudent.priceslist}">
+						<tr>
+							<td>${price.ptime}
+	                        </td>
+	                        <td>
+	                            ${price.pname}
+	                        <td>
+	                        	${price.plev}
+	                        </td>
+	                        <td>
+	                            ${price.pcell}</td>
+						</tr>
+					</c:forEach>
+                	</c:if>
+                </table>
+				<table>
+					<tr>
+						<td style="text-align: center;">初中阶段主要社会经历<br/>（包括社会实践、社会活动、学生干部经历等非学科学习经历）</td>
+					</tr>
+					<tr>
+						<td>${dtstudent.history}
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">个人自述</td>
+					</tr>
+					<tr>
+						<td>${dtstudent.reason}</td>
+					</tr>
+				</table>
 			<!--endprint-->
 			<!-- form end-->
 		</div>

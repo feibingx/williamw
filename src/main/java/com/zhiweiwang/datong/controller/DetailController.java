@@ -2,6 +2,7 @@ package com.zhiweiwang.datong.controller;
 
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTMessage;
+import com.zhiweiwang.datong.DTUtils;
 import com.zhiweiwang.datong.MD5;
 import com.zhiweiwang.datong.mapper.StudentMapper;
 import com.zhiweiwang.datong.mapper.UserMapper;
@@ -77,6 +78,10 @@ public class DetailController {
 		logger.info("user:  {} ", id);
 		Map<?, ?> student = studentMapper.getStudent(id);
 		session.setAttribute(DTContants.STUDENT_ID_IN_SESSION, id);
+		
+        DTUtils.makeJson2Map(student, "honors");
+        DTUtils.makeJson2Map(student, "prices");
+		
 		return new ModelAndView("detail", DTContants.DT_STUDENT, student);
 	}
 

@@ -61,8 +61,12 @@ public class AdminController {
 				intlimit = (Integer)map.get("limit");
 
 		}
+		try{
 		if (start != null)
 			intstart = Integer.parseInt(start);
+		}catch(NumberFormatException e){
+			intstart = 0;
+		}
 		map.put("nextstart", intstart+intlimit);
 		map.put("start", intstart);		
 
