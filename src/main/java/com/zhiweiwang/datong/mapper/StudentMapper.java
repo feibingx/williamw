@@ -9,8 +9,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.zhiweiwang.datong.model.User;
-
 public interface StudentMapper {
 
 	@Insert("insert into dt_students(id,username,name,pid,sex,policy,birthyear,birthmonth,birthday,healthy,city,address,addcode,phone,cell,gradeschool,gradesection,number,daddy,daddyname,daddyjob,daddyphone,mummy,mummyname,mummyjob,mummyphone,prices,history,reason,yuwem1,yuwem2,shuxue1,shuxue2,yingyu1,yingyu2,wuli1,wuli2,huaxue1,huaxue2,zongfen1,zongfen2,paimin1,paimin2,imgpath,honors) values(#{id},#{username},#{name},#{pid},#{sex},#{policy},#{birthyear},#{birthmonth},#{birthday},#{healthy},#{city},#{address},#{addcode},#{phone},#{cell},#{gradeschool},#{gradesection},#{number},#{daddy},#{daddyname},#{daddyjob},#{daddyphone},#{mummy},#{mummyname},#{mummyjob},#{mummyphone},#{prices},#{history},#{reason},#{yuwem1},#{yuwem2},#{shuxue1},#{shuxue2},#{yingyu1},#{yingyu2},#{wuli1},#{wuli2},#{huaxue1},#{huaxue2},#{zongfen1},#{zongfen2},#{paimin1},#{paimin2},#{imgpath},#{honors})")

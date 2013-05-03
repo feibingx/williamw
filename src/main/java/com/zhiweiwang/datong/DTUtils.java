@@ -1,6 +1,8 @@
 package com.zhiweiwang.datong;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +23,32 @@ public class DTUtils {
 	public static boolean regexMatches(String str) {
 		return pattern.matcher(str).matches();
 	}
+
+	public static String md5s(String plainText) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(plainText.getBytes());
+			byte b[] = md.digest();
+
+			int i;
+
+			StringBuffer buf = new StringBuffer("");
+			for (int offset = 0; offset < b.length; offset++) {
+				i = b[offset];
+				if (i < 0)
+					i += 256;
+				if (i < 16)
+					buf.append("0");
+				buf.append(Integer.toHexString(i));
+			}
+			return buf.toString();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void makeJson2Map(Map model, String name) {

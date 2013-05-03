@@ -3,15 +3,12 @@ import com.zhiweiwang.datong.mapper.StudentMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,10 +33,8 @@ public class AdminController {
 
     @Autowired
     private StudentMapper studentMapper;
-
-    @Autowired
-    private ReloadableResourceBundleMessageSource message;
     
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/admin", method = GET)
 	public /*List<?>*/ ModelAndView get(@RequestParam(required = false) String start,@RequestParam(required = false) String limit,@RequestParam(required = false) String sts,HttpSession session) {
 		int intstart = 0, intlimit = LINES_PER_PAGE;

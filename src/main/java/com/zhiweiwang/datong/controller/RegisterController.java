@@ -1,8 +1,5 @@
 package com.zhiweiwang.datong.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTMessage;
-import com.zhiweiwang.datong.MD5;
+import com.zhiweiwang.datong.DTUtils;
 import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.User;
 
@@ -44,7 +40,7 @@ public class RegisterController {
         	  mav.setViewName("redirect:/message");
           }
           else{
-	          String password = MD5.md5s(user.getPasswd());
+	          String password = DTUtils.md5s(user.getPasswd());
 	          logger.debug(user.getUsername());
 	          logger.debug(password);
 	          

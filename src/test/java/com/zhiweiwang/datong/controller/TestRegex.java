@@ -1,6 +1,5 @@
 package com.zhiweiwang.datong.controller;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TestRegex {

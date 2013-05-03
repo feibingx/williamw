@@ -308,7 +308,7 @@
                 </table>
 				<table>
 					<tr>
-						<td style="text-align: center;">初中阶段主要社会经历<br/>（包括社会实践、社会活动、学生干部经历等非学科学习经历）</td>
+						<td style="text-align: center;">初中阶段主要社会经历</td>
 					</tr>
 					<tr>
 						<td>${dtstudent.history}

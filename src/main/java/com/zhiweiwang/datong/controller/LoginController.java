@@ -2,20 +2,16 @@ package com.zhiweiwang.datong.controller;
 
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTMessage;
-import com.zhiweiwang.datong.MD5;
+import com.zhiweiwang.datong.DTUtils;
 import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -41,9 +37,6 @@ public class LoginController {
 
     @Autowired
     private UserMapper userMapper;
-
-    @Autowired
-    private ReloadableResourceBundleMessageSource message;
     
     @RequestMapping(method = POST)
     public ModelAndView login(@RequestParam String name,@RequestParam String password) {
@@ -52,7 +45,7 @@ public class LoginController {
         ModelAndView mav = new ModelAndView();
 
         User user = userMapper.get_user(name);
-        if (user == null || user.getPasswd().equals(MD5.md5s(password)) == false) {
+        if (user == null || user.getPasswd().equals(DTUtils.md5s(password)) == false) {
             mav.getModel().put(DTContants.MSG_ERRER, DTMessage.WRONG_NAME_OR_PASSWORD);
             mav.setViewName("redirect:/login");
             return mav;

@@ -1,11 +1,19 @@
-create database apply character set utf8;
+CREATE DATABASE apply
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'Chinese (Simplified)_People''s Republic of China.936'
+       LC_CTYPE = 'Chinese (Simplified)_People''s Republic of China.936'
+       CONNECTION LIMIT = -1;
 
 use apply;
 
-create sequence id_seq increment 1 minvalue 1 maxvalue 9223372036854775807  cache 1;
 
 drop table IF EXISTS dt_users;
 drop table IF EXISTS dt_students;
+
+
+create sequence id_seq increment 1 minvalue 1 maxvalue 9223372036854775807  cache 1;
 
 create table dt_users(
 	id int not null primary key default nextval('id_seq'),
@@ -13,8 +21,7 @@ create table dt_users(
 	passwd varchar(32) not null,
 	email varchar(120),
 	role varchar(12),
-	createTime timestamp DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (id)
+	createTime timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
 

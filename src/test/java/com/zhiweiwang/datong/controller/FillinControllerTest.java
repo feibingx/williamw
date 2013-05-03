@@ -1,19 +1,6 @@
 package com.zhiweiwang.datong.controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.security.Principal;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletInputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -45,8 +32,9 @@ public class FillinControllerTest {
 		studentMapper.deleteStudent(100);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@Test
-	public void should_return_3_factories(){
+	public void should_inserted(){
 		
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		User user = new User();

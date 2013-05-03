@@ -17,16 +17,17 @@ public class TestJSON {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		String text = "[{\"hname0\":\"123123123\",\"hlev0\":\"区级\"}]";
 		ObjectMapper objMapper = new ObjectMapper();
 		try {
-			List obj = (List)objMapper.readValue(text, new TypeReference<List<HashMap<String,Object>>>() {});
+			List<?> obj = (List<?>)objMapper.readValue(text, new TypeReference<List<HashMap<String,Object>>>() {});
 			
 			for(Object o: obj){
-				Map map = (Map)o;
+				Map<String, ?> map = (Map<String, ?>)o;
 				Set<String> keys = map.keySet();
-		        for (Iterator it = keys.iterator(); it.hasNext();) {
+		        for (Iterator<String> it = keys.iterator(); it.hasNext();) {
 		            String key = (String) it.next();
 		            Object student = map.get(key); 
 		            System.out.println(key + " - " + student);

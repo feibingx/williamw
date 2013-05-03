@@ -3,23 +3,17 @@ package com.zhiweiwang.datong.controller;
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTMessage;
 import com.zhiweiwang.datong.DTUtils;
-import com.zhiweiwang.datong.mapper.StudentMapper;
-import com.zhiweiwang.datong.model.User;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
-import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,13 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import static com.zhiweiwang.datong.DTContants.QUERY_CONF;
-import static com.zhiweiwang.datong.DTContants.DT_STUDENT_LIST;
-import static com.zhiweiwang.datong.DTContants.LINES_PER_PAGE;
-import static com.zhiweiwang.datong.DTContants.TOTAL_COUNT;
 
 @Controller
 @SessionAttributes(QUERY_CONF)
