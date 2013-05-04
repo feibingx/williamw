@@ -80,7 +80,7 @@ table {
 							placeholder="请输入" class="required input-small" value="${dtstudent.policy}">
 						</td>
 						<td rowspan="5" style="width:110px;">
-							<iframe src="pic" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0">	</iframe>
+							<iframe id="iframe" src="pic" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" title="双击浏览选择需要上传的照片" data-content="仅允许上传JPG、PNG、GIF文件<br>选择完毕后请点击提交" data-placement="top" data-toggle="popover" rel="popover" >	</iframe>
 						</td>
 					</tr>
 					<tr>
@@ -497,6 +497,8 @@ table {
 	<script src="assets/js/editor_config.js"></script>
 	<script src="assets/js/editor_all.js"></script>
 	<script type="text/javascript">
+
+		$('#iframe').popover();
 		$(document).ready(function() {
 			$("#fillform").validate({
 				rules : {

@@ -135,7 +135,7 @@
 						<td>${dtstudent.gradesection}</td>
 
 						<td>身体状况</td>
-						<td>${dtstudent.city}</td>
+						<td>${dtstudent.healthy}</td>
 					</tr>
 					<tr>
 						<td>出生年月</td>
