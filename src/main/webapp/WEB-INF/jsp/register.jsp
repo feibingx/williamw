@@ -4,7 +4,7 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8">
-    <title>大同中学自主招生系统</title>
+    <title>大同中学自荐招生系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -32,7 +32,7 @@
 <div class="page">
   <div class="logo">
 			<img class="pull-left title" src="assets/img/logo.png">
-			<div class="pull-left title">自主招生系统</div>
+			<div class="pull-left title">自荐招生系统</div>
 		</div>
   <div class="centerw wrapper">
 <!--      <div class="row-fluid">-->
@@ -44,7 +44,7 @@
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">用户名</label>
 					<div class="controls">
-						 <input type="text" id="username" name="username" placeholder="请输入姓名" class="input-large">
+						 <input type="text" id="username" name="username" placeholder="请输入姓名" class="input-large" title="请使用真实姓名加身份证号码后四位为用户名" data-content="如：王小明1234" data-placement="right" data-toggle="popover" rel="popover" >
 					<span id="input01alert"  class="help-inline hidden">不能为空</span>
 					</div>
 				</div>
@@ -72,8 +72,6 @@
 				<div class="control-group">
 					
 					<div class="controls">
-						<input type="checkbox" id="readed" name="readed" />我已阅读xxx
-						<span class="help-inline hidden" ></span>
 						<button id="submitbtn" type="submit" class="btn">注册</button>
 					</div>
 				</div>
@@ -113,8 +111,7 @@
 					email: {
 					    required: true
 					    ,email: true
-					},
-					readed: "required"
+					}
 				},
 				messages : {
 					username : "必填",
@@ -130,12 +127,14 @@
 					    required: "请输入确认密码",
 					    minlength: "确认密码不能小于5个字符",
 					    equalTo: "两次输入密码不一致不一致"
-					   },
-					   readed: "请确认真实有效"
+					   }
 				}
 			});
     });
 
+        //$('#username').focus(function(){
+            $('#username').popover();
+        //});
         $('#username').blur(function() {
     		
         	$.get("./getUser", {username: $("#username").attr("value") }, function (data, textStatus){

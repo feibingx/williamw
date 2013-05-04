@@ -6,7 +6,7 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<title>大同中学自主招生系统</title>
+<title>大同中学自荐招生系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -53,7 +53,7 @@ table {
 	<div class="page">
 		<div class="logo">
 			<img class="pull-left" src="assets/img/logo.png">
-			<div class="pull-left title">自主招生系统</div>
+			<div class="pull-left title">自荐招生系统</div>
 			<a href="logout" class="pull-right">注销</a>
 			<a href="javascript:;" onClick="doPrint()" class="btn pull-right print-btn">打印</a> 
 		</div>
@@ -465,7 +465,7 @@ table {
 					</tr>
 				</table><!--endprint-->
 				<div>
-					我保证以上信息真实有效 <input type="checkbox" name="allright" id="allright" />
+					我已按照要求如实填写所有内容 <input type="checkbox" name="allright" id="allright" />
 				</div>
 				<div>
 					<input type="submit" value="提交" class="btn btn-primary btn-large">

@@ -7,7 +7,7 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<title>大同中学自主招生系统</title>
+<title>大同中学自荐招生系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">

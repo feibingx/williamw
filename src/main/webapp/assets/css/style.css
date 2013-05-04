@@ -47,7 +47,8 @@ body {
 
 .logo {
     margin-bottom: 0px;
-	max-width: 1000px;
+	max-width: 1024px;
+    box-shadow: 0px 0px 10px #AAA
 }
 
 .wrapper {	
@@ -73,11 +74,11 @@ body {
     color: #B94A48;
 }
 
-.control-label {
+.control-labelx {
     width: 90px !important;
 }
 
-.controls {
+.controlsx {
     margin-left: 100px !important;;
 }
 
@@ -93,7 +94,6 @@ body {
     font-family: "KaiTi";
     font-weight: 38;
 }
-.centerw { padding-top: 200px;}
 
 .center {
 	width: auto;
