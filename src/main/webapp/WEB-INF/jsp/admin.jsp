@@ -56,7 +56,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>中考报名号</th>
+						<th>身份证号</th>
 						<th>姓名</th>
 						<th>性别</th>
 						<th>毕业学校</th>
@@ -67,11 +67,6 @@
 				<tbody>
 					<c:forEach var="dtstudent" items="${dtstudentlist}">
 						<tr>
-							<!-- <div class="list-avatar"> -->
-							<%-- 	<a href="?businessmanId=${dtstudent.id}"> --%>
-							<%-- 		<img src="assets/img/user-icon.png"> <span> <b>${businessman.name}</b> --%>
-							<!-- 	</span> </a> -->
-							<!-- </div> -->
 							<td>${dtstudent.pid}</td>
 							<td>${dtstudent.name}</td>
 							<td>${dtstudent.sex}</td>

@@ -91,8 +91,7 @@
 }
 </style>
 </head>
-<body>
-	<!--startprint-->
+<body>	
 	<div class="navbar navbar-fixed-top ">
 		<div class="mynav">
 			<span class="center"> 
@@ -325,7 +324,6 @@
 			<!-- form end-->
 		</div>
 	</div>
-	<!--endprint-->
 
   <div data-backdrop="false" tabindex="-1" class="modal fade hide in model-size" id="winModal" >
   	<form action="../deal" method="post">

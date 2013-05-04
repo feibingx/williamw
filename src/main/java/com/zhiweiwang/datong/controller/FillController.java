@@ -54,7 +54,12 @@ public class FillController {
         map.put(DTContants.DT_USERNAME, user.getUsername());
         
         Object imgpath = request.getSession().getAttribute(DTContants.IMG_PATH);
-        if(imgpath != null){
+        
+        // TODO
+        // bad coding  
+        // using user id to sure if the img belong to one
+        // 
+        if(imgpath != null && imgpath.toString().indexOf(""+user.getId())>0){
         	map.put(DTContants.IMG_PATH, imgpath);
         }
         logger.info(map.toString());
@@ -88,11 +93,6 @@ public class FillController {
         DTUtils.makeJson2Map(model, "prices");
         return model;
 	}
-
-	
-
-
-
 	
 	private static final String[] PRICE_NAMES = {"pname","plev","pcell","ptime"};
 	private static final String[] HONOR_NAMES = {"hname","hlev"};

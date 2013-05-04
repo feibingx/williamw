@@ -213,16 +213,16 @@ table {
 					</tr>
 					<tr>
 						<td><input id="mummy" name="mummy" type="text"
-							value="${dtstudent.mummy}" class="required input-small">
+							value="${dtstudent.mummy}" class="input-small">
 						</td>
 						<td><input id="mummyname" name="mummyname" type="text"
-							value="${dtstudent.mummyname}" class="required input-small">
+							value="${dtstudent.mummyname}" class="input-small">
 						</td>
 						<td><input id="mummyjob" name="mummyjob" type="text"
-							value="${dtstudent.mummyjob}" class="required input-xlarge">
+							value="${dtstudent.mummyjob}" class="input-xlarge">
 						</td>
 						<td><input id="mummyphone" name="mummyphone" type="text"
-							value="${dtstudent.mummyphone}" class="required input-large"
+							value="${dtstudent.mummyphone}" class="input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="21">
@@ -282,10 +282,10 @@ table {
 							maxlength="5">
 						</td>
 						<td><input id="paimin1" name="paimin1" type="text"
-							value="${dtstudent.paimin1}" class="required input-small"
+							value="${dtstudent.paimin1}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
-							maxlength="5">
+							maxlength="5">%
 						</td>
 					</tr>
 					<tr>
@@ -326,11 +326,12 @@ table {
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
 							maxlength="5">
 						</td>
-						<td><input id="paimin2" name="paimin2" type="text"
-							value="${dtstudent.paimin2}" class="required input-small"
+						<td>
+							<input id="paimin2" name="paimin2" type="text"
+							value="${dtstudent.paimin2}" class="required input-xsmall"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
-							maxlength="5">
+							maxlength="5">%
 						</td>
 					</tr>
 				</table>

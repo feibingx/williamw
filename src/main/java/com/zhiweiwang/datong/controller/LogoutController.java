@@ -20,7 +20,7 @@ public class LogoutController {
 
         HttpSession session = request.getSession();
         session.removeAttribute(DTContants.USER_IN_SESSION);
-        
+        session.removeAttribute(DTContants.IMG_PATH);
         ModelAndView mav = new ModelAndView();
 
         mav.setViewName("redirect:/message");
