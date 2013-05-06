@@ -85,6 +85,9 @@ public class PictureController {
 			if(img != null){
 				mav.getModel().put(DTContants.IMG_PATH, img.toString());
 				session.setAttribute(DTContants.IMG_PATH, img.toString());
+			}else{
+				mav.getModel().remove(DTContants.IMG_PATH);
+				session.removeAttribute(DTContants.IMG_PATH);
 			}
 		}
 		return mav;
@@ -100,6 +103,9 @@ public class PictureController {
 			if(img != null){
 				mav.getModel().put(DTContants.IMG_PATH, img.toString());
 				session.setAttribute(DTContants.IMG_PATH, img.toString());
+			}else{
+				mav.getModel().remove(DTContants.IMG_PATH);
+				session.removeAttribute(DTContants.IMG_PATH);
 			}
 		}
 		return mav;
