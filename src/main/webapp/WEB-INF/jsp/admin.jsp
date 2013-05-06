@@ -56,12 +56,12 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>#</th>
-						<th>身份证号</th>
-						<th>姓名</th>
-						<th>性别</th>
-						<th>毕业学校</th>
-						<th>当前状态</th>
+						<th style="width:1%">#</th>
+						<th style="width:15%">身份证号</th>
+						<th style="width:9%">姓名</th>
+						<th style="width:8%">性别</th>
+						<th style="width:20%">毕业学校</th>
+						<th style="width:10%">状态</th>
 						<th></th>
 					</tr>
 				</thead>

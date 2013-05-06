@@ -64,9 +64,9 @@ table {
 			<form class="form-horizontal" action="fillin" id="fillform" method="post">
 				<table>
 					<tr>
-						<td>姓名</td>
+						<td style="width:15%">姓名</td>
 						<td><input type="text" id="name" name="name"
-							value="${dtstudent.name}" placeholder="请输入姓名" class="required input">
+							value="${dtstudent.name}" placeholder="请输入姓名" class="required input-small">
 						</td>
 						<td>性别</td>
 						<td><select id="sex" style="width:50px" name="sex" required>
@@ -84,10 +84,6 @@ table {
 						</td>
 					</tr>
 					<tr>
-						<td>毕业学校</td>
-						<td><input type="text" id="gradeschool" name="gradeschool"
-							value="${dtstudent.gradeschool}" placeholder="请输入" class="required input">
-						</td>
 						<td>毕业区县</td>
 						<td><input type="text" id="gradesection" name="gradesection"
 							value="${dtstudent.gradesection}" placeholder="请输入"
@@ -96,6 +92,16 @@ table {
 						<td>身体状况</td>
 						<td><input type="text" id="healthy" name="healthy"
 							placeholder="请输入" class="required input-small" value="${dtstudent.healthy}">
+						</td>
+						<td>中考报名号</td>
+						<td><input type="text" id="number" name="number"
+							placeholder="请输入" class="required input-small" value="${dtstudent.number}">
+						</td>
+					</tr>
+					<tr>
+						<td>毕业学校</td>
+						<td colspan="5"><input type="text" id="gradeschool" name="gradeschool"
+							value="${dtstudent.gradeschool}" placeholder="请输入" class="required input">
 						</td>
 					</tr>
 					<tr>
@@ -130,13 +136,7 @@ table {
 									</option>
 								</c:forEach>
 						</select>日</td>
-					</tr>
-					<tr>
-						<td>中考报名号</td>
-						<td colspan="5"><input type="text" id="number" name="number"
-							placeholder="请输入" class="required input" value="${dtstudent.number}">
-						</td>
-					</tr>
+					</tr>					
 					<tr>
 						<td>户口所在地</td>
 						<td colspan="5"><input id="city" name="city" value="${dtstudent.city}"
@@ -148,13 +148,13 @@ table {
 				</table>
 				<table>
 					<tr>
-						<td colspan="2">家庭住址</td>
+						<td style="width:15%">家庭住址</td>
 						<td colspan="5"><input id="address" name="address" type="text"
 							value="${dtstudent.address}" class="required input-xxlarge">
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">邮政编码</td>
+						<td>邮政编码</td>
 						<td><input id="addcode" name="addcode" type="text"
 							value="${dtstudent.addcode}" class="required input-large"
 							onkeyup="this.value=this.value.replace(/\D/g,'')"
@@ -171,7 +171,7 @@ table {
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">身份证号码</td>
+						<td>身份证号码</td>
 						<td><input id="pid" name="pid" type="text"
 							value="${dtstudent.pid}" class="required input-large" maxlength="18">
 						</td>

@@ -117,7 +117,7 @@
 			<!--startprint-->
 			<table>
 					<tr>
-						<td>姓名</td>
+						<td style="width:15%">姓名</td>
 						<td>${dtstudent.name}</td>
 						<td>性别</td>
 						<td> ${dtstudent.sex} </td>
@@ -128,28 +128,25 @@
 						</td>
 					</tr>
 					<tr>
-						<td>毕业学校</td>
-						<td>${dtstudent.gradeschool}</td>
 						<td>毕业区县</td>
 						<td>${dtstudent.gradesection}</td>
-
 						<td>身体状况</td>
 						<td>${dtstudent.healthy}</td>
+						<td>中考报名号</td>
+						<td>${dtstudent.number}</td>
+					</tr>
+					<tr>
+						<td>毕业学校</td>
+						<td colspan="5">${dtstudent.gradeschool}</td>
 					</tr>
 					<tr>
 						<td>出生年月</td>
 						<td colspan="5">${dtstudent.birthyear}年${dtstudent.birthmonth}月${dtstudent.birthday}日</td>
-					</tr>
-					<tr>
-						<td>中考报名号</td>
-						<td colspan="5">${dtstudent.number}</td>
-					</tr>
+					</tr>					
 					<tr>
 						<td>户口所在地</td>
 						<td colspan="5">${dtstudent.city}</td>
-					</tr>
-					
-				
+					</tr>				
 				</table>
 				<table>
 					<tr>
