@@ -36,10 +36,10 @@
 		
 		<div class="wrapper container">
 			<div class="statusbar">
-				<a href="?sts=sts_pass" class="alert alert-success">通过: ${totalcount.sts_pass}</a> 
-				<a  class="alert alert-info" href="?sts=sts_unprove">未审核：${totalcount.sts_unprove}</a>
-				<a  class="alert"  href="?sts=sts_wait">待定：${totalcount.sts_wait}</a>
-				<a  class="alert alert-error"  href="?sts=sts_reject">拒绝：${totalcount.sts_reject}</a>
+				<a href="?sts=sts_pass" class="alert alert-success">通过: ${totalcount.sts_pass}</a>&nbsp;
+				<a class="alert alert-info" href="?sts=sts_unprove">未审核：${totalcount.sts_unprove}</a>&nbsp;
+				<a class="alert"  href="?sts=sts_wait">待定：${totalcount.sts_wait}</a>&nbsp;
+				<a class="alert alert-error"  href="?sts=sts_reject">拒绝：${totalcount.sts_reject}</a>
 				<span class="pull-right">
 					<c:if test="${query_conf.sts!=null}">
 						<a href="admin?sts=clear">全部</a>

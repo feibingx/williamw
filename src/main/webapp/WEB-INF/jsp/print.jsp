@@ -55,33 +55,6 @@ table {
 	max-width: 788px;
 	padding: auto 12px;
 }
-
-.mynav {
-	margin: auto;
-	font-size: 16px;
-	line-height: 18px;
-	background-color: #eeeeee;
-	background-repeat: repeat-x;
-	background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5),
-		color-stop(100%, #eeeeee) );
-	background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-	background-image: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-	background-image: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-	filter: progid : DXImageTransform.Microsoft.gradient (   startColorstr =
-		'#f5f5f5', endColorstr = '#eeeeee', GradientType = 0 );
-	background-image: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0, 0, 0, .1);
-	-moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0, 0, 0, .1);
-	box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0, 0, 0, .1);
-	filter: progid : DXImageTransform.Microsoft.gradient ( enabled = false );
-	padding: 2px;
-}
 .model-size{
 	width: 320px;
 	margin:-200px 0 0 -160px;
@@ -93,28 +66,13 @@ table {
 </head>
 <body>	
 	<div class="navbar navbar-fixed-top ">
-		<div class="mynav">
-			<span class="center"> 
-			<a id="pass" name="pass" onClick="setDatetime();" class="btn btn-large btn-success">通过</a>
-			<a href="../deal?action=sts_wait" class="btn btn-large btn-warning">待定</a>
-			<a href="../deal?action=sts_reject" class="btn btn-large btn-danger">拒绝</a>
-			<a href="../admin" class="btn btn-large btn-info">返回</a>
-			</span>
-		</div>
 		<span class="pull-right"> <a href="javascript:;"
-			onClick="doPrint()" class="btn">打印</a> <a href="../logout" class="btn">注销</a>
+			onClick="doPrint()" class="btn">打印</a>
+			<a href="../fillin" class="btn">返回</a>
 		</span>
-
 	</div>
-	<div class="page">
-		<div class="wrapper">
-			<div class="pull-right">当前状态：<fmt:message key="${dtstudent.sts}" />
-					审阅人: ${dtstudent.role} &nbsp;
-					<c:if test="${dtstudent.sts == 'sts_pass'}">
-						 面试时间：${dtstudent.interview}
-					</c:if>
-			</div>			
 			<!--startprint-->
+	<div class="page">
 			<table>
 					<tr>
 						<td style="width:15%">姓名</td>
@@ -273,10 +231,10 @@ table {
                         </td>
                     </tr>
                     <tr>
-                    	<td style="width:10%">获奖时间</td>
-                        <td style="width:45%">名称</td>
-                        <td style="width:10%">级别</td>
-                        <td>颁奖单位</td>
+                    	<td style="width:12%">获奖时间</td>
+                        <td style="width:50%;text-align: center;">名称</td>
+                        <td style="width:6%">级别</td>
+                        <td style="text-align: center;">颁奖单位</td>
                     </tr>
                     <c:if test="${dtstudent.priceslist==null}">
 	                    <tr>
@@ -317,30 +275,11 @@ table {
 						<td>${dtstudent.reason}</td>
 					</tr>
 				</table>
-			<!--endprint-->
-			<!-- form end-->
+			
 		</div>
 	</div>
-
-  <div data-backdrop="false" tabindex="-1" class="modal fade hide in model-size" id="winModal" >
-  	<form action="../deal" method="post">
-  		<input type="hidden" value="sts_pass" id="action" name="action">
-  		<input type="hidden" id="id" name="id">
-		<div class="modal-header">
-	      <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-	      <h3 id="myModalLabel">设定面试时间</h3>
-	    </div>
-	    <div class="modal-body">
-	      <input type="text" class="input-xlarge" id="interview" name="interview">
-	    </div>
-	    <div class="modal-footer">
-	      <button aria-hidden="true" data-dismiss="modal" class="btn" type="button">取消</button>
-	      <input type="submit" value="提交" class="btn btn-primary">
-	    </div>
-  	</form>
-    
-  </div>
-
+<!--endprint-->
+			<!-- form end-->
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -388,13 +327,6 @@ table {
 			window.print();
 		}
 
-		function setDatetime(){
-				$('#winModal').modal({
-					backdrop:true,
-					keyboard:true,
-					show:true
-				});
-		}
 	</script>
 </body>
 </html>
