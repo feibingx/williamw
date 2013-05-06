@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @SessionAttributes(DTContants.USER_IN_SESSION)
@@ -38,7 +39,7 @@ public class PictureController {
 	
 	@RequestMapping(value = "/pic", method = POST)
 	@ModelAttribute(DTContants.IMG_PATH)
-	public ModelAndView login(@RequestParam(required = false, value = "fileToUpload") MultipartFile file,
+	public ModelAndView getpic(@RequestParam(required = false, value = "fileToUpload") MultipartFile file,
 			@RequestParam("action") String action, @ModelAttribute(DTContants.USER_IN_SESSION) User user, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		if ("add".equals(action)) {
@@ -75,7 +76,7 @@ public class PictureController {
 	}
 
 	@RequestMapping(value = "/pic", method = GET)
-	public ModelAndView get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
+	public ModelAndView get(@ModelAttribute(DTContants.USER_IN_SESSION) User user, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		Map<?, ?> student = studentMapper.getStudent(user.getId());
 
@@ -83,13 +84,14 @@ public class PictureController {
 			Object img = student.get(DTContants.IMG_PATH);
 			if(img != null){
 				mav.getModel().put(DTContants.IMG_PATH, img.toString());
+				session.setAttribute(DTContants.IMG_PATH, img.toString());
 			}
 		}
 		return mav;
 	}
 
 	@RequestMapping(value = "/pic/{nid}", method = GET)
-	public ModelAndView getPica(@PathVariable("nid") int id) {
+	public ModelAndView getPica(@PathVariable("nid") int id , HttpSession session) {
 		ModelAndView mav = new ModelAndView("pic");
 		Map<?, ?> student = studentMapper.getStudent(id);
 
@@ -97,6 +99,7 @@ public class PictureController {
 			Object img = student.get(DTContants.IMG_PATH);
 			if(img != null){
 				mav.getModel().put(DTContants.IMG_PATH, img.toString());
+				session.setAttribute(DTContants.IMG_PATH, img.toString());
 			}
 		}
 		return mav;

@@ -176,7 +176,7 @@ table {
 						</td>
 						<td style="text-align: center;">${dtstudent.zongfen1}
 						</td>
-						<td style="text-align: center;">${dtstudent.paimin1}
+						<td style="text-align: center;">${dtstudent.paimin1}%
 						</td>
 					</tr>
 					<tr>
@@ -193,7 +193,7 @@ table {
 						</td>
 						<td  style="text-align: center;">${dtstudent.zongfen2}
 						</td>
-						<td  style="text-align: center;">${dtstudent.paimin2}
+						<td  style="text-align: center;">${dtstudent.paimin2}%
 						</td>
 					</tr>
 				</table>

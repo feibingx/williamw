@@ -73,12 +73,14 @@
     $('.popover-test').popover()
 
     // popover demo
+    // wangzw don't need it
+  
     $("a[rel=popover]")
       .popover()
       .click(function(e) {
-        e.preventDefault()
+       // e.preventDefault()
       })
-
+  
     // button state demo
     $('#fat-btn')
       .click(function () {
