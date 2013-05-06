@@ -56,6 +56,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
+						<th>#</th>
 						<th>身份证号</th>
 						<th>姓名</th>
 						<th>性别</th>
@@ -67,6 +68,7 @@
 				<tbody>
 					<c:forEach var="dtstudent" items="${dtstudentlist}">
 						<tr>
+							<td>${dtstudent.nid}</td>
 							<td>${dtstudent.pid}</td>
 							<td>${dtstudent.name}</td>
 							<td>${dtstudent.sex}</td>

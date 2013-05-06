@@ -14,6 +14,7 @@ drop table IF EXISTS dt_students;
 
 
 create sequence id_seq increment 1 minvalue 1 maxvalue 9223372036854775807  cache 1;
+create sequence nid_seq increment 1 minvalue 1 maxvalue 9223372036854775807  cache 1;
 
 create table dt_users(
 	id int not null primary key default nextval('id_seq'),
@@ -27,6 +28,7 @@ create table dt_users(
 
 CREATE TABLE dt_students (
    id int not null unique,
+   nid int not null default nextval('nid_seq'),
    username varchar(32) unique not null,
    name varchar(32),
    pid varchar(18),

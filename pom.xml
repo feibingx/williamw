@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.zhiweiwang</groupId>
-	<artifactId>datong</artifactId>
+	<artifactId>apply</artifactId>
 	<version>0.9-SNAPSHOT</version>
 	<packaging>war</packaging>
 

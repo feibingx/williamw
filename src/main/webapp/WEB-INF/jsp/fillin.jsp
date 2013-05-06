@@ -95,7 +95,7 @@ table {
 						</td>
 						<td>身体状况</td>
 						<td><input type="text" id="healthy" name="healthy"
-							placeholder="请输入" class="required input-small" value="${dtstudent.city}">
+							placeholder="请输入" class="required input-small" value="${dtstudent.healthy}">
 						</td>
 					</tr>
 					<tr>
