@@ -1,7 +1,5 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <!-- saved from url=(0054)http://dt.hpe.cn/opencms/opencms/oldWeb/daode/zjzs.htm -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<!-- saved from url=(0056)http://dt.hpe.cn/opencms/opencms/oldWeb/daode/index.html -->
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
@@ -37,6 +35,11 @@ type="image/x-icon" href="http://www.wenming.cn/jingtai/images/favicon.ico">
 .STYLE14 {color: #993300; font-weight: bold; }
 .STYLE18 {font-family: "宋体"; font-size: 16px; color: #000000; }
 .STYLE19 {font-family: "宋体"; font-size: 18px; color: #000000; }
+.STYLE24 {
+	font-size: 14px;
+	color: #000000;
+	font-family: "宋体";
+}
 #Layer1 {
   position:absolute;
   width:200px;
@@ -132,9 +135,10 @@ href="http://dt.hpe.sh.cn/opencms/opencms/index.html"></A>
                   <SPAN class="STYLE14">招生动态</SPAN>
                 </P>
                 <P class="STYLE19" align="left">
-                  ›
-                  <SPAN 
-class="STYLE1">我校自荐招生平台将于5月5日正式开通，届时请各位家长和考生及时关注。</SPAN>
+                    <span class="STYLE24">&#8250; 请各位考生于注册填报成功即日起至5月14日16:00之前将相关材料递交我校。<br>
+  &#8250; 请各位家长和考生务必登录上海招考热线，完成报考我校的相关流程。<br>
+&#8250; 考生所填写递交的材料必须真实有效，否则一切后果由考生本人负责。<br>
+&#8250; 请各位考生妥善保管注册名和密码，并及时登录网站查询最新动态。</span>
                 </P>
                 <P class="STYLE18" align="left">&nbsp;</P>
               </DIV>
@@ -184,10 +188,10 @@ target="_blank">• 2013年上海市大同中学体育特长生招生办法...</
             <DIV class="mingdan_dongtai">
               <a href="assets/img/zjzs_files/2013zsjc1.jpg" target="_blank">
                 <img border="0" src="assets/img/zjzs_files/Table_2013zsjc1.jpg" 
-width="351" height="186"></a>
+width="339" height="185"></a>
               <a href="assets/img/zjzs_files/2013zsjc2.jpg" target="_blank">
                 <IMG border="0" src="assets/img/zjzs_files/Table_2013zsjc2.jpg" 
-width="347" height="187"></a>
+width="339" height="185"></a>
             </DIV>
             <!--
       <div class="mingdan_dongtai">
