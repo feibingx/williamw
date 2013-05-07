@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<property name="USER_HOME" value="log" />
-	<property name="LOG_FILE_NAME" value="greatbanker" />
-	<property name="LOG_FILE_NAME_MSG" value="greatbanker" />
+	<property name="USER_HOME" value="/home/applysys/log" />
+	<property name="LOG_FILE_NAME" value="apply" />
+	<property name="LOG_FILE_NAME_MSG" value="apply" />
 	<property name="LEVEL" value="debug" />
 	<property name="logFileNamePattern" value="${LOG_FILE_NAME}_%d{yyyy-MM-dd}" />
 	<property name="logFileNamePattern2" value="${LOG_FILE_NAME}_%d{yyyy-MM-dd}_%i" />
