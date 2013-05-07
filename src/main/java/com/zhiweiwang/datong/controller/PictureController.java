@@ -22,6 +22,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static com.zhiweiwang.datong.DTContants.IMG_TYPE_ALLOWED;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,11 +41,11 @@ public class PictureController {
 	
 	@RequestMapping(value = "/pic", method = POST)
 	@ModelAttribute(DTContants.IMG_PATH)
-	public ModelAndView getpic(@RequestParam(required = false, value = "fileToUpload") MultipartFile file,
+	public ModelAndView pic(@RequestParam(required = false, value = "fileToUpload") MultipartFile file,
 			@RequestParam("action") String action, @ModelAttribute(DTContants.USER_IN_SESSION) User user, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		if ("add".equals(action)) {
-			String uploadDirPath = request.getSession().getServletContext().getRealPath(uploadDic);
+		String uploadDirPath = request.getSession().getServletContext().getRealPath(uploadDic);
+		if ("add".equals(action)) {			
 			MultipartFile image = file;
 			String filetype = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".")+1).toLowerCase();
 			if(fileIsAllowed(filetype) == false){
@@ -52,8 +54,7 @@ public class PictureController {
 				return mav;
 			}
 			logger.debug("uploadDirPath: " + uploadDirPath);
-			//File destFile = new File(uploadDirPath + "/" + image.getOriginalFilename());
-			File destFile = new File(uploadDirPath + "/img" + user.getId()+"."+filetype);
+			File destFile = new File(uploadDirPath + "/img" + user.getId()+"-"+getTimestamp()+"."+filetype);
 			try {
 				if (destFile.exists() == false)
 					destFile.createNewFile();
@@ -75,26 +76,22 @@ public class PictureController {
 		return mav;
 	}
 
+	private String getTimestamp() {
+		return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+	}
+
 	@RequestMapping(value = "/pic", method = GET)
 	public ModelAndView get(@ModelAttribute(DTContants.USER_IN_SESSION) User user, HttpSession session) {
-		ModelAndView mav = new ModelAndView();
-		Map<?, ?> student = studentMapper.getStudent(user.getId());
-
-		if(student != null){
-			Object img = student.get(DTContants.IMG_PATH);
-			if(img != null){
-				mav.getModel().put(DTContants.IMG_PATH, img.toString());
-				session.setAttribute(DTContants.IMG_PATH, img.toString());
-			}else{
-				mav.getModel().remove(DTContants.IMG_PATH);
-				session.removeAttribute(DTContants.IMG_PATH);
-			}
-		}
-		return mav;
+		return getPic(user.getId(), session);
 	}
 
 	@RequestMapping(value = "/pic/{nid}", method = GET)
 	public ModelAndView getPica(@PathVariable("nid") int id , HttpSession session) {
+		return getPic(id, session);
+		
+	}
+
+	private ModelAndView getPic(int id, HttpSession session) {
 		ModelAndView mav = new ModelAndView("pic");
 		Map<?, ?> student = studentMapper.getStudent(id);
 
@@ -109,7 +106,6 @@ public class PictureController {
 			}
 		}
 		return mav;
-		
 	}
 
 	private boolean fileIsAllowed(String filetype) {
