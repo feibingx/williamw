@@ -1,0 +1,308 @@
+body {
+	background-position: top; margin: 0px auto; padding: 0px; border: 0px currentColor; width: 100%; background-image: url("../images/bg_difang.jpg"); background-repeat: no-repeat;
+}
+#content {
+	margin: -470px auto 0px;
+	width: 986px;
+	text-align: left;
+	position: relative;
+	height: 600px;
+}
+#header {
+	margin: 0px auto; width: 980px; height: 495px;
+}
+#top {
+	margin: 0px auto; width: 980px; height: 30px; text-align: right; color: rgb(0, 0, 0); line-height: 30px; font-size: 12px; text-decoration: none;
+}
+#top a {
+	margin: 0px auto; width: 980px; height: 30px; text-align: right; color: rgb(0, 0, 0); line-height: 30px; font-size: 12px; text-decoration: none;
+}
+.top {
+	width: 100%; height: 30px; background-image: url("../images/bg_top.jpg");
+}
+.header {
+	margin: 0px auto; width: 100%; height: 215px;
+}
+#Main {
+	width: 986px;
+}
+#MainLeft {
+	width: 980px; float: left;
+}
+#MianRight {
+	width: 6px; height: 305px; float: right; background-image: url("../images/right_biantiao.jpg");
+}
+#Nav {
+	width: 980px; height: 180px; overflow: hidden;
+}
+.navLeft {
+	width: 740px; height: 232px; float: left;
+}
+.navRight {
+	width: 228px; height: 232px; float: right;
+}
+.xuexiaomingcheng {
+	width: 740px; height: 60px; text-align: center; margin-top: 80px;
+}
+.nav_bg {
+	width: 740px; height: 39px; text-align: left; margin-top: 20px; background-image: url("../images/bg_nav_df.jpg"); background-repeat: no-repeat;
+}
+.MainOne {
+	width: 980px; float: left;
+}
+.MainTwo {
+	width: 980px;
+	float: left;
+	height: auto;
+}
+.MainFiv {
+	border: 1px solid rgb(255, 153, 0); width: 978px; text-align: center; overflow: hidden; float: left;
+}
+.OneLeft {
+	width: 244px; float: left; display: inline;
+}
+.TwoLeft {
+	width: 244px; float: left; display: inline;
+}
+.TwoCenter {
+	width: 410px;
+	height: 508px;
+	overflow: hidden;
+	border-top-color: rgb(255, 153, 0);
+	border-bottom-color: rgb(255, 153, 0);
+	border-left-color: rgb(255, 153, 0);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	float: right;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: rgb(255, 153, 0);
+}
+.TwoRight {
+	width: 710px; height: 600px; border-top-color: rgb(255, 153, 0); border-right-color: rgb(255, 153, 0); border-bottom-color: rgb(255, 153, 0); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; float: right;
+}
+.OneLBox {
+	width: 244px; height: 252px; overflow: hidden; background-image: url("../images/bg_kuang.jpg"); background-repeat: no-repeat; background-color: rgb(255, 188, 16);
+}
+.OneLBox1 {
+	height: 600px;
+}
+.OneLBoxTop {
+	width: 230px; height: 29px; text-align: center; color: rgb(153, 51, 0); line-height: 29px; padding-left: 10px; font-size: 14px; float: left;
+}
+.TwoLBoxTop {
+	width: 230px; height: 29px; text-align: center; color: rgb(153, 51, 0); line-height: 29px; padding-left: 10px; font-size: 14px; float: left;
+}
+.OneLBoxTLeft {
+	width: 150px; height: 29px; text-align: left; line-height: 29px; font-weight: bold; float: left;
+}
+.TwoLBoxTLeft {
+	width: 150px; height: 29px; text-align: left; line-height: 29px; font-weight: bold; float: left;
+}
+.more {
+	width: 60px; height: 29px; color: rgb(255, 255, 255); font-size: 12px; text-decoration: none; float: right;
+}
+.more a {
+	width: 60px; height: 29px; color: rgb(255, 255, 255); font-size: 12px; text-decoration: none; float: right;
+}
+.OneLBoxText {
+	width: 230px; margin-right: 7px; margin-bottom: 7px; margin-left: 7px; float: left; display: inline; background-color: rgb(255, 255, 255);
+}
+.TwoLBoxTxt {
+	width: 230px; margin-right: 7px; margin-bottom: 7px; margin-left: 7px; float: left; display: inline; background-color: rgb(255, 255, 255);
+}
+.TwoLBoxTxt2 {
+	width: 230px; margin-right: 7px; margin-bottom: 7px; margin-left: 7px; float: left; display: inline; background-color: rgb(255, 255, 255);
+}
+.TwoLBoxTxt_difang {
+	padding: 12px; width: 206px; height: 453px; text-align: left; color: rgb(0, 0, 0); line-height: 22px; overflow: hidden; font-size: 12px; text-decoration: none;
+}
+.TwoLBoxTxt_difang a {
+	padding: 12px; width: 206px; height: 453px; text-align: left; color: rgb(0, 0, 0); line-height: 22px; overflow: hidden; font-size: 12px; text-decoration: none;
+}
+.OneLBoxTit {
+	width: 214px; color: rgb(153, 51, 0); line-height: 23px; font-size: 13px; text-decoration: none;
+}
+.OneLBoxTit a {
+	width: 214px; color: rgb(153, 51, 0); line-height: 23px; font-size: 13px; text-decoration: none;
+}
+.OneLBoxTit a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.TwoLBoxTxt a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.TwoLBoxTxt2 a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.OneRBoxLeft a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.TwoCNews ul li a:hover {
+	color: rgb(255, 0, 0);
+	text-decoration: none;
+	height: auto;
+}
+.Two_spzlRight a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.ThiRightTit a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.OneCNewsRight_right a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.TwoRPicTit a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.libiaoTit ul li a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.neirong_ljwenben ul li a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.tupian_lbTit a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.mingdan_xxmd ul li a:hover {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+.OneLBoxTxte {
+	color: rgb(0, 0, 0);
+}
+.OneLBoxTxte a {
+	color: rgb(0, 0, 0);
+}
+.strong {
+	font-weight: bold;
+}
+.OneCPic {
+	padding: 8px; border: 1px solid rgb(255, 153, 0); width: 467px; height: 264px; margin-bottom: 10px; background-color: rgb(255, 255, 255);
+}
+.OneCNews {
+	border: 1px solid rgb(255, 153, 0); width: 483px; height: 118px;
+}
+.OneCNewsLeft {
+	width: 37px; height: 118px; float: left;
+}
+.OneRBox {
+	border: 1px solid rgb(255, 153, 0); width: 226px; height: 283px; overflow: hidden;
+}
+.OneRBoxTop {
+	width: 100%; height: 26px; border-bottom-color: rgb(255, 153, 0); border-bottom-width: 1px; border-bottom-style: solid; float: left; background-image: url("../images/bg_jbqk.jpg"); background-repeat: repeat-x;
+}
+.TwoRBoxTop {
+	width: auto; height: 26px; border-bottom-color: rgb(255, 153, 0); border-bottom-width: 1px; border-bottom-style: solid; float: left; background-image: url("../images/bg_jbqk.jpg"); background-repeat: repeat-x;
+}
+.TwoCBoxTop {
+	border-right-color: rgb(255, 153, 0); border-right-width: 1px; border-right-style: solid;
+}
+.OneRBoxTLeft {
+	width: 90px; height: 24px; text-align: left; color: rgb(153, 51, 0); line-height: 26px; padding-left: 10px; font-size: 14px; font-weight: bold; float: left; background-image: url("../images/bg_jbqk_tit.jpg"); background-repeat: no-repeat;
+}
+.TwoCBoxTLeft {
+	width: 90px; height: 24px; text-align: left; color: rgb(153, 51, 0); line-height: 26px; padding-left: 10px; font-size: 14px; font-weight: bold; float: left; background-image: url("../images/bg_jbqk_tit.jpg"); background-repeat: no-repeat;
+}
+.TwoRBoxTLeft {
+	width: 200px; height: 24px; text-align: left; color: rgb(153, 51, 0); line-height: 26px; padding-left: 10px; font-size: 14px; font-weight: bold; float: left; background-image: url("../images/bg_jbqk_tit.jpg"); background-repeat: no-repeat;
+}
+.moreOne {
+	width: 40px; text-align: left; color: rgb(0, 0, 0); line-height: 26px; font-size: 12px; text-decoration: none; float: right;
+}
+.moreOne a {
+	width: 40px; text-align: left; color: rgb(0, 0, 0); line-height: 26px; font-size: 12px; text-decoration: none; float: right;
+}
+.TwoCNews {
+	width: 360px; height: 134px; overflow: visible; float: left;
+}
+.TwoCNews ul {
+	list-style: none; margin: 0px; padding: 10px; border: 0px currentColor; width: 385px; height: 200px; overflow: visible; float: left;
+}
+.TwoCNews ul li {
+	width: 100%; text-align: left; color: rgb(0, 0, 0); line-height: 24px; font-size: 13px; text-decoration: none;
+}
+.TwoCNews ul li a {
+	width: 100%; text-align: left; color: rgb(0, 0, 0); line-height: 24px; font-size: 13px; text-decoration: none;
+}
+.TwoCNewsTit {
+	border-top-color: rgb(255, 153, 0); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; float: left; background-image: none;
+}
+.TwoCBoxTLeftC {
+	background-image: none;
+}
+.TwoRPic {
+	padding: 20px 20px 10px; width: 317px; height: 168px; text-align: left; color: rgb(0, 0, 0); line-height: 20px; overflow: hidden; font-size: 12px; text-decoration: none;
+}
+.MainFou {
+	width: 980px; text-align: center; color: rgb(0, 0, 0); line-height: 22px; padding-top: 20px; padding-bottom: 40px; font-size: 12px; float: left;
+}
+.org {
+	color: rgb(255, 102, 0); font-size: 14px; font-weight: bold;
+}
+.menu {
+	width: 690px; height: 50px; padding-top: 6px; padding-left: 42px;
+}
+.menu ul {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; width: 690px;
+}
+.menu ul li {
+	width: 87px; height: 23px; overflow: hidden; padding-right: 10px; float: left;
+}
+.right {
+	border: currentColor; text-align: right; float: right;
+}
+.mingdan_Tit {
+	margin: 20px 0px 0px; width: 100%; height: 68px; text-align: center;
+}
+.mingdan_tishi {
+	background-position: bottom; width: 96%; height: 30px; text-align: right; color: rgb(102, 102, 102); font-size: 12px; background-image: url("../images/bg_line.jpg"); background-repeat: no-repeat;
+}
+.mingdan_xuexiao {
+	padding: 20px; width: 96%; text-align: center; overflow: hidden;
+}
+.mingdan_xxmd {
+	width: 98%; float: left;
+}
+.mingdan_xuexiao ul {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; width: 100%; overflow: hidden;
+}
+.mingdan_xxmd ul {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; width: 100%; overflow: hidden;
+}
+.mingdan_xuexiao ul li {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; width: 100%; overflow: hidden;
+}
+.mingdan_xxmd ul li {
+	width: 302px; height: 25px; text-align: left; color: rgb(51, 51, 51); line-height: 25px; font-size: 13px; text-decoration: none; float: left;
+}
+.mingdan_xxmd ul li a {
+	width: 302px; height: 25px; text-align: left; color: rgb(51, 51, 51); line-height: 25px; font-size: 13px; text-decoration: none; float: left;
+}
+.mingdan_chengshi {
+	width: 98%; height: 40px; text-align: left; color: rgb(255, 125, 0); line-height: 40px; font-size: 16px; font-weight: bold; float: left;
+}
+.mingdan_fanye {
+	margin: 0px 0px 20px 10px; width: 96%; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-size: 12px; text-decoration: none; background-color: rgb(255, 153, 0);
+}
+.mingdan_fanye a {
+	margin: 0px 0px 20px 10px; width: 96%; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-size: 12px; text-decoration: none; background-color: rgb(255, 153, 0);
+}
+.mingdan_fanye a:hover {
+	margin: 0px 0px 20px 10px; width: 96%; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-size: 12px; text-decoration: none; background-color: rgb(255, 153, 0);
+}
+.mingdan_dongtai {
+	margin: 1px; width: 700px; height: 200px; overflow: hidden; padding-top: 1px; border-top-color: rgb(153, 153, 153); border-top-width: 1px; border-top-style: dashed;
+}
+.mingdan_dongtai ul {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; width: 100%;
+}
+.mingdan_dongtai ul li {
+	margin: 10px 15px; padding: 2px; border: 1px solid rgb(153, 153, 153); width: 300px; height: 87px; float: left; display: inline;
+}
+.mingdan_dt_xiangxi {
+	width: 327px; height: 26px;
+}
