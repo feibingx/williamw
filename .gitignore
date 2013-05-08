@@ -8,5 +8,4 @@ out
 debug
 .idea
 *.iml
-src/main/webapp/assets/img
 src/main/webapp/upload
