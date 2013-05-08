@@ -8,8 +8,7 @@
 	<property name="logFileNamePattern" value="${LOG_FILE_NAME}_%d{yyyy-MM-dd}" />
 	<property name="logFileNamePattern2" value="${LOG_FILE_NAME}_%d{yyyy-MM-dd}_%i" />
 	<property name="fileLayoutPattern"
-		value="%d{yyyyMMdd:HH:mm:ss.SSS} [%thread][%logger{25}]%-5level  %msg%n" /><!-- 
-		value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n" /> -->
+		value="%d{yyyyMMdd:HH:mm:ss.SSS} [%logger{25}][%thread]%-5level  %msg%n" />
 	<property name="consoleLayoutPattern"
 		value="%d{yyyyMMdd:HH:mm:ss.SSS}[%logger{25}]%-5level  %msg%n" />
 	<contextName>pchApp</contextName>

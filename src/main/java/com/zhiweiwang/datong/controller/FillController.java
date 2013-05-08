@@ -36,14 +36,21 @@ public class FillController {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/fillin", method = RequestMethod.POST)
 	public ModelAndView fillin(HttpServletRequest request, @ModelAttribute(DTContants.USER_IN_SESSION) User user) {
-		
+        
+        ModelAndView mav = new ModelAndView();
+ 
 		logger.info("user is:  {} ",user.getId());
 		
 		Map map = new HashMap(request.getParameterMap());
 		Set<String> keys = map.keySet();
         for (Iterator it = keys.iterator(); it.hasNext();) {
             String key = (String) it.next();
-            Object student = request.getParameter(key);           
+            Object student = request.getParameter(key);
+            if(isNotAllowNull(key, student)){
+            	mav.setViewName("redirect:/message");
+            	mav.addObject(DTContants.MSG_ERRER, DTMessage.NOT_AVLID_REQUEST);
+            	return mav;
+            }
             map.put(key, student.toString());
             logger.info("params:  {} - {}",new Object[]{key, student});
         }
@@ -63,9 +70,7 @@ public class FillController {
         	map.put(DTContants.IMG_PATH, imgpath);
         }
         logger.info(map.toString());
-        
-        ModelAndView mav = new ModelAndView();
-        
+       
         Map<?, ?> student = studentMapper.getStudent(user.getId());
         if( student == null || student.size()<1){
         	studentMapper.insertRow(map);
@@ -77,6 +82,16 @@ public class FillController {
 		
 		mav.setViewName("redirect:/message");
 		return mav;
+	}
+
+	private boolean isNotAllowNull(String key, Object obj) {
+		if(obj == null){
+			for(String n: XKEYS){
+				if(n.equals(key))
+					return true;
+			}
+		}
+		return false;
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -93,7 +108,7 @@ public class FillController {
         DTUtils.makeJson2Map(model, "prices");
         return model;
 	}
-	
+	private static final String[] XKEYS={"name","pid"};
 	private static final String[] PRICE_NAMES = {"pname","plev","pcell","ptime"};
 	private static final String[] HONOR_NAMES = {"hname","hlev"};
 }

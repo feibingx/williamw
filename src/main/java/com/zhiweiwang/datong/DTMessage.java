@@ -11,4 +11,5 @@ public class DTMessage {
 	public static final String UPLOAD_FILE_NOT_ALLOW = "upload_file_not_allowd";	
 	public static final String SEARCH_WITH_NO_WHERE = "search_with_no_where";
 	public static final String SEARCH_INVALID = "search_invalid";
+	public static final Object NOT_AVLID_REQUEST = "not_valid_request";
 }
