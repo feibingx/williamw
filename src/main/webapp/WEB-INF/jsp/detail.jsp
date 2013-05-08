@@ -37,8 +37,10 @@ tr td {
 
 table {
 	width: 790px;
+	max-width: 790px;
 }
 
+p{max-width: 780px;}
 .wrapper div {
 	text-align: center;
 	margin: 2px auto;

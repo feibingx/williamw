@@ -70,7 +70,8 @@
         ,getMovieUrl:URL+"jsp/getMovie.jsp"                   //视频数据获取地址
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
-        ,toolbars:[[]]
+        ,toolbars:[["fullscreen","undo","redo","insertunorderedlist","link","unlink","bold","italic","underline","forecolor","justifyleft","justifycenter","justifyright","justifyjustify","pasteplain"]]
+        
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         ,labelMap:{
             'anchor':'', 'undo':''
