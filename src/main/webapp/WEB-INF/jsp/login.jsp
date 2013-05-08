@@ -99,13 +99,13 @@ width="980" height="185"></DIV>
                       </div>
                     </div>
                   </div>
+                  <P></P>
                   <P>&nbsp;</P>
                   <P>&nbsp;</P>
                   <P>&nbsp;</P>
                   <P>&nbsp;</P>
                   <P>&nbsp;</P>
-                  <P>&nbsp;</P>
-                  <P>&nbsp;</P>
+                  <P></P>
                   <DIV class="TwoLBoxTLeft STYLE2 STYLE3">友情链接</DIV>
                   <P>&nbsp;</P>
                   <P>&nbsp;</P>
@@ -134,11 +134,13 @@ href="http://dt.hpe.sh.cn/opencms/opencms/index.html"></A>
                 <P class="STYLE1" align="left">
                   <SPAN class="STYLE14">招生动态</SPAN>
                 </P>
-                <P class="STYLE19" align="left">
+		<P class="STYLE19" align="left">
+		<span class="STYLE24">&#8250; 推荐使用<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">IE8</a>以上或者<a href="https://www.google.com/intl/zh-CN/chrome/browser/index.html?system=true&standalone=1#eula">Chrome</a>访问本站,不推荐使用360浏览器。</span><br>
                     <span class="STYLE24">&#8250; 请各位考生于注册填报成功即日起至5月14日16:00之前将相关材料递交我校。<br>
   &#8250; 请各位家长和考生务必登录上海招考热线，完成报考我校的相关流程。<br>
 &#8250; 考生所填写递交的材料必须真实有效，否则一切后果由考生本人负责。<br>
-&#8250; 请各位考生妥善保管注册名和密码，并及时登录网站查询最新动态。</span>
+&#8250; 请各位考生妥善保管注册名和密码，并及时登录网站查询最新动态。</span><br>
+<span class="STYLE24">&#8250; 请各位考生注意，上传图片时仅允许JPG、PNG、GIF文件，选择完毕后请点击提交，请不要上传3<span class="STYLE25">M</span>以上的图像文件,最优图片比例为110*140。</span>
                 </P>
                 <P class="STYLE18" align="left">&nbsp;</P>
               </DIV>
@@ -146,10 +148,12 @@ href="http://dt.hpe.sh.cn/opencms/opencms/index.html"></A>
             </DIV>
             <DIV align="center">
               <P class="STYLE1">&nbsp;</P>
-              <P class="STYLE1" align="left">&nbsp;</P>
-              <P class="STYLE1" align="left">&nbsp;</P>
-              <P class="STYLE1" align="left">&nbsp;</P>
-              <DIV class="TwoRBoxTLeft STYLE7">
+	      <p align="left" class="STYLE1">&nbsp;</p>
+	      <p align="left" class="STYLE1">&nbsp;</p>
+	      <p align="left" class="STYLE1">&nbsp;</p>
+	      <p align="left" class="STYLE1">&nbsp;</p>
+	      <p align="left" class="STYLE1">&nbsp;</p>
+	      <DIV class="TwoRBoxTLeft STYLE7">
                 <SPAN class="STYLE1">
                   <SPAN 
 class="STYLE14">招生政策</SPAN>
@@ -183,15 +187,14 @@ target="_blank">• 2013年上海市大同中学高中艺术特长生招生简�
 target="_blank">• 2013年上海市大同中学体育特长生招生办法...</A>
                 </SPAN>
               </P>
-              <P class="STYLE1">&nbsp;</P>
             </DIV>
             <DIV class="mingdan_dongtai">
               <a href="assets/img/zjzs_files/2013zsjc1.jpg" target="_blank">
                 <img border="0" src="assets/img/zjzs_files/Table_2013zsjc1.jpg" 
-width="339" height="185"></a>
+width="339" height="146"></a>
               <a href="assets/img/zjzs_files/2013zsjc2.jpg" target="_blank">
                 <IMG border="0" src="assets/img/zjzs_files/Table_2013zsjc2.jpg" 
-width="339" height="185"></a>
+width="339" height="146"></a>
             </DIV>
             <!--
       <div class="mingdan_dongtai">
