@@ -95,7 +95,7 @@
 								<fmt:message key="${dtstudent.sts}" />
 							</td>
 							<td>
-								<a href="detail/${dtstudent.id}" class="btn btn-info">审阅</a>
+								<a href="detail/${dtstudent.id}" class="btn btn-info" target="_blank">审阅</a>
 							</td>
 						</tr>
 					</c:forEach>
