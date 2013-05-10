@@ -4,7 +4,8 @@ public class DTContants {
 
 	public static final String USER_IN_SESSION = "dtuser";
 	public static final String STUDENT_IN_SESSION = "sis";
-
+	public static final String SYS_CONF_PHASE ="SYS_CONF_PHASE";
+	
 	public static final String STUDENT_ID_IN_SESSION = "student_id";
 	public static final String DT_STUDENT = "dtstudent";
 	public static final String MSG_ERRER = "errmessage";

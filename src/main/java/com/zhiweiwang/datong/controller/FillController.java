@@ -66,7 +66,7 @@ public class FillController {
         // bad coding  
         // using user id to sure if the img belong to one
         // 
-        if(imgpath != null && imgpath.toString().indexOf(""+user.getId())>0){
+        if(imgpath != null && imgpath.toString().indexOf("img"+user.getId())>0){
         	map.put(DTContants.IMG_PATH, imgpath);
         }
         logger.info(map.toString());

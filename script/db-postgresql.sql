@@ -11,6 +11,7 @@ use apply;
 
 drop table IF EXISTS dt_users;
 drop table IF EXISTS dt_students;
+drop table IF EXISTS sysconf;
 
 
 create sequence id_seq increment 1 minvalue 1 maxvalue 9223372036854775807  cache 1;
@@ -25,6 +26,10 @@ create table dt_users(
 	createTime timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
+create table sysconf(
+	confname varchar(60) not null primary key,
+	confvalue varchar(120) not null
+);
 
 CREATE TABLE dt_students (
    id int not null unique,

@@ -37,6 +37,7 @@
 					<value>search</value>
 				</list>
 			</property>
+			<property name="sysconfMapper" ref="sysconfMapper"/>
 		</bean>
 	</mvc:interceptors>
 
@@ -73,6 +74,12 @@
 		<property name="mapperInterface" value="com.zhiweiwang.datong.mapper.StudentMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	
+	<bean id="sysconfMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.zhiweiwang.datong.mapper.SysconfMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
