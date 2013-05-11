@@ -106,7 +106,7 @@
   <div class="container-narrow">
 
     <div class="masthead">
-      <img class="pull-left title" src="assets/img/logo.png">
+      <a href="login" class="titlea"><img class="pull-left title" src="assets/img/logo.png"></a>
       <h2 class="pull-left title">自荐招生系统</h2>
       <a class="pull-right hidden-link" href="superlogin">管理员登陆</a>
     </div>

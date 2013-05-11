@@ -35,6 +35,8 @@
 					<value>pass</value>
 					<value>reject</value>
 					<value>search</value>
+					<value>superadmin</value>
+					<value>supereditor</value>
 				</list>
 			</property>
 			<property name="sysconfMapper" ref="sysconfMapper"/>

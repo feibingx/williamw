@@ -25,11 +25,13 @@ create table dt_users(
 	role varchar(12),
 	createTime timestamp DEFAULT CURRENT_TIMESTAMP
 );
-
 create table sysconf(
 	confname varchar(60) not null primary key,
-	confvalue varchar(120) not null
+	confvalue text
 );
+
+insert into sysconf values('sysphase','applying');
+insert into sysconf values('logintext',null);
 
 CREATE TABLE dt_students (
    id int not null unique,

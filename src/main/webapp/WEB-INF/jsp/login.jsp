@@ -1,233 +1,277 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<!-- saved from url=(0054)http://dt.hpe.cn/opencms/opencms/oldWeb/daode/zjzs.htm -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<HTML xmlns="http://www.w3.org/1999/xhtml">
-<HEAD>
-  <META content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <LINK rel="stylesheet" 
-type="text/css" href="assets/img/zjzs_files/zygydddr0623.css">
-  <LINK rel="icon" 
-type="image/x-icon" 
-href="http://www.wenming.cn/jingtai/images/favicon.ico">
-  <LINK rel="shortcut icon" 
-type="image/x-icon" href="http://www.wenming.cn/jingtai/images/favicon.ico">
-  <TITLE>上海市大同中学自荐招生平台</TITLE>
-  <META name="GENERATOR" content="MSHTML 9.00.8112.16476">
-  <STYLE type="text/css">
-<!--
-.STYLE1 {font-family: "宋体"}
-.STYLE2 {font-size: 18px}
-.STYLE3 {color: #993300}
-.STYLE6 {font-size: 14px; font-family: "宋体"; }
-.STYLE7 {
-  font-size: 16px;
-  width: 700px;
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>大同中学自荐招生系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  <style type="text/css">
+    .wrapper {margin:auto; height: 160px; background: #FFF; width: 400px; }
+    .page{margin: 0 auto; max-width: 800px; height: 100%; min-height:100%; _height:100%; margin-bottom:-55px;}
+    .error {color: #B94A48;}
+    .errmsg{ margin-left: 100px;}
+    .hidden-link { color: white; }
+    .hidden-link:hover { color: #EDEDED; }
+    .centerw { padding-top: 155px;}
+
+    html{height:100%;}
+      body {
+        height:100%;
+      }
+
+      h3{
+       border-bottom: 1px solid #FF9900;
+       border-top: 1px solid #FF9900;
+       padding: 0 0 0 15px;
+       color: #993300;
+      }
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      .marketing {
+        margin: 0;
+      }
+      .marketing p + h4 {
+        margin-top: 25px;
+        margin-left: 25px;
+      }
+      .span5{
+        margin-bottom:10px;
+        padding: 16px;
+      }
+      #picslice {
+      background: #FFF;
+      overflow:hidden;
+      border: 1px dashed #CCC;
+      width: 100%;
+      max-width: 1000px;
+      height: 700px;
+      }
+      #picslice img {
+      border: 3px solid #F2F2F2;
+      }
+      #inpicslice {
+      float: left;
+      width: 800%;
+      }
+      #picslice1 {
+      float: left;
+      }
+      #picslice2 {
+      float: left;
+      }
+
+      .TwoLBoxTop {
+    border-top: 10px solid #FFBC10;
+    border-left: 10px solid #FFBC10;
+    border-right: 10px solid #FFBC10;
+    border-bottom: 30px solid #FFBC10;
+    margin: 15px 0 15px 0;
+    padding: 0 0 25px 0;
+     float: left;
+     width: 260px;
 }
-.STYLE8 {font-size: 14px}
-.STYLE9 {font-size: xx-large}
-.STYLE10 {font-family: "宋体"; font-size: 12px; }
-.STYLE11 {font-size: 12px}
-.STYLE12 {font-size: 12}
-.STYLE14 {color: #993300; font-weight: bold; }
-.STYLE18 {font-family: "宋体"; font-size: 16px; color: #000000; }
-.STYLE19 {font-family: "宋体"; font-size: 18px; color: #000000; }
-.STYLE24 {
-	font-size: 14px;
-	color: #000000;
-	font-family: "宋体";
+form{
+  padding: 0 0px 0px 20px;
 }
-#Layer1 {
-  position:absolute;
-  width:200px;
-  height:115px;
-  z-index:1;
+.loginTitle{
+  background-color: #FFBC10;
+  padding: 0px 0px 0 20px ;
+  color: #993300;
+    font-size: 17px;
+    height: 29px;
+    line-height: 29px;
+    font-weight: bold;
 }
--->
-</STYLE>
-</HEAD>
-<BODY>
-  <DIV class="top">
-    <DIV id="top"></DIV>
-  </DIV>
-  <DIV id="header">
-    <DIV class="header">
-      <IMG border="0" src="assets/img/zjzs_files/zijianpingtai.jpg" 
-width="980" height="185"></DIV>
-  </DIV>
-  <DIV id="content">
-    <DIV id="Main">
-      <DIV id="MainLeft">
-        <DIV id="Nav">
-          <DIV class="navRight"></DIV>
-        </DIV>
-        <DIV class="MainTwo">
-          <DIV class="TwoLeft">
-            <DIV class="OneLBox OneLBox1 TwoLBox">
-              <DIV class="TwoLBoxTop">
-                <DIV class="TwoLBoxTLeft STYLE2">用户登录</DIV>
-              </DIV>
-              <DIV class="TwoLBoxTxt TwoLBoxTxt_difang">
-                <FORM method="post" name="form1" action="login">
-                  <LABEL></LABEL>
-                  <div id="Layer1">
-                    <div align="left">
-                      <c:if test="${errmessage!=null && fn:length(errmessage)> 0}">
-                        <div class="help-inline error">
-                          <fmt:message key="${errmessage}" />
-                        </div>
-                      </c:if>
-                      <div>
-                        <label for="name">用户名</label>
-                        <div>
-                          <input type="text" id="name" name="name" placeholder="请输入姓名" class="input"></div>
-                      </div>
-                      <div>
-                        <label for="inputPassword">密码</label>
-                        <div>
-                          <input type="password" id="password" name="password" placeholder="请输入密码" class="input"></div>
-                      </div>
-                      <div>
-                        <div>
-                          <button type="submit" >登录</button>
-                          &nbsp;
-                          <a href="register" >注册</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <P></P>
-                  <P>&nbsp;</P>
-                  <P>&nbsp;</P>
-                  <P>&nbsp;</P>
-                  <P>&nbsp;</P>
-                  <P>&nbsp;</P>
-                  <P></P>
-                  <DIV class="TwoLBoxTLeft STYLE2 STYLE3">友情链接</DIV>
-                  <P>&nbsp;</P>
-                  <P>&nbsp;</P>
-                  <H1 class="STYLE6">
-                    <SPAN class="STYLE9">
-                      <A href="http://www.shmeea.edu.cn/" target="_blank">上海招考热线</A>
-                    </SPAN>
-                  </H1>
-                  <H1 class="STYLE6" align="left">
-                    <SPAN class="STYLE9">
-                      <A href="http://dt.hpe.sh.cn/" target="_blank">上海市大同中学</A>
-                    </SPAN>
-                  </H1>
-                  <P class="STYLE2" align="left">&nbsp;</P>
-                  <P>
-                    <A 
-href="http://dt.hpe.sh.cn/opencms/opencms/index.html"></A>
-                  </P>
-                </FORM>
-              </DIV>
-            </DIV>
-          </DIV>
-          <DIV class="TwoRight">
-            <DIV class="TwoRBoxTop">
-              <DIV class="TwoRBoxTLeft STYLE7">
-                <P class="STYLE1" align="left">
-                  <SPAN class="STYLE14">招生动态</SPAN>
-                </P>
-		<P class="STYLE19" align="left">
-		<span class="STYLE24">&#8250; 推荐使用<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">IE8</a>以上或者<a href="https://www.google.com/intl/zh-CN/chrome/browser/index.html?system=true&standalone=1#eula">Chrome</a>访问本站,不推荐使用360浏览器。</span><br>
-                    <span class="STYLE24">&#8250; 请各位考生于注册填报成功即日起至5月14日16:00之前将相关材料递交我校。<br>
-  &#8250; 请各位家长和考生务必登录上海招考热线，完成报考我校的相关流程。<br>
-&#8250; 考生所填写递交的材料必须真实有效，否则一切后果由考生本人负责。<br>
-&#8250; 请各位考生妥善保管注册名和密码，并及时登录网站查询最新动态。</span><br>
-<span class="STYLE24">&#8250; 请各位考生注意，上传图片时仅允许JPG、PNG、GIF文件，选择完毕后请点击提交，请不要上传3<span class="STYLE25">M</span>以上的图像文件,最优图片比例为110*140。</span>
-                </P>
-                <P class="STYLE18" align="left">&nbsp;</P>
-              </DIV>
-              <DIV class="moreOne">更多&gt;</DIV>
-            </DIV>
-            <DIV align="center">
-              <P class="STYLE1">&nbsp;</P>
-	      <p align="left" class="STYLE1">&nbsp;</p>
-	      <p align="left" class="STYLE1">&nbsp;</p>
-	      <p align="left" class="STYLE1">&nbsp;</p>
-	      <p align="left" class="STYLE1">&nbsp;</p>
-	      <p align="left" class="STYLE1">&nbsp;</p>
-	      <DIV class="TwoRBoxTLeft STYLE7">
-                <SPAN class="STYLE1">
-                  <SPAN 
-class="STYLE14">招生政策</SPAN>
-                </SPAN>
-              </DIV>
-              <P class="STYLE1" align="left">&nbsp;</P>
-              <P class="STYLE1" align="left">
-                <SPAN class="STYLE8">
-                  <SPAN class="STYLE11">
-                    <SPAN 
-class="STYLE12">
-                      <SPAN class="STYLE11">
-                        <A href="http://dt.hpe.sh.cn/opencms/opencms/news/AdmissionsInformation/1440fde1-a6f8-11e2-9ee9-6944ccbba2e6.html" 
-target="_blank">• 2013年上海市大同中学“提前招生录取”方案...</A>
-                      </SPAN>
-                    </SPAN>
-                  </SPAN>
-                </SPAN>
-              </P>
-              <P class="STYLE10" align="left">
-                <A href="http://dt.hpe.sh.cn/opencms/opencms/news/AdmissionsInformation/4415d61a-a6fb-11e2-9ee9-6944ccbba2e6.html" 
-target="_blank">• 2013年上海市大同中学推荐生招生计划表...</A>
-              </P>
-              <P class="STYLE10" align="left">
-                <A href="http://dt.hpe.cn/opencms/opencms/news/AdmissionsInformation/ef3627e3-6360-11e2-9748-6944ccbba2e6.html" 
-target="_blank">• 2013年上海市大同中学高中艺术特长生招生简章...</A>
-              </P>
-              <P class="STYLE1" align="left">
-                <SPAN class="STYLE11">
-                  <A href="http://dt.hpe.sh.cn/opencms/opencms/news/AdmissionsInformation/9ba2acab-a567-11e2-b383-6944ccbba2e6.html" 
-target="_blank">• 2013年上海市大同中学体育特长生招生办法...</A>
-                </SPAN>
-              </P>
-            </DIV>
-            <DIV class="mingdan_dongtai">
-              <a href="assets/img/zjzs_files/2013zsjc1.jpg" target="_blank">
-                <img border="0" src="assets/img/zjzs_files/Table_2013zsjc1.jpg" 
-width="339" height="146"></a>
-              <a href="assets/img/zjzs_files/2013zsjc2.jpg" target="_blank">
-                <IMG border="0" src="assets/img/zjzs_files/Table_2013zsjc2.jpg" 
-width="339" height="146"></a>
-            </DIV>
-            <!--
-      <div class="mingdan_dongtai">
-            <ul>
-              <li>
-                <a href="#" target="_blank">
-                  <img src="images/pic/20115.jpg" width="131" height="87" border="0" />
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank">
-                  <img src="images/pic/20116.jpg" width="131" height="87" border="0" />
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank">
-                  <img src="images/pic/20117.jpg" width="131" height="87" border="0" />
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank">
-                  <img src="images/pic/20118.jpg" width="131" height="87" border="0" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          -->
-        </DIV>
-      </DIV>
-      <DIV class="MainFou"></DIV>
-    </DIV>
-    <DIV id="MianRight"></DIV>
-  </DIV>
-</DIV>
-</BODY>
-</HTML>
+    </style>
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container-narrow">
+
+    <div class="masthead" style="margin:auto;">
+      <IMG border="0" src="assets/img/zjzs_files/zijianpingtai.jpg" width="1000"></div>
+
+    <div class="row-fluid marketing">
+      <div class=" TwoLBoxTop">
+        <p class="loginTitle">用户登录</p>
+        <div>
+          <c:if test="${errmessage!=null && fn:length(errmessage)>0}">
+            <div class="help-inline error">
+              <fmt:message key="${errmessage}" />
+            </div>
+          </c:if>
+
+          <form class="form-vertical" action="login" method="post" >
+            <div class="control-group">
+              <label class="control-label" for="name">用户名</label>
+              <div class="controls">
+                <input type="text" id="name" name="name" placeholder="请输入姓名" class="input">
+                <span id="input01alert"  class="help-inline hidden">不能为空</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputPassword">密码</label>
+              <div class="controls">
+                <input type="password" id="password" name="password" placeholder="请输入密码" class="input">
+                <span id="input02alert"  class="help-inline hidden">不能为空</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn">登录</button>
+                <span class="help-inline hidden">nbsp;</span>
+                <a href="register" class="btn">注册</a>
+                <span class="help-inline hidden">nbsp;</span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div style="margin-top:60px; padding: 20px;">
+          <ul class="nav nav-tabs nav-stacked" style="width:220px;">
+            <li class="nav-header" style="backgournd: #FFF; color: #000000" >
+              <h4 style=" color: #993300;">友情链接</h4>
+            </li>
+            <li>
+              <a href="http://www.shmeea.edu.cn/node2/index.html">上海招考热线</a>
+            </li>
+            <li>
+              <a href="http://dt.hpe.sh.cn/opencms/opencms/index.html">大同中学</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="span8">
+      <div>
+          ${logintext}
+          </div>      </div>
+    </div>
+    <!-- <hr>-->
+    <div id="picslice">
+      <div id="inpicslice">
+        <div id="picslice1">
+          <a href="assets/img/zjzs_files/2013zsjc1.jpg" target="_blank">
+            <img src="assets/img/zjzs_files/Table_2013zsjc1.jpg" border="0" />
+          </a>
+          <a href="assets/img/zjzs_files/2013zsjc2.jpg" target="_blank">
+            <img src="assets/img/zjzs_files/Table_2013zsjc2.jpg" border="0" />
+          </a>
+        </div>
+        <div id="picslice2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /container -->
+<!-- Footer ================================================== -->
+<footer class="footer"  valign="bottom">
+  <div class="container">
+    <p class="pull-right">本站推荐使用Firefox、Chrome浏览</p>
+    <p>Copyrigth ©2013 大同高级中学</p>
+  </div>
+</footer>
+
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="assets/js/bootstrap-modal.js"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="assets/js/bootstrap-carousel.js"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/application.js"></script>
+<script>
+  var speed = 27;
+  var tab = document.getElementById("picslice");
+  var tab1 = document.getElementById("picslice1");
+  var tab2 = document.getElementById("picslice2");
+  tab2.innerHTML = tab1.innerHTML;
+
+  function Marquee() {
+    if (tab2.offsetWidth - tab.scrollLeft <= 0) tab.scrollLeft -= tab1.offsetWidth
+    else {
+      tab.scrollLeft++;
+    }
+  }
+  var MyMar = setInterval(Marquee, speed);
+  tab.onmouseover = function() {
+    clearInterval(MyMar)
+  };
+  tab.onmouseout = function() {
+    MyMar = setInterval(Marquee, speed)
+  };
+        $(function(){
+        $("form").submit(function(){
+            if( $("#name").attr("value") == ""){
+                $("#input01alert").removeClass("hidden");
+                $("#input01alert").addClass("error");
+                $("#input01alert").html("用户名不能为空");
+                return false;
+            }
+            if( $("#password").attr("value") == ""){
+                $("#input02alert").removeClass("hidden");
+                $("#input02alert").addClass("error");
+                $("#input02alert").html("密码不能为空");
+                return false;
+            }
+            return true;
+        });
+
+        
+    });
+    </script></body>
+</html>

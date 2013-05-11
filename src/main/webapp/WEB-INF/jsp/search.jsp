@@ -28,7 +28,7 @@
 <body>
 	<div class="page">
 		<div class="logo">
-			<img class="pull-left" src="assets/img/logo.png">
+			<a href="login" class=titlea" ><img class="pull-left" src="assets/img/logo.png"></a>
 			<div class="pull-left title">自荐招生系统</div>
 			<div>
 				<a href="logout" class="pull-right">注销</a>

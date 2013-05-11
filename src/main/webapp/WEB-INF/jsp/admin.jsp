@@ -23,14 +23,18 @@
 .statusbar{
 	padding: 12px 0;
 }
+.link{
+	margin: 0 0 0 10px;
+}
 </style>
 <body>
 	<div class="page">
 		<div class="logo">
-			<img class="pull-left" src="assets/img/logo.png">
+			<a href="login" class=titlea" ><img class="pull-left" src="assets/img/logo.png"></a>
 			<div class="pull-left title">自荐招生系统</div>
 			<div>
-				<a href="logout" class="pull-right">注销</a>
+				<a href="logout" class="pull-right link">注销</a>				
+				<a href="supereditor" class="pull-right link">编辑首页</a>
 			</div>
 		</div>
 		

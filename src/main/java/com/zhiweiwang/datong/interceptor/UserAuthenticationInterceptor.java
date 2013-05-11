@@ -35,8 +35,8 @@ public class UserAuthenticationInterceptor extends HandlerInterceptorAdapter {
 				
 				String phase = sysconfMapper.getValue(SysConfContants.SYSPHASE);
 				
-				if(phase != null && phase.equals(SysConfContants.eSYSPHASE.applying)){
-					
+				if(phase==null || SysConfContants.eSYSPHASE.applying.toString().equals(phase)){
+					// 系统接受申请状态
 				}else{
 					response.addHeader(DTContants.MSG_ERRER, "login first ! bitch!");
 					response.sendRedirect(request.getContextPath() + "/info/"+phase);

@@ -70,7 +70,7 @@ body{
 	<div id="content" class="picform">
 		<form name="form" action="pic" method="POST" enctype="multipart/form-data">
 			<c:if test="${imgpath != null}">
-				<img class="imgclass" src="${imgpath}" />
+				<a href="${imgpath}" target="_blank"><img class="imgclass" src="${imgpath}" /></a>
 			</c:if>
 			<c:if test="${imgpath == null}">
 				<input class="pull-right" id="fileToUpload" name="fileToUpload" type="file" onchange="readURL(this);">

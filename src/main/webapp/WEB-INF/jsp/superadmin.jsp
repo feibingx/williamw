@@ -33,7 +33,7 @@
 <body>
 <div class="page">
   <div class="logo">
-			<img class="pull-left title" src="assets/img/logo.png">
+			<a href="login" class="titlea"><img class="pull-left title" src="assets/img/logo.png"></a>
 			<div class="pull-left title">自荐招生系统 管理后台</div>
 			<a href="login" class="pull-right">普通登录</a>
 		</div>

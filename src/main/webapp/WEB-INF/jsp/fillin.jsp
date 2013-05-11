@@ -52,7 +52,7 @@ table {
 
 	<div class="page">
 		<div class="logo">
-			<img class="pull-left" src="assets/img/logo.png">
+			<a href="login" class="titlea"><img class="pull-left title" src="assets/img/logo.png"></a>
 			<div class="pull-left title">自荐招生系统</div>
 			<a href="logout" class="pull-right">注销</a>
 			<a data-content="请务必先完成提交后，再进行打印" rel="popover" data-placement="left" class="btn pull-right print-btn" href="print/${dtstudent.id}" data-original-title="注意!">打印</a>
