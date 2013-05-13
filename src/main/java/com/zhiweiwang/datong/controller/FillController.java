@@ -39,7 +39,7 @@ public class FillController {
         
         ModelAndView mav = new ModelAndView();
  
-		logger.info("user is:  {} ",user.getId());
+		logger.info("user is updating:  {} ",user.getId());
 		
 		Map map = new HashMap(request.getParameterMap());
 		Set<String> keys = map.keySet();
@@ -52,7 +52,7 @@ public class FillController {
             	return mav;
             }
             map.put(key, student.toString());
-            logger.info("params:  {} - {}",new Object[]{key, student});
+            logger.debug("params:  {} - {}",new Object[]{key, student});
         }
         
       	DTUtils.makeMap2Json(map, HONOR_NAMES, "honors");

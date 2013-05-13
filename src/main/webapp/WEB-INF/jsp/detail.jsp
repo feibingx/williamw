@@ -97,7 +97,8 @@ p{max-width: 780px;}
 	<div class="navbar navbar-fixed-top ">
 		<div class="mynav">
 			<span class="center"> 
-			<a id="pass" name="pass" onClick="setDatetime();" class="btn btn-large btn-success">通过</a>
+			<!-- <a id="pass" name="pass" onClick="setDatetime();" class="btn btn-large btn-success">通过</a> -->
+			<a href="../deal?action=sts_pass" class="btn btn-large btn-success">通过</a>
 			<a href="../deal?action=sts_wait" class="btn btn-large btn-warning">待定</a>
 			<a href="../deal?action=sts_reject" class="btn btn-large btn-danger">拒绝</a>
 			<a href="../admin" class="btn btn-large btn-info">返回</a>

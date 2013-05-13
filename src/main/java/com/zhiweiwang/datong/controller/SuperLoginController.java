@@ -16,13 +16,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
-/**
- * Created with IntelliJ IDEA.
- * User: WilliamW
- * Date: 13-4-18
- * Time: 上午10:26
- * To change this template use File | Settings | File Templates.
- */
 @Controller
 @RequestMapping("/superlogin")
 @SessionAttributes(DTContants.USER_IN_SESSION)

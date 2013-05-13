@@ -28,8 +28,11 @@ public class DetailController {
     private StudentMapper studentMapper;
     
 	@RequestMapping(value="/deal",method = POST)
-    public String postDeal(@RequestParam(value="action",required=false) String action,@RequestParam(required=false) String interview, HttpSession session){
-    	return deal(action, interview, (Integer)session.getAttribute(DTContants.STUDENT_ID_IN_SESSION), ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
+    public String postDeal(@RequestParam(value="action",required=false) String action,@RequestParam(required=false) String interview,@RequestParam(required=false) String id, HttpSession session){
+    	if(id==null)
+    		return deal(action, interview, (Integer)session.getAttribute(DTContants.STUDENT_ID_IN_SESSION), ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
+    	else
+    		return deal(action, interview, Integer.parseInt(id), ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
     }
 	
 	@RequestMapping(value="/deal",method = GET)
@@ -40,6 +43,11 @@ public class DetailController {
 
 	@RequestMapping(value="/pass",method = POST)
     public String pass(@RequestParam(required=false) int id,@RequestParam(required=false) String action,@RequestParam(required=false) String interview, HttpSession session) {
+    	return deal(action, interview, id, ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
+    }
+	
+	@RequestMapping(value="/pass",method = GET)
+    public String passGet(@RequestParam(required=false) int id,@RequestParam(required=false) String action,@RequestParam(required=false) String interview, HttpSession session) {
     	return deal(action, interview, id, ((User)session.getAttribute(DTContants.USER_IN_SESSION)).getRole());
     }
 	

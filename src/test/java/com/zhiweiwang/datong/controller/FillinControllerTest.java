@@ -26,12 +26,7 @@ public class FillinControllerTest {
 	
 	@Autowired
 	StudentMapper studentMapper;
-	
-	@Before
-	public void perpare(){
-		studentMapper.deleteStudent(100);
-	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@Test
 	public void should_inserted(){

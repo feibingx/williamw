@@ -82,7 +82,7 @@
 							</td>
 							<td>
 							<a href="detail/${dtstudent.id}" class="btn btn-info">审阅</a>
-							<a href="#" onClick="setDatetime(${dtstudent.id});" class="btn btn-success">通过</a>
+							<a href="pass?action=sts_pass&id=${dtstudent.id}" class="btn btn-success">通过</a>
 							<a href="reject?id=${dtstudent.id}" class="btn btn-danger">拒绝</a></td>
 						</tr>
 					</c:forEach>

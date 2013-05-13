@@ -45,4 +45,11 @@ public interface StudentMapper {
 	
 	@Select("select sts,count(*) as cnt from dt_students group by sts")
 	List<Map<String, ?>> getCounting();
+	
+	@Select("select interview,count(*) as cnt from dt_students where sts='sts_pass' group by interview")
+	List<Map<String, ?>> getInterviewing();
+	
+	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview FROM dt_students where sts='sts_pass' order by nid")
+	List<Map<?, ?>> getPassedStudents();
+	
 }
