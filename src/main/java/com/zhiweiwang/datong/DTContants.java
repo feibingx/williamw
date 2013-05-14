@@ -56,9 +56,11 @@ public class DTContants {
 	public static final String DT_PAIMIN1 = "paimin1";
 	public static final String DT_PAIMIN2 = "paimin2";
 	public static final String IMG_PATH = "imgpath";
+	public static final String DT_INTERVIEW = "interview";
 	public static final String[] IMG_TYPE_ALLOWED = {"jpg","gif","jpeg","png"};
 	public static final String RET_VIEWER = "retviewer";
 	public static final String LOGINTEXT = "logintext";
+	public static final String TIMETABLELIST = "timetablelist";
 	
 	
 

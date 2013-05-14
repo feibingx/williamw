@@ -52,4 +52,7 @@ public interface StudentMapper {
 	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview FROM dt_students where sts='sts_pass' order by nid")
 	List<Map<?, ?>> getPassedStudents();
 	
+	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview FROM dt_students where sts='sts_pass' and interview=#{interview} order by nid")
+	List<Map<?, ?>> getPassedStudentsByInterview(@Param("interview") String interview);
+	
 }
