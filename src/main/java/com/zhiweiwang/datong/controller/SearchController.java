@@ -95,13 +95,24 @@ public class SearchController {
 				resultList.add(row);
 			}
 		} catch (SQLException e) {
-
 			try {
+				statement.close();
 				conn.close();
 			} catch (Exception ex) {
 				e.printStackTrace();
 			}
 			e.printStackTrace();
+		}finally{
+			try {
+				statement.close();
+				conn.close();
+			} catch (SQLException ex) {
+				try {
+					statement.close();
+					conn.close();
+				} catch (Exception e) {
+				}
+			}
 		}
 
 		return new ModelAndView("search","dtstudentlist",resultList);

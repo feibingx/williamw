@@ -32,16 +32,13 @@
 </head>
 <body>
     <div class="page">
-        <div class="logo">
-            <a href="login" class=titlea" ><img class="pull-left title" src="assets/img/logo.png"></a>
-            <div class="pull-left title">自荐招生系统 管理后台</div>
-            <a href="login" class="pull-right">普通登录</a>
-        </div>
+		<jsp:include page="/logo" />
+		
         <div class="wrapper">
             <!-- form begin -->
             <form action="supereditor" id="theform" method="post">
                 <button id="submitbtn" type="submit" class="btn btn-primary pull-right">提交</button>
-                <div class="control-group">本后台用于编辑现实首页</div>                
+                <div class="control-group">本后台用于编辑显示首页</div>                
                 <div style="padding-top: 10px;">
                     <textarea name="logintext" id="logintext" >${logintext}</textarea>                    
                 </div>

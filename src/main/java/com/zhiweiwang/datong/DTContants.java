@@ -61,7 +61,4 @@ public class DTContants {
 	public static final String RET_VIEWER = "retviewer";
 	public static final String LOGINTEXT = "logintext";
 	public static final String TIMETABLELIST = "timetablelist";
-	
-	
-
 }

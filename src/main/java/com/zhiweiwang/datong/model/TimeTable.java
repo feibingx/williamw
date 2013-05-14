@@ -8,6 +8,8 @@ public class TimeTable {
 
 	String title;
 	List<Map<String, ?>> dtstudentlist;
+	String number;
+	int cnt;
 	
 	public TimeTable(){
 		dtstudentlist = new ArrayList<Map<String, ?>>();
@@ -25,6 +27,20 @@ public class TimeTable {
 	public void setDtstudentlist(List<Map<String, ?>> dtstudentlist) {
 		this.dtstudentlist = dtstudentlist;
 	}
-	
-	
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String string) {
+		this.number = string;
+	}
+
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 }

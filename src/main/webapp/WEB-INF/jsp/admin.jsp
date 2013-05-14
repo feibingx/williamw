@@ -29,15 +29,7 @@
 </style>
 <body>
 	<div class="page">
-		<div class="logo">
-			<a href="login" class=titlea" ><img class="pull-left" src="assets/img/logo.png"></a>
-			<div class="pull-left title">自荐招生系统</div>
-			<div>
-				<a href="logout" class="pull-right link">注销</a>				
-				<a href="supereditor" class="pull-right link">编辑首页</a>
-			</div>
-		</div>
-		
+		<jsp:include page="/logo" />
 		<div class="wrapper container">
 			<div class="statusbar">
 				<a href="?sts=sts_pass" class="alert alert-success">通过: ${totalcount.sts_pass}</a>&nbsp;
@@ -54,7 +46,7 @@
 					<c:if test="${query_conf.listsize >= query_conf.limit}">
 						<a href="admin?start=${query_conf.nextstart}&limit=${query_conf.limit}">下一页</a>
 					</c:if>
-					<a href="search" class="btn">精确搜索</a>
+					
 				</span>
 			</div>
 			<table class="table table-hover">

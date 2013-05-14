@@ -27,18 +27,12 @@
 </style>
 <body>
 	<div class="page">
-		<div class="logo">
-			<a href="login" class=titlea" ><img class="pull-left" src="assets/img/logo.png"></a>
-			<div class="pull-left title">自荐招生系统</div>
-			<div>
-				<a href="logout" class="pull-right">注销</a>
-			</div>
-		</div>
-
+		
+		<jsp:include page="/logo" />
 		<div class="wrapper container">
-					<div class="">
-						<fmt:message key="${interview}" />
-					</div>
+			<div class="">
+				<fmt:message key="${interview}" />
+			</div>
 				<table class="table table-hover">
 				<thead>
 					<tr>
@@ -47,7 +41,7 @@
 						<th>姓名</th>
 						<th>性别</th>
 						<th>毕业学校</th>
-						<th>场次</th>
+						<th>确认</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -60,7 +54,9 @@
 							<td>${dtstudent.sex}</td>
 							<td>${dtstudent.gradeschool}</td>
 							<td>
-								${dtstudent.interview}
+								<c:if test="${dtstudent.sts == 'sts_echo'}">
+						 			<img src="assets/img/ok.png" alt="已反馈"/>
+								</c:if>
 							</td>
 							<td>
 								<a href="../detail/${dtstudent.id}" class="btn btn-info" target="_blank">审阅</a>

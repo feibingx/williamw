@@ -27,14 +27,7 @@
 </style>
 <body>
 	<div class="page">
-		<div class="logo">
-			<a href="login" class=titlea" ><img class="pull-left" src="assets/img/logo.png"></a>
-			<div class="pull-left title">自荐招生系统</div>
-			<div>
-				<a href="logout" class="pull-right">注销</a>
-			</div>
-		</div>
-
+		<jsp:include page="/logo" />
 		<div class="wrapper container">
 
 			<form id="form" class="form-horizontal" action="search" method="POST" id="searchForm">

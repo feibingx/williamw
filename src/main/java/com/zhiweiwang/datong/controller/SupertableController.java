@@ -25,7 +25,6 @@ import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.TimeTable;
 
 @Controller
-
 public class SupertableController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -33,52 +32,51 @@ public class SupertableController {
     @Autowired
     private StudentMapper studentMapper;
 
+	
+
     @ModelAttribute(DTContants.TIMETABLELIST)
-    @RequestMapping(value="/supertable2",method = GET)
+    @RequestMapping(value="/supertable",method = GET)
     public List<TimeTable> get(){
 
     	List<TimeTable> model = new ArrayList<TimeTable>();
     	List<Map<?, ?>> passedstudents = studentMapper.getPassedStudents();
 
-    	updatePasswdstudents(passedstudents);
+    	int[] cnts=updatePasswdstudents(passedstudents);
     	Map<String, Object> in = new HashMap<String, Object>();
     	TimeTable table = null;
     	for(Map map : passedstudents){
 			String text = map.get(DTContants.DT_INTERVIEW).toString();
 			if(in.get(text) == null){
 				table = new TimeTable();
-				table.setTitle(text);
+				table.setTitle(PRE+text);
+				table.setNumber(text);
 				model.add(table);
+				table.setCnt(cnts[Integer.parseInt(text)]);
 				in.put(text, table);
 			}else{
 				table = (TimeTable) in.get(text);
 			}
-			
 			table.getDtstudentlist().add(map);
 		}
     	return model;
     }
-
-    @RequestMapping(value="/supertable",method = GET)
-    public void dget(){ }
     
-    @ModelAttribute(DTContants.DT_STUDENT_LIST)
-    @RequestMapping(value="/supertable/${interview}",method = GET)
+    @RequestMapping("/supergroup/{interview}")
     public ModelAndView getSupertableDetail(@PathVariable("interview") String interview){
-    	
-    	List<Map<?, ?>> passedstudents = studentMapper.getPassedStudentsByInterview(interview);
-    	ModelAndView mav =  new ModelAndView("timetable", DTContants.DT_STUDENT, passedstudents);
+    	logger.debug("in group");
+    	List<Map<?, ?>> passedstudents = studentMapper.getPassedStudentsByInterview(""+interview);
+    	ModelAndView mav =  new ModelAndView("supergroup");
+    	mav.addObject(DTContants.DT_STUDENT_LIST, passedstudents);
     	mav.addObject(DTContants.DT_INTERVIEW, PRE+interview);
     	return mav;
     }
-    
-    
+   
     /**
      * if interview in db is null,
      * update it;
      * @param passedstudents
      */
-	private void updatePasswdstudents(List<Map<?, ?>> passedstudents) {
+	private int[] updatePasswdstudents(List<Map<?, ?>> passedstudents) {
 		List<Map<String, ?>> totalcountlist = studentMapper.getInterviewing();
 		
 		int[] cnts = new int[MAX_SIZE];
@@ -91,9 +89,12 @@ public class SupertableController {
 		}
 		logger.debug("the interview map: {} \n{}", new Object[]{cnts, totalcountlist});
 		for(Map map : passedstudents){
-			map.put("interview", PRE+getMin(cnts));
-			studentMapper.updateSts(map);
+			if(map.get(DTContants.DT_INTERVIEW) == null){
+				map.put("interview", getMin(cnts));
+				studentMapper.updateSts(map);
+			}
 		}
+		return cnts;
 	}
 
 	/**

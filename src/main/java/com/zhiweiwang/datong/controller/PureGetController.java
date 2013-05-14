@@ -27,6 +27,9 @@ public class PureGetController {
 	@RequestMapping(value = "/index", method = GET)
 	public void getIndex(){}
 	
+	@RequestMapping(value = "/logo", method = GET)
+	public void getlogo(){}
+	
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/print/{nid}")
 	public ModelAndView get(@PathVariable("nid") int id) {

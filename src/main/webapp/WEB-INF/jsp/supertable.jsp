@@ -27,17 +27,12 @@
 </style>
 <body>
 	<div class="page">
-		<div class="logo"><a href="login" class="titlea">
-			<img class="pull-left" src="assets/img/logo.png"></a>
-			<div class="pull-left title">自荐招生系统</div>
-			<div><a href="logout" class="pull-right">注销</a></div>
-		</div>
-
+		<jsp:include page="/logo" />
 		<div class="wrapper container">
 			<div class="row">
 			<c:forEach var="timetable" items="${timetablelist}">
-				<div class="span4">
-					<a href="supertable" >${timetable.title}</a>					
+				<div class="span2">
+					<p><a href="supergroup/${timetable.number}" ><fmt:message key="${timetable.title}" /></a>(${timetable.cnt})</p>					
 					<table class="table table-hover">
 						<thead>
 							<tr>
@@ -46,19 +41,20 @@
 							</tr>
 						</thead>
 						<tbody id="resultTbody">
-							<c:forEach var="dtstudent" items="${timetable.dtstuentlist}">							
+							<c:forEach var="dtstudent" items="${timetable.dtstudentlist}">							
 								<tr>
 									<td>${dtstudent.nid}</td>
 									<td>${dtstudent.name}</td>
-									<td>${dtstudent.sts}</td>
+								<c:if test="${dtstudent.sts == 'sts_echo'}">
+						 			<td><img src="assets/img/ok.png" alt="已反馈"/></td>
+								</c:if>
 								</tr>							
 							</c:forEach>
 						</tbody>
 					</table>
-					
 				</div>
-			</div>
 			</c:forEach>
+			</div>
 
 			<div id="result"></div>
 		</div>

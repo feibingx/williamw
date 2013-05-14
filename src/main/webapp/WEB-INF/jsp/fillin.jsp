@@ -36,7 +36,9 @@ tr td {
 table {
     width: 790px;
 }
-
+.wrapper {
+	padding-top:120px;
+}
 .wrapper div {
     text-align: center;
     margin: 2px auto;
