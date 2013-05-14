@@ -1,6 +1,8 @@
 package com.zhiweiwang.datong.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +60,13 @@ public class SupertableController {
 			}
 			table.getDtstudentlist().add(map);
 		}
+    	Collections.sort(model, new Comparator<TimeTable>(){    
+    	    public int compare(TimeTable f1, TimeTable f2) {    
+    	        if(Integer.parseInt(f1.getNumber()) < Integer.parseInt(f2.getNumber()))
+    	        	return -1;
+    	        else
+    	        	return 1;
+    	}});  
     	return model;
     }
     
@@ -79,7 +88,7 @@ public class SupertableController {
 	private int[] updatePasswdstudents(List<Map<?, ?>> passedstudents) {
 		List<Map<String, ?>> totalcountlist = studentMapper.getInterviewing();
 		
-		int[] cnts = new int[MAX_SIZE];
+		int[] cnts = new int[DTContants.MAX_SIZE];
 		for(Map<String, ?> m : totalcountlist){
 			if(m.get(DTContants.DT_INTERVIEW)!=null){
 				cnts[Integer.parseInt(m.get(DTContants.DT_INTERVIEW).toString())]= Integer.parseInt(m.get("cnt").toString());
@@ -90,7 +99,7 @@ public class SupertableController {
 		logger.debug("the interview map: {} \n{}", new Object[]{cnts, totalcountlist});
 		for(Map map : passedstudents){
 			if(map.get(DTContants.DT_INTERVIEW) == null){
-				map.put("interview", getMin(cnts));
+				map.put("interview", DTUtils.getMin(cnts));
 				studentMapper.updateSts(map);
 			}
 		}
@@ -102,19 +111,7 @@ public class SupertableController {
 	 * @param cnts
 	 * @return
 	 */
-	private Object getMin(int[] cnts) {
-		int min = cnts[1];
-		int ans = 1;
-		for(int i=2; i<MAX_SIZE; i++){
-			if(cnts[i]<min ){
-				min = cnts[i];
-				ans = i;
-			}
-		}
-		cnts[ans]++;
-		return ans;
-	}
+	
 
-	private static final int MAX_SIZE = 4;
 	private static final String PRE = "Time";
 }

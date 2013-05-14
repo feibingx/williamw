@@ -12,9 +12,9 @@
 
 <!-- Author: William Wang -->
 <!--  www.zhiweiwang.com  -->
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -82,7 +82,6 @@ body{
 				<input class="delbtn btn" id="delbtn" name="delbtn" type="submit" value="删除"/>
 				<input type="hidden" value="del" id="action" name="action" >
 			</c:if>
-			
 		</form>
 
 	</div>

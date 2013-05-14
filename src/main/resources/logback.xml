@@ -45,7 +45,6 @@
 
 	<root level="${LEVEL}">
 		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="ROLLING" />
 	</root>
 
 </configuration>

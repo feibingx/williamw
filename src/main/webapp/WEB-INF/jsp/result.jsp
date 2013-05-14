@@ -28,6 +28,10 @@
 	<![endif]-->
 
 <style type="text/css">
+body{
+	padding:0;
+}
+
 tr td {
 	padding: 5px;
 	margin: 2px;
@@ -51,8 +55,9 @@ p{max-width: 780px;}
 	margin:-200px 0 0 -160px;
 }
 .wrapper{
-	padding: 20px;
+	padding: 120px 20px 20px 20px;
 }
+
 </style>
 </head>
 <body>	
@@ -62,15 +67,13 @@ p{max-width: 780px;}
 			<a href="login" class="titlea"><img class="pull-left title" src="assets/img/logo.png"></a>
 			<div class="pull-left title">自荐招生系统</div>
 			<a href="logout" class="pull-right">注销</a>
-			<a class="btn pull-right print-btn" href="print/${dtstudent.id}" data-original-title="注意!">打印</a>
 		</div>
 		<div class="wrapper">
-			<div class=""><fmt:message key="${dtstudent.resultmsg}" />
-					<c:if test="${dtstudent.sts == 'sts_pass'}">
-						 面试时间：${dtstudent.interviewtime}
-					</c:if>
+			<div class="btn-banner">
+				<a href="result/${dtstudent.id}" class="btn btn-large btn-primary">查看审核结果</a>
 			</div>			
 			<!--startprint-->
+			<a class="btn pull-right print-btn" href="print/${dtstudent.id}">打印</a>
 			<table>
 					<tr>
 						<td style="width:15%">姓名</td>
@@ -80,7 +83,7 @@ p{max-width: 780px;}
 						<td>政治面貌</td>
 						<td>${dtstudent.policy}</td>
 						<td rowspan="5" style="width:110px;">
-							<iframe src="../pic/${dtstudent.id}" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+							<iframe src="pic/${dtstudent.id}" width="110" height="160" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
 						</td>
 					</tr>
 					<tr>

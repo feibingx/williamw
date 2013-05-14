@@ -114,4 +114,16 @@ public class DTUtils {
 		}
 	}
 
+	public static Object getMin(int[] cnts) {
+		int min = cnts[1];
+		int ans = 1;
+		for(int i=2; i<DTContants.MAX_SIZE; i++){
+			if(cnts[i]<min ){
+				min = cnts[i];
+				ans = i;
+			}
+		}
+		cnts[ans]++;
+		return ans;
+	}
 }

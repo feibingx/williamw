@@ -20,8 +20,8 @@ public interface StudentMapper {
 	@Update("update dt_students set sts=#{sts},role=#{role},interview=#{interview} where id=#{id}")
 	void updateSts(Map<String, Object> map);
 	
-	@Update("update dt_students set sts=#{sts} where id=#{id}")
-	void updateFeedback(@Param("sts") String sts,@Param("id") int id);
+	@Update("update dt_students set feedback='yes' where id=#{id}")
+	void updateFeedback(@Param("id") int id);
 	
 	@Update("update dt_students set imgpath=#{imgpath} where id=#{id}")
 	void updatePic(@Param("id") int id, @Param("imgpath") String imgpath);
@@ -52,10 +52,10 @@ public interface StudentMapper {
 	@Select("select interview,count(*) as cnt from dt_students where sts='sts_pass' group by interview")
 	List<Map<String, ?>> getInterviewing();
 	
-	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview FROM dt_students where sts='sts_pass' order by nid")
+	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview,feedback FROM dt_students where sts='sts_pass' order by nid")
 	List<Map<?, ?>> getPassedStudents();
 	
-	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview FROM dt_students where sts='sts_pass' and interview=#{interview} order by interview,nid")
+	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview,feedback FROM dt_students where sts='sts_pass' and interview=#{interview} order by interview,nid")
 	List<Map<?, ?>> getPassedStudentsByInterview(@Param("interview") String interview);
 	
 }

@@ -1,5 +1,5 @@
 ﻿<div class="logo">
-<a href="login" class=titlea" >
+<a href="${pageContext.request.contextPath}/login" class=titlea" >
 <img class="pull-left" src="${pageContext.request.contextPath}/assets/img/logo.png">
 </a>
 <div class="pull-left title">自荐招生系统</div>
@@ -15,6 +15,6 @@
 	  </li>
 	  <li><a href="${pageContext.request.contextPath}/superlogin">设置审核员</a></li>
 	  <li><a href="${pageContext.request.contextPath}/login">回到首页</a></li>
-	  <li><a href="logout">注销</a></li>
+	  <li><a href="${pageContext.request.contextPath}/logout">注销</a></li>
 	</ul>
 </div>

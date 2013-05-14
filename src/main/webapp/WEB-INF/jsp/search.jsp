@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -29,7 +28,6 @@
 	<div class="page">
 		<jsp:include page="/logo" />
 		<div class="wrapper container">
-
 			<form id="form" class="form-horizontal" action="search" method="POST" id="searchForm">
 				<fieldset>
 					<legend>输入搜索条件
@@ -69,7 +67,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>中考报名号</th>
+						<th>身份证</th>
 						<th>姓名</th>
 						<th>性别</th>
 						<th>毕业学校</th>

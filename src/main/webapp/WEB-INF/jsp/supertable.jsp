@@ -45,9 +45,6 @@
 								<tr>
 									<td>${dtstudent.nid}</td>
 									<td>${dtstudent.name}</td>
-								<c:if test="${dtstudent.sts == 'sts_echo'}">
-						 			<td><img src="assets/img/ok.png" alt="已反馈"/></td>
-								</c:if>
 								</tr>							
 							</c:forEach>
 						</tbody>

@@ -34,8 +34,7 @@ public class FillController {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/fillin", method = RequestMethod.POST)
-	public ModelAndView fillin(HttpServletRequest request,
-			@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
+	public ModelAndView fillin(HttpServletRequest request, @ModelAttribute(DTContants.USER_IN_SESSION) User user) {
 
 		ModelAndView mav = new ModelAndView();
 
@@ -66,8 +65,7 @@ public class FillController {
 		// bad coding
 		// using user id to sure if the img belong to one
 		//
-		if (imgpath != null
-				&& imgpath.toString().indexOf("img" + user.getId()) > 0) {
+		if (imgpath != null && imgpath.toString().indexOf("img" + user.getId()) > 0) {
 			map.put(DTContants.IMG_PATH, imgpath);
 		}
 		logger.info(map.toString());
@@ -95,34 +93,34 @@ public class FillController {
 		return false;
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/fillin", method = GET)
 	public ModelAndView get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
 		logger.info("user:  {} ", user.getId());
 
 		ModelAndView mav = new ModelAndView();
-		
+
 		Map result = studentMapper.getStudent(user.getId());
 
-		if (DTContants.STS_REJECT.equals(result.get(DTContants.DT_STS))
-				|| DTContants.STS_PASS.equals(result.get(DTContants.DT_STS))) {
-			mav.setViewName("redirect:/result");
-			mav.addObject(DTContants.DT_STUDENT, result);
-			return mav;
-		}
+		if(result != null){
+			if (DTContants.STS_REJECT.equals(result.get(DTContants.DT_STS)) 
+					|| DTContants.STS_PASS.equals(result.get(DTContants.DT_STS))) {
+				logger.debug("redirect to result {}", result);
+				mav.setViewName("redirect:/result");
+				mav.getModel().put(DTContants.DT_STUDENT, result);
+				return mav;
+			}
 
-		
-		DTUtils.makeJson2Map(result, "honors");
-		DTUtils.makeJson2Map(result, "prices");
-		
+			DTUtils.makeJson2Map(result, "honors");
+			DTUtils.makeJson2Map(result, "prices");
+		}
 		mav.setViewName("fillin");
 		mav.addObject(DTContants.DT_STUDENT, result);
 		return mav;
 	}
 
 	private static final String[] XKEYS = { "name", "pid" };
-	private static final String[] PRICE_NAMES = { "pname", "plev", "pcell",
-			"ptime" };
+	private static final String[] PRICE_NAMES = { "pname", "plev", "pcell", "ptime" };
 	private static final String[] HONOR_NAMES = { "hname", "hlev" };
 }

@@ -67,6 +67,9 @@ public class DTContants {
 	public static final String STS_WAIT = "sts_wait";
 	public static final String STS_REJECT ="sts_reject";
 	public static final String STS_PASS="sts_pass";
+	//public static final String STS_ECHOED = "sts_echo";
 	public static final String DT_RESULT_MSG = "resultmsg";
 	public static final String DT_INTERVIEW_TIME = "interviewtime";
+	public static final int MAX_SIZE = 4;
+	
 }

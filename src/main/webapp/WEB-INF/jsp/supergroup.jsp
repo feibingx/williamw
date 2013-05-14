@@ -30,8 +30,9 @@
 		
 		<jsp:include page="/logo" />
 		<div class="wrapper container">
-			<div class="">
+			<div >
 				<fmt:message key="${interview}" />
+				<a href="${pageContext.request.contextPath}/supertable" class="pull-right">返回</a>
 			</div>
 				<table class="table table-hover">
 				<thead>
@@ -48,17 +49,17 @@
 				<tbody id="resultTbody">
 					<c:forEach var="dtstudent" items="${dtstudentlist}">
 						<tr>
-							<td>${dtstudent.nid}</td>
-							<td>${dtstudent.pid}</td>
-							<td>${dtstudent.name}</td>
-							<td>${dtstudent.sex}</td>
-							<td>${dtstudent.gradeschool}</td>
-							<td>
-								<c:if test="${dtstudent.sts == 'sts_echo'}">
-						 			<img src="assets/img/ok.png" alt="已反馈"/>
+							<td width="2%">${dtstudent.nid}</td>
+							<td width="12%">${dtstudent.pid}</td>
+							<td width="16%">${dtstudent.name}</td>
+							<td width="8%">${dtstudent.sex}</td>
+							<td width="32%">${dtstudent.gradeschool}</td>
+							<td width="8%">
+								<c:if test="${dtstudent.feedback == 'yes'}">
+						 			<img src="${pageContext.request.contextPath}/assets/img/ok.png" alt="已反馈" style="width:20px"/>
 								</c:if>
 							</td>
-							<td>
+							<td width="12%">
 								<a href="../detail/${dtstudent.id}" class="btn btn-info" target="_blank">审阅</a>
 							</td>
 						</tr>
