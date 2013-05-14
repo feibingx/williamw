@@ -35,9 +35,19 @@ public class ResultController {
 	
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/result", method = GET)
-	public Map<?,?> get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
-		logger.info("user getting result:  {} ",user.getId());
-		return studentMapper.getStudent(user.getId());
+	public Map<?,?> get(@ModelAttribute(DTContants.DT_STUDENT) Map map) {
+		Object sts = map.get(DTContants.DT_STS);
+		if(sts == null){
+			logger.debug("sts is null");
+			return null;
+		}
+		String status = sts.toString();
+		logger.info("user getting result:  {}",status);
+		map.put(DTContants.DT_RESULT_MSG, "msg_"+status);
+		if(map.get(DTContants.DT_INTERVIEW) != null){
+			map.put(DTContants.DT_INTERVIEW_TIME, "Time"+map.get(DTContants.DT_INTERVIEW));
+		}
+		return map;
 	}
 
 	@ModelAttribute(DTContants.MSG_ERRER)

@@ -65,10 +65,9 @@ p{max-width: 780px;}
 			<a class="btn pull-right print-btn" href="print/${dtstudent.id}" data-original-title="注意!">打印</a>
 		</div>
 		<div class="wrapper">
-			<div class="pull-right">当前状态：<fmt:message key="${dtstudent.sts}" />
-					审阅人: ${dtstudent.role} &nbsp;
+			<div class=""><fmt:message key="${dtstudent.resultmsg}" />
 					<c:if test="${dtstudent.sts == 'sts_pass'}">
-						 面试时间：${dtstudent.interview}
+						 面试时间：${dtstudent.interviewtime}
 					</c:if>
 			</div>			
 			<!--startprint-->

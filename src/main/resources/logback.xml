@@ -40,7 +40,6 @@
 	</appender>
 
 	<logger name="com.zhiweiwang.datong" level="DEBUG" >
-		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="ROLLING" />
 	</logger>
 

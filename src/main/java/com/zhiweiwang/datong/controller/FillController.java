@@ -31,63 +31,64 @@ public class FillController {
 
 	@Autowired
 	protected StudentMapper studentMapper;
-	
-	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/fillin", method = RequestMethod.POST)
-	public ModelAndView fillin(HttpServletRequest request, @ModelAttribute(DTContants.USER_IN_SESSION) User user) {
-        
-        ModelAndView mav = new ModelAndView();
- 
-		logger.info("user is updating:  {} ",user.getId());
-		
+	public ModelAndView fillin(HttpServletRequest request,
+			@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
+
+		ModelAndView mav = new ModelAndView();
+
+		logger.info("user is updating:  {} ", user.getId());
+
 		Map map = new HashMap(request.getParameterMap());
 		Set<String> keys = map.keySet();
-        for (Iterator it = keys.iterator(); it.hasNext();) {
-            String key = (String) it.next();
-            Object student = request.getParameter(key);
-            if(isNotAllowNull(key, student)){
-            	mav.setViewName("redirect:/message");
-            	mav.addObject(DTContants.MSG_ERRER, DTMessage.NOT_AVLID_REQUEST);
-            	return mav;
-            }
-            map.put(key, student.toString());
-            logger.debug("params:  {} - {}",new Object[]{key, student});
-        }
-        
-      	DTUtils.makeMap2Json(map, HONOR_NAMES, "honors");
-      	DTUtils.makeMap2Json(map, PRICE_NAMES, "prices");
-        map.put(DTContants.DT_ID, user.getId());
-        map.put(DTContants.DT_USERNAME, user.getUsername());
-        
-        Object imgpath = request.getSession().getAttribute(DTContants.IMG_PATH);
-        
-        // TODO
-        // bad coding  
-        // using user id to sure if the img belong to one
-        // 
-        if(imgpath != null && imgpath.toString().indexOf("img"+user.getId())>0){
-        	map.put(DTContants.IMG_PATH, imgpath);
-        }
-        logger.info(map.toString());
-       
-        Map<?, ?> student = studentMapper.getStudent(user.getId());
-        if( student == null || student.size()<1){
-        	studentMapper.insertRow(map);
-        	mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_SUCCESS);
-        }else{
-        	studentMapper.update(map);
-        	mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_UPATE_SUCCESS);
-        }
-		
+		for (Iterator it = keys.iterator(); it.hasNext();) {
+			String key = (String) it.next();
+			Object student = request.getParameter(key);
+			if (isNotAllowNull(key, student)) {
+				mav.setViewName("redirect:/message");
+				mav.addObject(DTContants.MSG_ERRER, DTMessage.NOT_AVLID_REQUEST);
+				return mav;
+			}
+			map.put(key, student.toString());
+			logger.debug("params:  {} - {}", new Object[] { key, student });
+		}
+
+		DTUtils.makeMap2Json(map, HONOR_NAMES, "honors");
+		DTUtils.makeMap2Json(map, PRICE_NAMES, "prices");
+		map.put(DTContants.DT_ID, user.getId());
+		map.put(DTContants.DT_USERNAME, user.getUsername());
+
+		Object imgpath = request.getSession().getAttribute(DTContants.IMG_PATH);
+
+		// TODO
+		// bad coding
+		// using user id to sure if the img belong to one
+		//
+		if (imgpath != null
+				&& imgpath.toString().indexOf("img" + user.getId()) > 0) {
+			map.put(DTContants.IMG_PATH, imgpath);
+		}
+		logger.info(map.toString());
+
+		Map<?, ?> student = studentMapper.getStudent(user.getId());
+		if (student == null || student.size() < 1) {
+			studentMapper.insertRow(map);
+			mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_SUCCESS);
+		} else {
+			studentMapper.update(map);
+			mav.addObject(DTContants.MSG_ERRER, DTMessage.FILLIN_UPATE_SUCCESS);
+		}
+
 		mav.setViewName("redirect:/message");
 		return mav;
 	}
 
 	private boolean isNotAllowNull(String key, Object obj) {
-		if(obj == null){
-			for(String n: XKEYS){
-				if(n.equals(key))
+		if (obj == null) {
+			for (String n : XKEYS) {
+				if (n.equals(key))
 					return true;
 			}
 		}
@@ -97,18 +98,31 @@ public class FillController {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@ModelAttribute(DTContants.DT_STUDENT)
 	@RequestMapping(value = "/fillin", method = GET)
-	public Map<?,?> get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
-		logger.info("user:  {} ",user.getId());
-		Map model = new HashMap();
-		Map<?, ?> result = studentMapper.getStudent(user.getId());
-		if(result != null)
-			model.putAll(result);
-        
-        DTUtils.makeJson2Map(model, "honors");
-        DTUtils.makeJson2Map(model, "prices");
-        return model;
+	public ModelAndView get(@ModelAttribute(DTContants.USER_IN_SESSION) User user) {
+		logger.info("user:  {} ", user.getId());
+
+		ModelAndView mav = new ModelAndView();
+		
+		Map result = studentMapper.getStudent(user.getId());
+
+		if (DTContants.STS_REJECT.equals(result.get(DTContants.DT_STS))
+				|| DTContants.STS_PASS.equals(result.get(DTContants.DT_STS))) {
+			mav.setViewName("redirect:/result");
+			mav.addObject(DTContants.DT_STUDENT, result);
+			return mav;
+		}
+
+		
+		DTUtils.makeJson2Map(result, "honors");
+		DTUtils.makeJson2Map(result, "prices");
+		
+		mav.setViewName("fillin");
+		mav.addObject(DTContants.DT_STUDENT, result);
+		return mav;
 	}
-	private static final String[] XKEYS={"name","pid"};
-	private static final String[] PRICE_NAMES = {"pname","plev","pcell","ptime"};
-	private static final String[] HONOR_NAMES = {"hname","hlev"};
+
+	private static final String[] XKEYS = { "name", "pid" };
+	private static final String[] PRICE_NAMES = { "pname", "plev", "pcell",
+			"ptime" };
+	private static final String[] HONOR_NAMES = { "hname", "hlev" };
 }
