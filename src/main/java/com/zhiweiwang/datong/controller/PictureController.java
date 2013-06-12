@@ -3,6 +3,7 @@ package com.zhiweiwang.datong.controller;
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTMessage;
 import com.zhiweiwang.datong.mapper.StudentMapper;
+import com.zhiweiwang.datong.mapper.UserMapper;
 import com.zhiweiwang.datong.model.User;
 
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class PictureController {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private StudentMapper studentMapper;
+	private UserMapper userMapper;
 
 	private String uploadDic ="/upload";
 	
@@ -66,10 +67,10 @@ public class PictureController {
 			logger.debug("destPath: " + destPath);
 			mav.getModel().put(DTContants.IMG_PATH, destPath);
 
-			request.getSession().setAttribute(DTContants.IMG_PATH, destPath);
-			
+			//request.getSession().setAttribute(DTContants.IMG_PATH, destPath);
+			userMapper.updatePic(user.getId(), destPath);
 		} else if ("del".equals(action)) {
-			studentMapper.updatePic(user.getId(), null);
+			userMapper.updatePic(user.getId(), null);
 			request.getSession().removeAttribute(DTContants.IMG_PATH);
 			mav.setViewName("redirect:/pic");
 		}
@@ -93,16 +94,16 @@ public class PictureController {
 
 	private ModelAndView getPic(int id, HttpSession session) {
 		ModelAndView mav = new ModelAndView("pic");
-		Map<?, ?> student = studentMapper.getStudent(id);
+		User user = userMapper.get_userById(id);
 
-		if(student != null){
-			Object img = student.get(DTContants.IMG_PATH);
+		if(user != null){
+			String img = user.getImgpath();
 			if(img != null){
-				mav.getModel().put(DTContants.IMG_PATH, img.toString());
-				session.setAttribute(DTContants.IMG_PATH, img.toString());
+				mav.getModel().put(DTContants.IMG_PATH, img);
+				//session.setAttribute(DTContants.IMG_PATH, img);
 			}else{
 				mav.getModel().remove(DTContants.IMG_PATH);
-				session.removeAttribute(DTContants.IMG_PATH);
+				//session.removeAttribute(DTContants.IMG_PATH);
 			}
 		}
 		return mav;

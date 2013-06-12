@@ -7,6 +7,7 @@ public class User {
 	String email;
 	String createtime;
 	String role;
+	String imgpath;
 	
 	public String getUsername() {
 		return username;
@@ -47,6 +48,12 @@ public class User {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public String getImgpath() {
+		return imgpath;
+	}
+	public void setImgpath(String imgpath) {
+		this.imgpath = imgpath;
 	}
 	
 	

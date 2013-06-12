@@ -74,6 +74,7 @@
         padding: 16px;
       }
       #picslice {
+      z-index: 0;
       background: #FFF;
       overflow:hidden;
       border: 1px dashed #CCC;
@@ -158,44 +159,7 @@
       </div>
 
       <div class="span8 row">
-        <div class="row"  style="margin-bottom:50px;">
-          <h3>招生动态</h3>
-          <a href="#" class="pull-right" >更多</a>
-          <p>我校自荐招生平台将于5月5日正式开通，届时请各位家长和考生及时关注。</p>
-
-        </div>
-        <div class="row">
-          <h3>招生政策</h3>
-          <div class="span5">
-            <h4>提前招生</h4>
-            <p>
-              2013年上海市大同中学“提前招生录取”方案...
-            </p>
-            <a class="pull-right" href="http://dt.hpe.sh.cn/opencms/opencms/news/AdmissionsInformation/1440fde1-a6f8-11e2-9ee9-6944ccbba2e6.html">了解更多</a>
-          </div>
-          <div class="span5">
-            <h4>
-              推荐生招生计划</h4>
-            <p>
-              2013年上海市大同中学推荐生招生计划表...
-            </p>
-            <a class="pull-right" href="http://dt.hpe.sh.cn/opencms/opencms/news/AdmissionsInformation/4415d61a-a6fb-11e2-9ee9-6944ccbba2e6.html">了解更多</a>
-          </div>
-          <div class="span5">
-            <h4>艺术特长生</h4>
-            <p>
-              上海市大同中学2013年高中艺术特长生招生简章...
-            </p>
-            <a class="pull-right" href="http://dt.hpe.cn/opencms/opencms/news/AdmissionsInformation/ef3627e3-6360-11e2-9748-6944ccbba2e6.html">了解更多</a>
-          </div>
-          <div class="span5">
-            <h4>体育特长生</h4>
-            <p>
-              2013年上海市大同中学体育特长生招生办法
-            </p>
-            <a class="pull-right" href="http://dt.hpe.sh.cn/opencms/opencms/news/AdmissionsInformation/9ba2acab-a567-11e2-b383-6944ccbba2e6.html">了解更多</a>
-         </div>
-        </div>
+        ${logintext}
       </div>
     </div>
     <div id="picslice" class="row">

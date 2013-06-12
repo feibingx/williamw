@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.zhiweiwang.datong.DTContants;
 import com.zhiweiwang.datong.DTUtils;
 import com.zhiweiwang.datong.mapper.StudentMapper;
+import com.zhiweiwang.datong.mapper.SysconfMapper;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -22,10 +23,16 @@ public class PureGetController {
 	@Autowired
 	protected StudentMapper studentMapper;
 
+	@Autowired
+	private SysconfMapper sysconfMapper;
+
 //	private Logger logger = LoggerFactory.getLogger(this.getClass());
   
 	@RequestMapping(value = "/index", method = GET)
-	public void getIndex(){}
+	@ModelAttribute("logintext")
+	public String getIndex(){
+		return sysconfMapper.getValue("logintext");
+	}
 	
 	@RequestMapping(value = "/logo", method = GET)
 	public void getlogo(){}
