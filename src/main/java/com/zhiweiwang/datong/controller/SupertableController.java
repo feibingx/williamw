@@ -34,8 +34,6 @@ public class SupertableController {
     @Autowired
     private StudentMapper studentMapper;
 
-	
-
     @ModelAttribute(DTContants.TIMETABLELIST)
     @RequestMapping(value="/supertable",method = GET)
     public List<TimeTable> get(){

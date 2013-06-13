@@ -11,7 +11,7 @@ public class DTContants {
 	public static final String MSG_ERRER = "errmessage";
 	public static final String DT_STUDENT_LIST = "dtstudentlist";
 	public static final String QUERY_CONF ="query_conf";
-	public static final int LINES_PER_PAGE = 20;
+	public static final int LINES_PER_PAGE = 50;
 	public static final String TOTAL_COUNT = "totalcount";
 	public static final String DT_ID = "id";
 	public static final String DT_USERNAME = "username";

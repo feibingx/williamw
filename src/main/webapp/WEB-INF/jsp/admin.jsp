@@ -52,11 +52,11 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th style="width:1%">#</th>
-						<th style="width:15%">身份证号</th>
-						<th style="width:9%">姓名</th>
-						<th style="width:8%">性别</th>
-						<th style="width:20%">毕业学校</th>
+						<th style="width:1%"><a href="?order=nid">#</a></th>
+						<th style="width:15%"><a href="?order=pid">身份证号</a></th>
+						<th style="width:9%"><a href="?order=name">姓名</a></th>
+						<th style="width:8%"><a href="?order=sex">性别</a></th>
+						<th style="width:20%"><a href="?order=gradeschool">毕业学校</a></th>
 						<th style="width:10%">状态</th>
 						<th></th>
 					</tr>

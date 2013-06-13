@@ -36,7 +36,7 @@ public class AdminController {
     
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/admin", method = GET)
-	public /*List<?>*/ ModelAndView get(@RequestParam(required = false) String start,@RequestParam(required = false) String limit,@RequestParam(required = false) String sts,HttpSession session) {
+	public /*List<?>*/ ModelAndView get(@RequestParam(required = false) String start,@RequestParam(required = false) String limit,@RequestParam(required = false) String sts,@RequestParam(required = false) String order,HttpSession session) {
 		int intstart = 0, intlimit = LINES_PER_PAGE;
 		Object conf = session.getAttribute(QUERY_CONF);
 		logger.debug("sts {}", new Object[]{sts});
@@ -54,17 +54,19 @@ public class AdminController {
 				intstart = (Integer)map.get("start");
 			if(map.get("limit")!=null)
 				intlimit = (Integer)map.get("limit");
-
+			if(map.get("order")!=null && order ==null)
+				order = map.get("order").toString(); 
 		}
 		try{
-		if (start != null)
-			intstart = Integer.parseInt(start);
+			if (start != null)
+				intstart = Integer.parseInt(start);
 		}catch(NumberFormatException e){
 			intstart = 0;
 		}
 		map.put("nextstart", intstart+intlimit);
 		map.put("start", intstart);		
-
+		map.put("order", order);
+		
 		if(intstart - intlimit >0){
 			map.put("perviousstart", intstart - intlimit);
 		}else{
@@ -82,14 +84,16 @@ public class AdminController {
 			//状态变更 重置页数
 			map = new HashMap<String, Object>();
 		}
-		
+		if(order == null)
+			order = "nid";
+
 		List<Map<?, ?>> list = null;
 		if(sts != null){
 			logger.debug("sts {}", new Object[]{sts});
-			list = studentMapper.getStudentsBySts(intstart, intlimit, sts);
+			list = studentMapper.getStudentsBySts(intstart, intlimit, sts, order);
 			map.put("sts",sts);
 		}else{
-			list = studentMapper.getStudentsLimit(intstart, intlimit);
+			list = studentMapper.getStudentsLimit(intstart, intlimit, order);
 		}
 
 		map.put("limit", intlimit);

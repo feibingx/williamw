@@ -37,11 +37,11 @@ public interface StudentMapper {
 //	@Select("select * FROM dt_students where sts=#{sts} limit #{start},#{limit}  ")
 //	List<Map<?, ?>> getStudentsBySts(@Param("start")int start,@Param("limit") int limit,@Param("sts") String sts);
 
-	@Select("select * FROM dt_students order by nid limit #{limit} offset #{start}")
-	List<Map<?,?>> getStudentsLimit(@Param("start") int start, @Param("limit") int limit);
+	@Select("select * FROM dt_students order by ${order} limit #{limit} offset #{start}")
+	List<Map<?,?>> getStudentsLimit(@Param("start") int start, @Param("limit") int limit, @Param("order") String order);
 
-	@Select("select * FROM dt_students where sts=#{sts} order by nid  limit #{limit} offset #{start}")
-	List<Map<?, ?>> getStudentsBySts(@Param("start")int start,@Param("limit") int limit,@Param("sts") String sts);
+	@Select("select * FROM dt_students where sts=#{sts} order by ${order}  limit #{limit} offset #{start}")
+	List<Map<?, ?>> getStudentsBySts(@Param("start")int start,@Param("limit") int limit,@Param("sts") String sts, @Param("order") String order);
 	
 	@Select("select sts,count(*) as cnt from dt_students group by sts")
 	List<Map<String, ?>> getCounting();
