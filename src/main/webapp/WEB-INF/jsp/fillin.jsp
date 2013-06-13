@@ -249,91 +249,80 @@ table {
 						<td>第一次</td>
 						<td><input id="yuwem1" name="yuwem1" type="text"
 							value="${dtstudent.yuwem1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter();"
 							maxlength="5">
 						</td>
 						<td><input id="shuxue1" name="shuxue1" type="text"
 							value="${dtstudent.shuxue1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="yingyu1" name="yingyu1" type="text"
 							value="${dtstudent.yingyu1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="wuli1" name="wuli1" type="text"
 							value="${dtstudent.wuli1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="huaxue1" name="huaxue1" type="text"
 							value="${dtstudent.huaxue1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="zongfen1" name="zongfen1" type="text"
 							value="${dtstudent.zongfen1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="paimin1" name="paimin1" type="text"
 							value="${dtstudent.paimin1}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return precentfilter(this);"
+							onkeyup="return precentfilter(this);"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
-							maxlength="5">%
+							maxlength="3">%
 						</td>
 					</tr>
 					<tr>
 						<td>第二次</td>
 						<td><input id="yuwem2" name="yuwem2" type="text"
 							value="${dtstudent.yuwem2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="shuxue2" name="shuxue2" type="text"
 							value="${dtstudent.shuxue2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="yingyu2" name="yingyu2" type="text"
 							value="${dtstudent.yingyu2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="wuli2" name="wuli2" type="text"
 							value="${dtstudent.wuli2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="huaxue2" name="huaxue2" type="text"
 							value="${dtstudent.huaxue2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td><input id="zongfen2" name="zongfen2" type="text"
 							value="${dtstudent.zongfen2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
-							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							onkeypress="return scorefilter(event);"
 							maxlength="5">
 						</td>
 						<td>
 							<input id="paimin2" name="paimin2" type="text"
 							value="${dtstudent.paimin2}" class="required input-xsmall"
-							onkeyup="this.value=this.value.replace(/\D/g,'')"
+							onkeyup="return precentfilter(this);"
 							onafterpaste="this.value=this.value.replace(/\D/g,'')"
-							maxlength="5">%
+							maxlength="3">%
 						</td>
 					</tr>
 				</table>
@@ -589,6 +578,33 @@ table {
 			prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); 
 			window.document.body.innerHTML=prnhtml; 
 			window.print(); 
+		}
+
+		function scorefilter(e) {
+			 var obj=e.srcElement || e.target;
+			 var dot=obj.value.indexOf(".");//alert(e.which);
+			 var  key=e.keyCode|| e.which;
+			 if(key==8 || key==9 || key==46 || (key>=37  && key<=40))//这里为了兼容Firefox的backspace,tab,del,方向键
+			  return true;
+			 if (key<=57 && key>=48) { //数字
+			  if(dot==-1)//没有小数点
+			     return true;
+			    else if(obj.value.length<=dot+1)//两位小数
+			  return true;
+			 } else if((key==46) && dot==-1){//小数点
+			  return true;
+			 }        
+			    return false;
+		}
+		function precentfilter(input){
+
+			input.value=input.value.replace(/\D/g,'');
+			if(eval(input.value)>100){
+				alert("不能大于100");
+				input.value='0';
+				return false;
+			}			
+
 		}
 	</script>
 </body>
