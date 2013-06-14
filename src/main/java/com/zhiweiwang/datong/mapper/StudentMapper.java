@@ -55,4 +55,7 @@ public interface StudentMapper {
 	@Select("select id,nid,name,pid,sex,gradeschool,sts,role,interview,feedback FROM dt_students where sts='sts_pass' and interview=#{interview} order by interview,nid")
 	List<Map<?, ?>> getPassedStudentsByInterview(@Param("interview") String interview);
 	
+	@Select("select * FROM dt_students order by nid")
+	List<Map<String, ?>> getAllStudents();
+	
 }

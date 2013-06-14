@@ -39,6 +39,7 @@
 					<value>superadmin</value>
 					<value>supereditor</value>
 					<value>supertable</value>
+					<value>export</value>
 				</list>
 			</property>
 			<property name="sysconfMapper" ref="sysconfMapper"/>
