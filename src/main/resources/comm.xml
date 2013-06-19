@@ -25,6 +25,7 @@
 				<list>
 					<value>fillin</value>
 					<value>result</value>
+					<value>print</value>
 				</list>
 			</property>
 			<property name="inAdminFilters">
