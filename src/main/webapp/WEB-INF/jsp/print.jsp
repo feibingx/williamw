@@ -284,38 +284,6 @@ table {
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="${pageContext.request.contextPath}/assets/js/jquery.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/jquery.validate.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-transition.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-alert.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-modal.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-dropdown.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-scrollspy.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-tab.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-tooltip.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-popover.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-button.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-collapse.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-carousel.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/bootstrap-typeahead.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/application.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/editor_config.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/editor_all.js"></script>
 	<script type="text/javascript">
 		function doPrint() {
 			bdhtml = window.document.body.innerHTML;

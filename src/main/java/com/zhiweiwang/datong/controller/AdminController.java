@@ -1,4 +1,5 @@
 package com.zhiweiwang.datong.controller;
+
 import com.zhiweiwang.datong.mapper.StudentMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,29 +18,27 @@ import static com.zhiweiwang.datong.DTContants.QUERY_CONF;
 import static com.zhiweiwang.datong.DTContants.DT_STUDENT_LIST;
 import static com.zhiweiwang.datong.DTContants.LINES_PER_PAGE;
 import static com.zhiweiwang.datong.DTContants.TOTAL_COUNT;
+
 /**
- * Created with IntelliJ IDEA.
- * User: WilliamW
- * Date: 13-4-18
- * Time: 上午10:26
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: WilliamW Date: 13-4-18 Time: 上午10:26 To
+ * change this template use File | Settings | File Templates.
  */
 @Controller
 @SessionAttributes(QUERY_CONF)
 public class AdminController {
-    
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private StudentMapper studentMapper;
-    
+	@Autowired
+	private StudentMapper studentMapper;
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/admin", method = GET)
-	public /*List<?>*/ ModelAndView get(@RequestParam(required = false) String start,@RequestParam(required = false) String limit,@RequestParam(required = false) String sts,@RequestParam(required = false) String order,HttpSession session) {
+	public/* List<?> */ModelAndView get(@RequestParam(required = false) String start, @RequestParam(required = false) String limit,
+			@RequestParam(required = false) String sts, @RequestParam(required = false) String order, HttpSession session) {
 		int intstart = 0, intlimit = LINES_PER_PAGE;
 		Object conf = session.getAttribute(QUERY_CONF);
-		logger.debug("sts {}", new Object[]{sts});
+		logger.debug("sts {}", new Object[] { sts });
 		if (limit == null || limit.length() < 1) {
 			intlimit = LINES_PER_PAGE;
 		} else {
@@ -48,64 +47,72 @@ public class AdminController {
 
 		Map<String, Object> map = new HashMap<String, Object>();
 		logger.debug(map.toString());
-		if(conf != null){
-			map = (Map<String, Object>)conf;
-			if(map.get("start")!=null)
-				intstart = (Integer)map.get("start");
-			if(map.get("limit")!=null)
-				intlimit = (Integer)map.get("limit");
-			if(map.get("order")!=null && order ==null)
-				order = map.get("order").toString(); 
+		if (conf != null) {
+			map = (Map<String, Object>) conf;
+			if (map.get("start") != null)
+				intstart = (Integer) map.get("start");
+			if (map.get("limit") != null)
+				intlimit = (Integer) map.get("limit");
+			if (map.get("order") != null)
+				if (order == null)
+					order = map.get("order").toString();
+				else if (order.equals(map.get("order").toString()))
+					if (map.get("desc") == null) {
+						order += " desc";
+						map.put("desc", "true");
+					}else{
+						map.remove("desc");
+					}
 		}
-		try{
+		try {
 			if (start != null)
 				intstart = Integer.parseInt(start);
-		}catch(NumberFormatException e){
+		} catch (NumberFormatException e) {
 			intstart = 0;
 		}
-		map.put("nextstart", intstart+intlimit);
-		map.put("start", intstart);		
+		map.put("nextstart", intstart + intlimit);
+		map.put("start", intstart);
 		map.put("order", order);
-		
-		if(intstart - intlimit >0){
+
+		if (intstart - intlimit > 0) {
 			map.put("perviousstart", intstart - intlimit);
-		}else{
+		} else {
 			map.put("perviousstart", 0);
 		}
-		
+
 		Object msts = map.get("sts");
-		if(sts == null){
-			if(msts != null )
+		if (sts == null) {
+			if (msts != null)
 				sts = msts.toString();
-		}else if("clear".equals(sts)){
+		} else if ("clear".equals(sts)) {
 			sts = null;
 			map = new HashMap<String, Object>();
-		}else if(msts!=null && msts.equals(sts)==false){
-			//状态变更 重置页数
+		} else if (msts != null && msts.equals(sts) == false) {
+			// 状态变更 重置页数
 			map = new HashMap<String, Object>();
 		}
-		if(order == null)
+		if (order == null)
 			order = "nid";
 
 		List<Map<?, ?>> list = null;
-		if(sts != null){
-			logger.debug("sts {}", new Object[]{sts});
+		if (sts != null) {
+			logger.debug("sts {}", new Object[] { sts });
 			list = studentMapper.getStudentsBySts(intstart, intlimit, sts, order);
-			map.put("sts",sts);
-		}else{
+			map.put("sts", sts);
+		} else {
 			list = studentMapper.getStudentsLimit(intstart, intlimit, order);
 		}
 
 		map.put("limit", intlimit);
 		map.put("listsize", list.size());
-		
-		ModelAndView mav =  new ModelAndView("admin", DT_STUDENT_LIST, list);
+
+		ModelAndView mav = new ModelAndView("admin", DT_STUDENT_LIST, list);
 
 		// 状态栏
 		List<Map<String, ?>> totalcountlist = studentMapper.getCounting();
 		Map<String, Object> cnts = new HashMap<String, Object>();
-		for(Map m : totalcountlist){
-			if(m.get("sts")!=null){
+		for (Map m : totalcountlist) {
+			if (m.get("sts") != null) {
 				cnts.put(m.get("sts").toString(), m.get("cnt"));
 			}
 		}
@@ -113,10 +120,10 @@ public class AdminController {
 		mav.addObject(TOTAL_COUNT, cnts);
 		session.setAttribute(QUERY_CONF, map);
 		return mav;
-    }
-	
+	}
+
 	@RequestMapping(value = "/counting", method = GET)
-	public List<?> counting(){
+	public List<?> counting() {
 		return studentMapper.getCounting();
 	}
 }

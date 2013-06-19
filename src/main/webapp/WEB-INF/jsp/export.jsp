@@ -62,45 +62,45 @@
 		<c:forEach var="dtstudent" items="${dtstudentlist}">
 			<tr>
 				<td>${dtstudent.nid}</td>
-				<td>${dtstudent.pid}</td>
+				<td>'${dtstudent.pid}</td>
 				<td>${dtstudent.name}</td>
 				<td>${dtstudent.sex}</td>
 				<td><fmt:message key="${dtstudent.sts}" /></td>
-				<td>${policy}</td>
-				<td>${birthyear}</td>
-				<td>${birthmonth}</td>
-				<td>${birthday}</td>
-				<td>${healthy}</td>
-				<td>${city}</td>
-				<td>${address}</td>
-				<td>${addcode}</td>
-				<td>${phone}</td>
-				<td>${cell}</td>
-				<td>${gradeschool}</td>
-				<td>${gradesection}</td>
-				<td>${number}</td>
-				<td>${daddy}</td>
-				<td>${daddyname}</td>
-				<td>${daddyjob}</td>
-				<td>${daddyphone}</td>
-				<td>${mummy}</td>
-				<td>${mummyname}</td>
-				<td>${mummyjob}</td>
-				<td>${mummyphone}</td>
-				<td>${yuwem1}</td>
-				<td>${yuwem2}</td>
-				<td>${shuxue1}</td>
-				<td>${shuxue2}</td>
-				<td>${yingyu1}</td>
-				<td>${yingyu2}</td>
-				<td>${wuli1}</td>
-				<td>${wuli2}</td>
-				<td>${huaxue1}</td>
-				<td>${huaxue2}</td>
-				<td>${zongfen1}</td>
-				<td>${zongfen2}</td>
-				<td>${paimin1}</td>
-				<td>${paimin2}</td>
+				<td>${dtstudent.policy}</td>
+				<td>${dtstudent.birthyear}</td>
+				<td>${dtstudent.birthmonth}</td>
+				<td>${dtstudent.birthday}</td>
+				<td>${dtstudent.healthy}</td>
+				<td>${dtstudent.city}</td>
+				<td>${dtstudent.address}</td>
+				<td>${dtstudent.addcode}</td>
+				<td>${dtstudent.phone}</td>
+				<td>${dtstudent.cell}</td>
+				<td>${dtstudent.gradeschool}</td>
+				<td>${dtstudent.gradesection}</td>
+				<td>${dtstudent.number}</td>
+				<td>${dtstudent.daddy}</td>
+				<td>${dtstudent.daddyname}</td>
+				<td>${dtstudent.daddyjob}</td>
+				<td>${dtstudent.daddyphone}</td>
+				<td>${dtstudent.mummy}</td>
+				<td>${dtstudent.mummyname}</td>
+				<td>${dtstudent.mummyjob}</td>
+				<td>${dtstudent.mummyphone}</td>
+				<td>${dtstudent.yuwem1}</td>
+				<td>${dtstudent.yuwem2}</td>
+				<td>${dtstudent.shuxue1}</td>
+				<td>${dtstudent.shuxue2}</td>
+				<td>${dtstudent.yingyu1}</td>
+				<td>${dtstudent.yingyu2}</td>
+				<td>${dtstudent.wuli1}</td>
+				<td>${dtstudent.wuli2}</td>
+				<td>${dtstudent.huaxue1}</td>
+				<td>${dtstudent.huaxue2}</td>
+				<td>${dtstudent.zongfen1}</td>
+				<td>${dtstudent.zongfen2}</td>
+				<td>${dtstudent.paimin1}</td>
+				<td>${dtstudent.paimin2}</td>
 			</tr>
 		</c:forEach>
 	</tbody>
